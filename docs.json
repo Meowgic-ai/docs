@@ -37,6 +37,17 @@
         ]
       },
       {
+        "tab": "Tips & Tricks",
+        "groups": [
+          {
+            "group": "How to use Meowgic",
+            "pages": [
+              "tips-tricks/best-practices"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "Changelog",
         "href": "https://meowgic.ai/changelog"
       }
