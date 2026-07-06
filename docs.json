@@ -18,6 +18,7 @@
         "default": true,
         "tabs": [
           {
+<<<<<<< HEAD
             "tab": "Introduction",
             "groups": [
               {
@@ -54,6 +55,19 @@
           {
             "tab": "Changelog",
             "href": "https://meowgic.ai/changelog"
+=======
+            "group": "Getting started",
+            "pages": []
+          }
+        ]
+      },
+      {
+        "tab": "Cloud",
+        "groups": [
+          {
+            "group": "About cloud",
+            "pages": []
+>>>>>>> 21c9ff7be2acdf9157c1009154623ca1c056495e
           }
         ]
       },
@@ -61,6 +75,7 @@
         "language": "zh",
         "tabs": [
           {
+<<<<<<< HEAD
             "tab": "介绍",
             "groups": [
               {
@@ -97,6 +112,10 @@
           {
             "tab": "更新日志",
             "href": "https://meowgic.ai/cn/changelog"
+=======
+            "group": "How to use Meowgic",
+            "pages": []
+>>>>>>> 21c9ff7be2acdf9157c1009154623ca1c056495e
           }
         ]
       }
