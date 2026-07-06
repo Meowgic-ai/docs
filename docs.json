@@ -12,44 +12,93 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
+    "languages": [
       {
-        "tab": "Introduction",
-        "groups": [
+        "language": "en",
+        "default": true,
+        "tabs": [
           {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "getting-started/subscription-ai-credits"
+            "tab": "Introduction",
+            "groups": [
+              {
+                "group": "Getting started",
+                "pages": [
+                  "index",
+                  "getting-started/subscription-ai-credits"
+                ]
+              }
             ]
+          },
+          {
+            "tab": "Cloud",
+            "groups": [
+              {
+                "group": "About cloud",
+                "pages": [
+                  "cloud/index"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Tips & Tricks",
+            "groups": [
+              {
+                "group": "How to use Meowgic",
+                "pages": [
+                  "tips-tricks/best-practices"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Changelog",
+            "href": "https://meowgic.ai/changelog"
           }
         ]
       },
       {
-        "tab": "Cloud",
-        "groups": [
+        "language": "zh",
+        "tabs": [
           {
-            "group": "About cloud",
-            "pages": [
-              "cloud/index"
+            "tab": "介绍",
+            "groups": [
+              {
+                "group": "入门指南",
+                "pages": [
+                  "zh/index",
+                  "zh/getting-started/subscription-ai-credits"
+                ]
+              }
             ]
+          },
+          {
+            "tab": "云服务",
+            "groups": [
+              {
+                "group": "关于云服务",
+                "pages": [
+                  "zh/cloud/index"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "提示与技巧",
+            "groups": [
+              {
+                "group": "如何使用 Meowgic",
+                "pages": [
+                  "zh/tips-tricks/best-practices"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "更新日志",
+            "href": "https://meowgic.ai/cn/changelog"
           }
         ]
-      },
-      {
-        "tab": "Tips & Tricks",
-        "groups": [
-          {
-            "group": "How to use Meowgic",
-            "pages": [
-              "tips-tricks/best-practices"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Changelog",
-        "href": "https://meowgic.ai/changelog"
       }
     ]
   },
