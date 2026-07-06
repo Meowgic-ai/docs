@@ -18,10 +18,7 @@
         "groups": [
           {
             "group": "Getting started",
-            "pages": [
-              "index",
-              "getting-started/subscription-ai-credits"
-            ]
+            "pages": []
           }
         ]
       },
@@ -30,9 +27,7 @@
         "groups": [
           {
             "group": "About cloud",
-            "pages": [
-              "cloud/index"
-            ]
+            "pages": []
           }
         ]
       },
@@ -41,9 +36,7 @@
         "groups": [
           {
             "group": "How to use Meowgic",
-            "pages": [
-              "tips-tricks/best-practices"
-            ]
+            "pages": []
           }
         ]
       },
