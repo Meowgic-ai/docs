@@ -46,7 +46,8 @@
               {
                 "group": "How to use Meowgic",
                 "pages": [
-                  "tips-tricks/best-practices"
+                  "tips-tricks/best-practices",
+                  "tips-tricks/create-app-let-it-work-on-your-store"
                 ]
               }
             ]
@@ -89,7 +90,8 @@
               {
                 "group": "如何使用 Meowgic",
                 "pages": [
-                  "zh/tips-tricks/best-practices"
+                  "zh/tips-tricks/best-practices",
+                  "zh/tips-tricks/create-app-let-it-work-on-your-store"
                 ]
               }
             ]
@@ -122,15 +124,15 @@
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {
