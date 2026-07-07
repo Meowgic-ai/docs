@@ -1,0 +1,15 @@
+### IntelliJ project files ###
+.idea/
+.run/
+
+### macOS template ###
+# General
+**/.DS_Store
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+### vscode ###
+.vscode/
