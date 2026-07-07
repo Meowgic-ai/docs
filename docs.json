@@ -41,6 +41,25 @@
             ]
           },
           {
+            "tab": "Integrations",
+            "groups": [
+              {
+                "group": "About integrations",
+                "pages": [
+                  "integrations/introduction"
+                ]
+              },
+              {
+                "group": "Platforms",
+                "pages": [
+                  "integrations/shopify",
+                  "integrations/shopline",
+                  "integrations/shoplazza"
+                ]
+              }
+            ]
+          },
+          {
             "tab": "Tips & Tricks",
             "groups": [
               {
@@ -80,6 +99,25 @@
                 "group": "关于云服务",
                 "pages": [
                   "zh/cloud/index"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "集成",
+            "groups": [
+              {
+                "group": "关于集成",
+                "pages": [
+                  "zh/integrations/introduction"
+                ]
+              },
+              {
+                "group": "电商平台",
+                "pages": [
+                  "zh/integrations/shopify",
+                  "zh/integrations/shopline",
+                  "zh/integrations/shoplazza"
                 ]
               }
             ]
