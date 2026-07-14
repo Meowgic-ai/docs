@@ -66,7 +66,8 @@
                 "group": "How to use Meowgic",
                 "pages": [
                   "tips-tricks/best-practices",
-                  "tips-tricks/create-app-let-it-work-on-your-store"
+                  "tips-tricks/create-app-let-it-work-on-your-store",
+                  "tips-tricks/how-to-submit-your-app-to-the-meowgic-app-store"
                 ]
               }
             ]
@@ -129,7 +130,8 @@
                 "group": "如何使用 Meowgic",
                 "pages": [
                   "zh/tips-tricks/best-practices",
-                  "zh/tips-tricks/create-app-let-it-work-on-your-store"
+                  "zh/tips-tricks/create-app-let-it-work-on-your-store",
+                  "zh/tips-tricks/how-to-submit-your-app-to-the-meowgic-app-store"
                 ]
               }
             ]
