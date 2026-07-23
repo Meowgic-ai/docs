@@ -1,0 +1,156 @@
+---
+title: "Add AI features to your app"
+icon: "brain"
+description: "Add chat, summaries, image generation, and voice features to your Meowgic app without managing API keys or backend infrastructure."
+---
+
+Adding AI to an app normally means selecting models, protecting API keys, building backend calls, and monitoring cost. Meowgic Cloud handles that foundation for you. Describe the feature you want to build, and Meowgic can set up the AI capability behind it.
+
+AI features inside your app are separate from the Meowgic AI agent that helps you build it:
+
+- **In-app AI** serves your customers, such as a support assistant or product-copy generator.
+- **Build AI** supports your development workflow, such as creating pages or updating code.
+
+## What you can build with AI
+
+Common use cases include:
+
+- **Product and content summaries**: Turn long descriptions, reviews, or documentation into clear takeaways.
+- **Support and shopping assistance**: Answer questions, recommend products, and guide shoppers before purchase.
+- **Sentiment and intent analysis**: Review customer feedback at scale and surface issues that need attention.
+- **Knowledge-base Q&A**: Answer customer questions using your help center, policies, and internal documentation.
+- **Copy and localization**: Draft campaign copy, product titles, emails, and localized content.
+- **Image generation and editing**: Create campaign visuals or adapt product imagery to a new style.
+- **Voice features**: Read content aloud or turn spoken input into searchable text.
+
+## Enable AI features
+
+1. Make sure Cloud is enabled for your app: **App → Cloud → Enable Meowgic Cloud**.
+2. Open the **AI** tab in Cloud.
+3. Configure AI permissions to match your team's approval policy.
+
+## How it works
+
+Meowgic handles the underlying infrastructure:
+
+- **Managed credentials**: Meowgic manages model credentials so you do not need to paste keys into your app.
+- **Server-side calls**: Requests run through a managed backend instead of directly in the browser, keeping sensitive data protected.
+- **Streaming responses**: Chat and generation features can stream output so customers see results sooner.
+- **Usage visibility**: Each request records its status, duration, and credit consumption to help you troubleshoot and optimize.
+
+## Choose the right model
+
+If you are unsure which model to use, describe the business outcome you need and start with Meowgic's recommendation. Then refine your choice based on quality, speed, and cost.
+
+- **Chat and Q&A**: Start with a fast general-purpose model that balances quality and cost.
+- **Complex reasoning or accuracy-sensitive work**: Use a stronger model when slower responses and higher cost are acceptable.
+- **High-volume batch work**: Choose an efficient model for classification, tagging, and simple summaries.
+- **Image work**: Select a model based on whether final quality or production cost matters more.
+
+You can use different models for different jobs. For example, use a fast model for customer support and a more capable one for analyzing complex return or order disputes.
+
+## Chat models
+
+Chat models understand and generate text. Use them for customer support, product copy, review classification, and knowledge-base Q&A.
+
+If you are not sure where to start, choose a reliable, fast general-purpose model. Move up when you need more accuracy or deeper reasoning.
+
+<Note>
+Available models may vary. Refer to the model list in your Meowgic workspace for the current options.
+</Note>
+
+| Model | Best for |
+| ---- | ------------ |
+| **DeepSeek V4 Flash** | High-volume, low-latency work such as first-line storefront support, product FAQ replies, and review triage. |
+| **DeepSeek V4 Pro** | Tasks that need stronger logical consistency, such as interpreting return policies, routing complex cases, and explaining operating rules. |
+| **Kimi K3** | Long-context work, such as turning extensive product documentation into selling points or summarizing long support conversations into next steps. |
+| **GPT 5.4 mini** | Cost-conscious everyday work, including bulk product titles, campaign snippets, email polishing, and localization. |
+| **GPT 5.5** | Accuracy-sensitive tasks, such as high-value customer cases, complex knowledge-base questions, and analysis across multiple sources. |
+| **GPT-5.6 Luna** | Lightweight, high-throughput tasks such as intent detection, tag extraction, short summaries, and real-time shopping prompts. |
+| **GPT-5.6 Terra** | A general-purpose choice for support assistants, product recommendation explanations, campaign copy, and medium-complexity reasoning. |
+| **GPT-5.6 Sol** | Demanding work such as multi-step business reasoning, complex promotion rules, and decision-support analysis. |
+| **GLM 5.2** | Chinese-language customer conversations, Chinese copy adaptation, and Chinese knowledge-base Q&A. |
+
+Practical guidance:
+
+1. Establish a baseline model and track success rate, average latency, and credits per request.
+2. Test the same input set with different models to compare quality and cost.
+3. Choose models by task instead of asking one model to do everything.
+
+## Image models
+
+Image models create and edit product images, campaign assets, and social content.
+
+| Model | Best for |
+| ---- | ------------ |
+| **Nano Banana** | Low-cost, fast visual exploration, such as campaign drafts, initial cover variations, and creative previews for A/B tests. |
+| **Nano Banana 2** | Everyday marketing production, including product-image variations, promotion graphics, and batches of social media assets. |
+| **Nano Banana Pro** | High-quality brand visuals, such as hero imagery, seasonal campaign key art, and polished marketing creative. |
+| **GPT Image 1 Mini** | High-volume lightweight work, including thumbnail generation, rapid style exploration, and inexpensive draft batches. |
+| **GPT Image 2** | High-fidelity creative production, such as refined product hero images, final ad creative, and complex compositing. |
+
+For image generation, a two-stage workflow often controls cost best:
+
+1. Generate a broad set of concepts with a lower-cost model.
+2. Refine the selected concepts with a higher-quality model.
+
+## Other models
+
+Other models handle focused image-processing and editing tasks.
+
+| Model | Best for |
+| ---- | ------------ |
+| **Face Cutout** | Isolating people in images, such as cropping creator content, extracting profile images, or layering talent into campaign graphics. |
+| **Remove Background** | Preparing product and marketing assets, including clean catalog images, standardized product imagery, and transparent exports. |
+
+## Monitor AI usage and performance
+
+In **App → Cloud → Usage → AI usage**, you can review:
+
+- Daily request volume
+- The share of requests by model
+- Credits consumed by requests
+
+Use this data to answer three important questions:
+
+- Which requests are most common?
+- Which features consume the most credits?
+- Where would a different model reduce cost or improve speed?
+
+## Usage and billing
+
+Meowgic Cloud AI features consume credits based on usage. Go to **Settings → Usage** to review your workspace balance, billing history, and daily cost.
+
+To manage costs, start with these three practices:
+
+1. Review your highest-volume use cases before switching to a lower-cost model.
+2. Process long documents in smaller chunks to avoid expensive single requests.
+3. Add request limits and useful fallback messages to critical features.
+
+## Best practices
+
+1. Define success metrics before you build: accuracy, response time, and cost per request.
+2. Validate prompts and models with a small traffic segment before a full rollout.
+3. Keep a non-AI fallback for critical flows, such as human review or rule-based logic.
+4. Group request logs by business use case so you can improve the right workflow.
+5. Review your top failure and top-cost scenarios each week.
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Is in-app AI the same as the Meowgic build assistant?">
+    No. In-app AI serves your customers through features like chat, summaries, and generation. The build assistant helps you create and update your app.
+  </Accordion>
+  <Accordion title="Do I need to provide a model-provider API key?">
+    Usually not. When you use Meowgic Cloud's built-in AI features, Meowgic handles credential management and the server-side integration.
+  </Accordion>
+  <Accordion title="Can I choose a specific model?">
+    Yes. Tell Meowgic which model you prefer, or start with the recommended model and refine the choice based on quality and cost.
+  </Accordion>
+  <Accordion title="Why might I receive a 429 or 402 response?">
+    A 429 usually means your request rate exceeded the limit. A 402 usually means your workspace does not have enough credits. Reduce concurrency, add retry logic, or add credits to restore service.
+  </Accordion>
+  <Accordion title="How can I lower AI costs quickly?">
+    Start with high-volume workflows: use lighter models for simple tasks, remove unnecessary context, limit output length, and set request thresholds based on business value.
+  </Accordion>
+</AccordionGroup>

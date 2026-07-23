@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "Meowgic Docs",
   "colors": {
-    "primary": "#4F46E5",
-    "light": "#4F46E5",
-    "dark": "#4F46E5"
+    "primary": "#FF5C01",
+    "light": "#FF5C01",
+    "dark": "#FF5C01"
   },
   "icons": {
     "library": "lucide"
@@ -35,7 +35,8 @@
               {
                 "group": "About cloud",
                 "pages": [
-                  "cloud/index"
+                  "cloud/index",
+                  "cloud/ai"
                 ]
               }
             ]
@@ -99,7 +100,8 @@
               {
                 "group": "关于云服务",
                 "pages": [
-                  "zh/cloud/index"
+                  "zh/cloud/index",
+                  "zh/cloud/ai"
                 ]
               }
             ]
@@ -176,7 +178,8 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/meowgic_ai"
+      "x": "https://x.com/meowgic_ai",
+      "youtube": "https://www.youtube.com/@meowgic_ai_official_account"
     }
   }
 }
