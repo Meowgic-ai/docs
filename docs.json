@@ -77,6 +77,13 @@
           {
             "tab": "Changelog",
             "href": "https://meowgic.ai/changelog"
+          },
+          {
+            "tab": "AGENTS",
+            "hidden": true,
+            "pages": [
+              "AGENTS"
+            ]
           }
         ]
       },
