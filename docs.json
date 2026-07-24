@@ -81,8 +81,13 @@
           {
             "tab": "AGENTS",
             "hidden": true,
-            "pages": [
-              "AGENTS"
+            "groups": [
+              {
+                "group": "Agentic coding",
+                "pages": [
+                  "AGENTS"
+                ]
+              }
             ]
           }
         ]
@@ -191,6 +196,6 @@
     }
   },
   "seo": {
-    "indexing": "all"
+    "indexing": "navigable"
   }
 }

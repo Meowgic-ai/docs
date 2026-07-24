@@ -1,6 +1,5 @@
 ---
 title: "AGENTS"
-hidden: true
 ---
 
 # Documentation agent instructions
