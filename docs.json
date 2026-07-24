@@ -1,7 +1,8 @@
 {
-  "$schema": "https://docs.meowgic.ai/docs.json",
+  "$schema": "https://www.mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Meowgic Docs",
+  "name": "Meowgic Documentation",
+  "description": "Meowgic Documentation — Build store apps, customize storefronts, connect tools, and solve issues across Shopify, SHOPLINE, and Shoplazza.",
   "colors": {
     "primary": "#FF5C01",
     "light": "#FF5C01",
