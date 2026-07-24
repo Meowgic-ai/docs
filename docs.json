@@ -182,5 +182,8 @@
       "x": "https://x.com/meowgic_ai",
       "youtube": "https://www.youtube.com/@meowgic_ai_official_account"
     }
+  },
+  "seo": {
+    "indexing": "navigable"
   }
 }
