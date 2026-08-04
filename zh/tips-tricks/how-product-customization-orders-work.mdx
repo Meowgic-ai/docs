@@ -1,0 +1,435 @@
+---
+title: "如何用 Meowgic 搭建商品定制下单流程"
+icon: "shopping-cart"
+description: "本指南面向零代码商家，介绍如何用 Meowgic 搭建商品定制下单流程：保存顾客提交的定制资料，将定制信息关联到购物车和订单，并让商家可以在后台查询和处理定制需求。"
+sidebarTitle: "搭建商品定制下单流程"
+---
+
+一个完整的商品定制功能，需要同时解决“定制内容”和“下单流程”两个问题。
+
+<Frame caption="顾客看见的是定制内容，真正支撑交易的是完整的下单流程。">
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/885f196a-a73a-48b5-8d8b-3d961e49b070.png?x-oss-process=image/format,webp"
+    alt="商品定制功能冰山模型：水面上是输入框、实时预览、图片上传和定制按钮等定制内容；水面下是保存资料、生成定制信息 ID、关联商品、进入购物车和订单以及后台查询等下单流程。"
+  />
+</Frame>
+
+<Note>
+这一篇只介绍如何搭建商品定制下单流程，不讨论具体需要收集哪些定制内容。
+
+建议商家优先采用“定制按钮 + 弹窗 + 单独产品模板”。
+
+这种方案对店铺其他模块的影响最小，商家的操作成本最低，也能让顾客更专注地完成定制。
+</Note>
+
+## 商品定制下单流程概览
+
+<CardGroup cols={3}>
+  <Card title="描述下单流程" icon="list-check">
+    向 Meowgic 说明如何保存定制资料、生成定制信息 ID，并将商品加入购物车和订单。
+  </Card>
+
+  <Card title="配置定制商品" icon="store">
+    为定制商品创建单独的产品模板，隐藏原购买按钮，并确认其他商品不受影响。
+  </Card>
+
+  <Card title="测试并查询订单" icon="clipboard-check">
+    完成一笔测试订单，确认可以使用定制信息 ID 在后台查询顾客资料。
+  </Card>
+</CardGroup>
+
+## 1. 在 Meowgic 中描述商品定制下单流程
+
+创建应用时，将下面的下单流程要求添加到功能描述中：
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/271db8e2-4122-47c5-825b-a6c798369874.png?x-oss-process=image/format,webp"
+    alt="在 Meowgic 的描述框中输入商品定制下单流程要求，包括保存定制资料、生成定制信息 ID，并将 ID 关联到购物车和订单。"
+  />
+</Frame>
+
+```text
+创建一个商品定制 Block，放在商品详情页的购买区域。
+
+Block 显示一个「Custom Now」按钮，顾客点击后打开定制弹窗。
+
+请为应用启用后台，保存顾客提交的完整定制资料。
+
+顾客完成定制后，先保存资料，再生成一个不会重复的定制信息 ID。
+
+把定制信息 ID 作为 Line item property 写入商品，然后再把商品加入购物车。
+
+确保购物车和订单中都能看到这个 ID。
+
+请在应用后台提供 ID 查询功能，让商家可以查看顾客提交的完整资料。
+
+如果资料保存失败，不要把商品加入购物车。
+```
+
+## 2. 为定制商品配置单独的产品模板
+
+建议为定制商品使用单独的产品模板。
+
+<Note>
+下面以 Shopify 为例介绍具体配置方法。其他电商平台的操作入口和界面名称可能不同，但配置原则相同。
+</Note>
+
+<br />
+
+在 Shopify 主题编辑器中，以默认产品模板为基础创建一个定制商品专用模板。
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/f479c981-4be3-46cc-b68d-697cd3639582.png?x-oss-process=image/format,webp"
+    alt="在 Shopify 主题编辑器的产品模板菜单中选择“Create template”，为定制商品创建单独的产品模板。"
+  />
+</Frame>
+
+<br />
+
+输入模板名称，然后点击 **Create template**。
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/1a8b82f6-0745-4542-9416-6908ce9cc414.png?x-oss-process=image/format,webp"
+    alt="在 Shopify 的“Create a template”弹窗中输入模板名称“Custom Pillow”，然后点击“Create template”。"
+  />
+</Frame>
+
+<br />
+
+找到 **Buy buttons** Block，点击右侧的隐藏图标。
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/41638017-9306-462e-bcfe-561a5f7ef0a2.png?x-oss-process=image/format,webp"
+    alt="在定制产品模板中找到“Buy buttons”区块，并点击隐藏图标关闭原生购买按钮。"
+  />
+</Frame>
+
+<br />
+
+确认 **Buy buttons** 已隐藏，商品页只保留 **Custom Now**。
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/d7a74061-99c4-4af8-8e69-b44ed464cca6.png?x-oss-process=image/format,webp"
+    alt="Shopify 主题编辑器中的“Buy buttons”区块已隐藏，定制商品页面只保留“Custom Now”按钮。"
+  />
+</Frame>
+
+<br />
+
+检查其他产品模板是否包含商品定制 Block；如果有，将其隐藏，避免影响普通商品。
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/29056887-5685-4a06-861d-332efa2f7406.png?x-oss-process=image/format,webp"
+    alt="在默认产品模板中检查是否存在“Pillow Customizer”定制 Block，避免普通商品错误显示定制入口。"
+  />
+</Frame>
+
+<br />
+
+前往 Shopify 商品编辑页，找到 **Theme template** 设置。
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/99186796-ad92-4361-ba22-869c4d59f550.png?x-oss-process=image/format,webp"
+    alt="在 Shopify 商品编辑页找到“Theme template”设置，商品当前使用“Default product”模板。"
+  />
+</Frame>
+
+<br />
+
+选择 **custom-pillow**，然后点击 **Save**。
+
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/bfe5edc7-869a-4741-9425-5fe9267b34c1.png?x-oss-process=image/format,webp"
+    alt="将定制商品的主题模板切换为“custom-pillow”，然后点击“Save”保存设置。"
+  />
+</Frame>
+
+<br />
+
+前往店铺前台，分别检查定制商品和其他商品的购买按钮。
+
+隐藏原来的购买按钮后，顾客只能先完成定制，不会跳过定制直接购买。
+
+<br />
+
+检查定制商品
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/084da29e-2f3b-4065-aaf3-52133685e50b.png?x-oss-process=image/format,webp"
+    alt="定制商品页面只显示“Custom Now”按钮，原生的“Add to cart”和“Buy it now”按钮已隐藏。"
+  />
+</Frame>
+
+<br />
+
+检查其他商品
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/781d044f-0c7c-4147-bc35-58e287b0d6a2.png?x-oss-process=image/format,webp"
+    alt="普通礼品袋商品页面正常显示数量选择器、“Add to cart”和“Buy it now”按钮，没有显示“Custom Now”，不受定制商品模板影响。"
+  />
+</Frame>
+
+> 如果主题还有快速加购或悬浮购买按钮，也要检查它们能不能绕过定制。
+
+## 3. 定制信息 ID 有什么作用
+
+定制信息 ID 就像一张取件码：
+
+- 完整资料保存在应用后台
+- 购物车和订单只保存定制信息 ID
+- 商家用订单中的 ID 查询完整资料
+
+Shopify 的 `line item property` 可以理解为“跟在这件商品后面的一条附加信息”。
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/c023407a-ac5a-43de-89eb-675460c537ea.png?x-oss-process=image/format,webp"
+    alt="定制信息 ID 就像一张取件码：完整资料保存在应用后台，购物车和订单只保存 ID，商家可以使用订单中的 ID 查询完整资料。"
+  />
+</Frame>
+
+
+完整的定制信息流转顺序是：
+
+**顾客完成定制 → 后台保存资料 → 生成定制信息 ID → ID 进入购物车和订单 → 商家用 ID 查询资料**
+
+## 4. 如何测试商品定制订单
+
+发布前，请像真正的顾客一样完成一次下单测试。
+
+### 1. 检查定制商品按钮
+
+打开定制商品页，确认页面只显示 **Custom Now**，原生的 **Add to cart** 和 **Buy it now** 按钮已经隐藏。
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/084da29e-2f3b-4065-aaf3-52133685e50b.png?x-oss-process=image/format,webp"
+    alt="定制商品页面只显示“Custom Now”按钮，原生的“Add to cart”和“Buy it now”按钮已隐藏。"
+  />
+</Frame>
+
+<br />
+
+### 2. 上传测试图片
+
+点击 **Custom Now**，上传一张可以代表真实顾客需求的测试图片。
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/1d08deb5-a3ec-4450-886a-a95d8bea86f1.png?x-oss-process=image/format,webp"
+    alt="顾客点击“Custom Now”后打开图片上传弹窗，可以上传 JPG、PNG 或 WebP 图片，并选择去除背景或抠头模式。"
+  />
+</Frame>
+
+<br />
+
+### 3. 调整裁剪范围和处理方式
+
+拖动裁剪框，选择需要保留的图片区域。根据商品需求选择 **Remove background** 或 **Face cutout**，然后点击 **Confirm & continue**。
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/05b737d6-d052-4b7c-82b3-aa25b901c465.png?x-oss-process=image/format,webp"
+    alt="顾客上传猫咪照片后，拖动裁剪框调整图片范围，选择“Remove background”去背景模式并点击“Confirm & continue”。"
+  />
+</Frame>
+
+<br />
+
+### 4. 调整预览效果并加入购物车
+
+预览生成后，调整描边宽度和颜色，然后点击 **Confirm & add to cart**。
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/782d7086-f80c-435b-8275-dc7f9c4bdee6.png?x-oss-process=image/format,webp"
+    alt="定制抱枕预览显示去除背景后的猫咪图案，顾客可以调整描边宽度和颜色，然后点击“Confirm & add to cart”。"
+  />
+</Frame>
+
+<br />
+
+等待系统保存设计。在保存完成前，不要关闭页面或重复点击按钮。
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/08cad1e5-ca6e-4d18-808d-fc67b2bac6b3.png?x-oss-process=image/format,webp"
+    alt="定制抱枕预览正在保存设计，“Confirm & add to cart”按钮显示“Saving your design”状态。"
+  />
+</Frame>
+
+<br />
+
+### 5. 确认购物车和订单中的定制信息 ID
+
+保存成功后，弹窗会显示本次定制生成的信息 ID，并提示商品已加入购物车。
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/6686df43-be20-406e-848e-95061392b450.png?x-oss-process=image/format,webp"
+    alt="顾客完成定制后，成功弹窗显示定制信息 ID“PC-79HMCYR2”，并提示商品已加入购物车。"
+  />
+</Frame>
+
+<br />
+
+打开购物车，确认商品下方显示相同的定制信息 ID。
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/2210c913-8849-42e3-84f7-9c04596a6a3c.png?x-oss-process=image/format,webp"
+    alt="购物车中的定制抱枕商品显示定制信息 ID“PC-79HMCYR2”。"
+  />
+</Frame>
+
+<br />
+
+完成结账后，在订单确认页检查定制信息 ID。
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/1c3c24ff-6f9b-45da-8ed4-c45eab784048.png?x-oss-process=image/format,webp"
+    alt="订单确认页中的定制商品显示与购物车相同的定制信息 ID“PC-79HMCYR2”。"
+  />
+</Frame>
+
+<br />
+
+前往 Shopify 后台打开对应订单，确认商品下方仍然显示同一个 ID。
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/08fed512-edb9-4ee6-8111-4746079e8438.png?x-oss-process=image/format,webp"
+    alt="Shopify 订单详情页在定制商品下方显示定制信息 ID“PC-79HMCYR2”。"
+  />
+</Frame>
+
+<br />
+
+### 6. 使用 ID 查询完整定制资料
+
+在 Meowgic 应用后台输入订单中的定制信息 ID，然后进行查询。
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/555306a7-4ca8-43a9-8314-70a3382944cc.png?x-oss-process=image/format,webp"
+    alt="在 Meowgic 应用后台输入定制信息 ID“PC-79HMCYR2”，查询对应的顾客定制记录。"
+  />
+</Frame>
+
+<br />
+
+打开查询结果，确认可以查看顾客提交的完整定制资料。
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/fe550900-6a3d-4f4a-b6cc-cc3adac19f1a.png?x-oss-process=image/format,webp"
+    alt="Meowgic 应用后台展示定制信息 ID“PC-79HMCYR2”的完整资料，包括原始图片、去除背景后的图片和裁剪结果。"
+  />
+</Frame>
+
+<br />
+
+### 7. 检查其他商品的购买流程
+
+最后打开一个没有使用定制产品模板的商品，确认原来的购买按钮和下单流程仍然可以正常使用。
+
+全部通过，这个商品定制流程就做好了。
+
+## 常见问题
+
+<AccordionGroup>
+  <Accordion title="Meowgic 商品定制下单流程包含哪些环节？">
+    完整流程包括：顾客提交定制内容、应用后台保存资料、生成唯一的定制信息 ID、将 ID 关联到商品、把商品加入购物车和订单，以及商家使用 ID 查询完整资料。
+  </Accordion>
+
+  <Accordion title="为什么推荐使用“定制按钮 + 弹窗 + 单独产品模板”？">
+    这种方案对店铺其他模块的影响最小，商家的配置和维护成本较低，也能让顾客集中完成定制，减少跳过定制直接购买的情况。
+  </Accordion>
+
+  <Accordion title="为什么需要隐藏 Shopify 原来的购买按钮？">
+    如果保留原生的 **Add to cart** 或 **Buy it now** 按钮，顾客可能绕过定制流程直接购买，导致订单中没有对应的定制资料。
+  </Accordion>
+
+  <Accordion title="定制信息 ID 有什么作用？">
+    定制信息 ID 是连接定制资料与 Shopify 订单的唯一标识。完整资料保存在 Meowgic 应用后台，购物车和订单只保存这个 ID，商家可以通过 ID 查询顾客提交的内容。
+  </Accordion>
+
+  <Accordion title="顾客的完整定制资料会保存在 Shopify 订单中吗？">
+    按照本文介绍的方案，完整定制资料不会直接写入 Shopify 订单。购物车和订单只保存定制信息 ID，图片、文字和预览效果等资料保存在 Meowgic 应用后台。
+  </Accordion>
+
+  <Accordion title="商品定制功能会影响店铺里的普通商品吗？">
+    使用单独的产品模板，并只把该模板分配给需要定制的商品，可以将影响控制在定制商品范围内。普通商品仍然可以使用原来的购买流程。
+  </Accordion>
+
+  <Accordion title="快速加购和悬浮购买按钮也需要隐藏吗？">
+    需要检查。如果这些按钮能够绕过 **Custom Now** 直接把定制商品加入购物车，也应该在定制商品页面隐藏或禁用。
+  </Accordion>
+
+  <Accordion title="如果定制资料保存失败，商品还能加入购物车吗？">
+    按照本文介绍的流程，资料保存失败时，应用不能把商品加入购物车。这样可以避免产生无法查询定制内容的订单。
+  </Accordion>
+
+  <Accordion title="发布商品定制功能前需要测试什么？">
+    你需要以顾客身份完成一次真实测试，确认定制商品只显示 **Custom Now**、普通商品仍然可以正常购买、定制完成后能够生成 ID、购物车和订单显示同一个 ID，并且可以在 Meowgic 后台通过 ID 查询完整资料。
+  </Accordion>
+</AccordionGroup>
+
+<br />
+
+## 相关阅读
+
+<Columns cols={2}>
+  <Card
+    title="最佳实践"
+    icon="dumbbell"
+    href="/zh/tips-tricks/best-practices"
+  >
+    了解如何通过图片、参考链接和可视化编辑，更准确地构建应用。
+  </Card>
+
+  <Card
+    title="创建应用"
+    icon="wand-sparkles"
+    href="/zh/tips-tricks/create-app-let-it-work-on-your-store"
+  >
+    了解如何在 Meowgic 中创建和配置应用。
+  </Card>
+
+  <Card
+    title="应用集成"
+    icon="store"
+    href="/zh/integrations/introduction"
+  >
+    了解如何将应用集成到你的店铺。
+  </Card>
+
+  <Card
+    title="欢迎使用 Meowgic"
+    icon="paw-print"
+    href="/zh"
+  >
+    了解 Meowgic 的核心能力，以及从创建到发布应用的整体工作流。
+  </Card>
+</Columns>
+
+<br />
+
+
+<Update label="08/04/2026">
+  ## 文章创建
+
+  创建了该文章
+</Update>

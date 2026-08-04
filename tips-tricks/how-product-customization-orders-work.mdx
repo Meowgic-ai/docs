@@ -1,0 +1,433 @@
+---
+title: "How to build a product customization order workflow with Meowgic"
+icon: "shopping-cart"
+description: "Build a no-code product customization order workflow with Meowgic, link customer data to carts and orders, and retrieve it in your app admin."
+sidebarTitle: "Product customization flow"
+---
+
+A complete product customization experience requires both customer-facing customization options and a reliable order workflow.
+
+<Frame caption="Customers see the customization content, but the complete order workflow is what makes the transaction possible.">
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/c4a408c4-60b0-426e-8c3f-585f21090569.png?x-oss-process=image/format,webp"
+    alt="Product customization iceberg model: input fields, live preview, image upload, and the customization button appear above the surface, while data storage, customization ID generation, product linking, cart and order integration, and admin lookup form the order workflow below."
+  />
+</Frame>
+
+<Note>
+This guide focuses on building the product customization order workflow. It does not cover which customization inputs you should collect.
+
+We recommend starting with a customization button, a modal, and a separate product template.
+
+This setup has the least impact on other parts of your store, minimizes the work required from merchants, and helps customers stay focused on customization.
+</Note>
+
+## Product customization order workflow overview
+
+<CardGroup cols={3}>
+  <Card title="Describe the order workflow" icon="list-check">
+    Tell Meowgic how to save customization data, generate a customization ID, add the product to the cart, and carry the ID through to the order.
+  </Card>
+
+  <Card title="Configure customizable products" icon="store">
+    Create a separate product template, hide the original purchase buttons, and confirm that other products are not affected.
+  </Card>
+
+  <Card title="Test and look up orders" icon="clipboard-check">
+    Complete a test order and confirm that you can use the customization ID to retrieve the customer's data in the app admin.
+  </Card>
+</CardGroup>
+
+## 1. Describe the product customization order workflow in Meowgic
+
+When creating your app, add the following order workflow requirements to the feature description:
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/2f2274e1-1fc2-44aa-8fe4-11b27488fe87.png?x-oss-process=image/format,webp"
+    alt="Entering product customization order workflow requirements in Meowgic, including saving customization data, generating a customization ID, and linking it to the cart and order."
+  />
+</Frame>
+
+```text
+Create a product customization Block and place it in the purchase area of the product page.
+
+The Block displays a “Custom Now” button. When a customer clicks it, open the customization modal.
+
+Enable an admin area for the app and save the complete customization data submitted by the customer.
+
+After the customer completes the customization, save the data first, then generate a unique customization ID.
+
+Write the customization ID to the product as a line item property, then add the product to the cart.
+
+Make sure the ID appears in both the cart and the order.
+
+Provide an ID lookup feature in the app admin so merchants can view the complete customization data submitted by the customer.
+
+If saving the data fails, do not add the product to the cart.
+```
+
+## 2. Configure a separate product template for customizable products
+
+We recommend using a separate product template for customizable products.
+
+<Note>
+The steps below use Shopify as an example. Other ecommerce platforms may use different menu locations and interface labels, but the configuration principles are the same.
+</Note>
+
+<br />
+
+In the Shopify theme editor, create a dedicated template for customizable products based on the default product template.
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/f479c981-4be3-46cc-b68d-697cd3639582.png?x-oss-process=image/format,webp"
+    alt="Selecting Create template from the product template menu in the Shopify theme editor to create a separate template for customizable products."
+  />
+</Frame>
+
+<br />
+
+Enter a template name, then click **Create template**.
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/1a8b82f6-0745-4542-9416-6908ce9cc414.png?x-oss-process=image/format,webp"
+    alt="Entering Custom Pillow in the Shopify Create a template dialog and clicking Create template."
+  />
+</Frame>
+
+<br />
+
+Find the **Buy buttons** block and click the visibility icon on the right.
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/41638017-9306-462e-bcfe-561a5f7ef0a2.png?x-oss-process=image/format,webp"
+    alt="Locating the Buy buttons block in the customizable product template and clicking the visibility icon to hide the native purchase buttons."
+  />
+</Frame>
+
+<br />
+
+Confirm that **Buy buttons** is hidden and that only **Custom Now** remains on the product page.
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/d7a74061-99c4-4af8-8e69-b44ed464cca6.png?x-oss-process=image/format,webp"
+    alt="The Buy buttons block is hidden in the Shopify theme editor, leaving only the Custom Now button on the customizable product page."
+  />
+</Frame>
+
+<br />
+
+Check whether other product templates contain the product customization Block. If they do, hide it so it does not affect regular products.
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/29056887-5685-4a06-861d-332efa2f7406.png?x-oss-process=image/format,webp"
+    alt="Checking the default product template for the Pillow Customizer block to prevent the customization entry from appearing on regular products."
+  />
+</Frame>
+
+<br />
+
+Go to the Shopify product editor and find the **Theme template** setting.
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/99186796-ad92-4361-ba22-869c4d59f550.png?x-oss-process=image/format,webp"
+    alt="Locating the Theme template setting on the Shopify product editing page, where the product currently uses the Default product template."
+  />
+</Frame>
+
+<br />
+
+Select **custom-pillow**, then click **Save**.
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/bfe5edc7-869a-4741-9425-5fe9267b34c1.png?x-oss-process=image/format,webp"
+    alt="Assigning the custom-pillow theme template to the customizable product and clicking Save."
+  />
+</Frame>
+
+<br />
+
+Open your storefront and check the purchase buttons on both the customizable product and other products.
+
+After you hide the original purchase buttons, customers must complete the customization before purchasing and cannot bypass the workflow.
+
+<br />
+
+Check the customizable product.
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/084da29e-2f3b-4065-aaf3-52133685e50b.png?x-oss-process=image/format,webp"
+    alt="The customizable product page displays only the Custom Now button, with the native Add to cart and Buy it now buttons hidden."
+  />
+</Frame>
+
+<br />
+
+Check another product.
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/781d044f-0c7c-4147-bc35-58e287b0d6a2.png?x-oss-process=image/format,webp"
+    alt="A regular gift bag product page displays the quantity selector, Add to cart, and Buy it now buttons without a Custom Now button, showing that it is unaffected by the customizable product template."
+  />
+</Frame>
+
+> If your theme includes quick-add or sticky purchase buttons, check whether customers can use them to bypass customization.
+
+## 3. What does the customization ID do?
+
+A customization ID works like a claim ticket:
+
+- The complete customization data stays in the app admin.
+- The cart and order store only the customization ID.
+- The merchant uses the ID from the order to retrieve the complete data.
+
+A Shopify `line item property` is an extra piece of information attached to an item in the order.
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/cf089f1e-4a50-4fce-a217-1f17388a1819.png?x-oss-process=image/format,webp"
+    alt="A customization ID works like a claim ticket: full customization details stay in the app, the cart and order store only the ID, and the merchant uses the customization ID from the order to retrieve the complete details."
+  />
+</Frame>
+
+The complete customization data flow is:
+
+**Customer completes customization → App saves the data → App generates a customization ID → ID appears in the cart and order → Merchant uses the ID to retrieve the data**
+
+## 4. How to test a product customization order
+
+Before publishing, complete an entire order as a real customer would.
+
+### 1. Check the customizable product buttons
+
+Open the customizable product page. Confirm that it displays only **Custom Now** and that the native **Add to cart** and **Buy it now** buttons are hidden.
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/084da29e-2f3b-4065-aaf3-52133685e50b.png?x-oss-process=image/format,webp"
+    alt="The customizable product page displays only the Custom Now button, with the native Add to cart and Buy it now buttons hidden."
+  />
+</Frame>
+
+<br />
+
+### 2. Upload a test image
+
+Click **Custom Now** and upload a test image that represents a realistic customer request.
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/1d08deb5-a3ec-4450-886a-a95d8bea86f1.png?x-oss-process=image/format,webp"
+    alt="After the customer clicks Custom Now, the image upload dialog lets them upload a JPG, PNG, or WebP image and choose Remove background or Face cutout."
+  />
+</Frame>
+
+<br />
+
+### 3. Adjust the crop and processing method
+
+Drag the crop frame to select the part of the image you want to keep. Choose **Remove background** or **Face cutout** based on the product, then click **Confirm & continue**.
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/05b737d6-d052-4b7c-82b3-aa25b901c465.png?x-oss-process=image/format,webp"
+    alt="After uploading a cat photo, the customer adjusts the crop frame, selects Remove background, and clicks Confirm and continue."
+  />
+</Frame>
+
+<br />
+
+### 4. Adjust the preview and add the product to the cart
+
+After the preview loads, adjust the outline width and color, then click **Confirm & add to cart**.
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/782d7086-f80c-435b-8275-dc7f9c4bdee6.png?x-oss-process=image/format,webp"
+    alt="The custom pillow preview shows the cat with its background removed, along with controls for outline width and color and a Confirm and add to cart button."
+  />
+</Frame>
+
+<br />
+
+Wait for the system to save the design. Do not close the page or click the button again until saving is complete.
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/08cad1e5-ca6e-4d18-808d-fc67b2bac6b3.png?x-oss-process=image/format,webp"
+    alt="The custom pillow preview is saving the design, with the button showing a Saving your design status."
+  />
+</Frame>
+
+<br />
+
+### 5. Confirm the customization ID in the cart and order
+
+Once the design is saved, a dialog displays the customization ID and confirms that the product has been added to the cart.
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/6686df43-be20-406e-848e-95061392b450.png?x-oss-process=image/format,webp"
+    alt="After customization is complete, a success dialog displays the customization ID PC-79HMCYR2 and confirms that the product was added to the cart."
+  />
+</Frame>
+
+<br />
+
+Open the cart and confirm that the same customization ID appears below the product.
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/2210c913-8849-42e3-84f7-9c04596a6a3c.png?x-oss-process=image/format,webp"
+    alt="The customized pillow in the shopping cart displays the customization ID PC-79HMCYR2."
+  />
+</Frame>
+
+<br />
+
+After checkout, check the customization ID on the order confirmation page.
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/1c3c24ff-6f9b-45da-8ed4-c45eab784048.png?x-oss-process=image/format,webp"
+    alt="The customized product on the order confirmation page displays the same customization ID, PC-79HMCYR2, as the shopping cart."
+  />
+</Frame>
+
+<br />
+
+Open the corresponding order in the Shopify admin and confirm that the same ID appears below the product.
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/08fed512-edb9-4ee6-8111-4746079e8438.png?x-oss-process=image/format,webp"
+    alt="The Shopify order details page displays the customization ID PC-79HMCYR2 beneath the customized product."
+  />
+</Frame>
+
+<br />
+
+### 6. Look up the complete customization data by ID
+
+Enter the customization ID from the order in the Meowgic app admin, then search for it.
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/555306a7-4ca8-43a9-8314-70a3382944cc.png?x-oss-process=image/format,webp"
+    alt="Entering the customization ID PC-79HMCYR2 in the Meowgic app admin to find the corresponding customer customization record."
+  />
+</Frame>
+
+<br />
+
+Open the result and confirm that you can view the complete customization data submitted by the customer.
+
+<Frame>
+  <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260804/fe550900-6a3d-4f4a-b6cc-cc3adac19f1a.png?x-oss-process=image/format,webp"
+    alt="The Meowgic app admin displays the complete data for customization ID PC-79HMCYR2, including the original image, background-removed image, and trimmed result."
+  />
+</Frame>
+
+<br />
+
+### 7. Check the purchase flow for other products
+
+Finally, open a product that does not use the customizable product template. Confirm that its original purchase buttons and order flow still work normally.
+
+If every check passes, your product customization order workflow is ready.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What steps are included in a Meowgic product customization order workflow?">
+    The complete workflow includes collecting the customer's customization content, saving the data in the app admin, generating a unique customization ID, linking the ID to the product, adding the product to the cart and order, and using the ID to retrieve the complete data.
+  </Accordion>
+
+  <Accordion title="Why do you recommend a customization button, a modal, and a separate product template?">
+    This setup has the least impact on other parts of the store, reduces the work required to configure and maintain the experience, and helps customers stay focused on completing their customization without bypassing the workflow.
+  </Accordion>
+
+  <Accordion title="Why do I need to hide Shopify's original purchase buttons?">
+    If the native **Add to cart** or **Buy it now** buttons remain visible, customers may bypass the customization workflow and place an order without the required customization data.
+  </Accordion>
+
+  <Accordion title="What does the customization ID do?">
+    The customization ID is the unique link between the customer's customization data and the Shopify order. The complete data stays in the Meowgic app admin, while the cart and order store only the ID. Merchants use the ID to retrieve what the customer submitted.
+  </Accordion>
+
+  <Accordion title="Is the customer's complete customization data saved in the Shopify order?">
+    With the approach described in this guide, the complete customization data is not written directly to the Shopify order. The cart and order store only the customization ID, while images, text, previews, and other details stay in the Meowgic app admin.
+  </Accordion>
+
+  <Accordion title="Will product customization affect regular products in my store?">
+    Using a separate product template and assigning it only to customizable products limits the changes to those products. Regular products can continue using their original purchase flow.
+  </Accordion>
+
+  <Accordion title="Do I also need to hide quick-add and sticky purchase buttons?">
+    Check them. If customers can use these buttons to bypass **Custom Now** and add a customizable product directly to the cart, hide or disable them on customizable product pages.
+  </Accordion>
+
+  <Accordion title="Can the product be added to the cart if saving the customization data fails?">
+    No. With the workflow described in this guide, the app must not add the product to the cart when saving fails. This prevents orders whose complete customization data cannot be retrieved.
+  </Accordion>
+
+  <Accordion title="What should I test before publishing a product customization feature?">
+    Complete a realistic order as a customer. Confirm that only customizable products display **Custom Now**, regular products still work normally, the app generates a customization ID, the cart and order display the same ID, and you can use that ID to retrieve the complete data in the Meowgic app admin.
+  </Accordion>
+</AccordionGroup>
+
+<br />
+
+## Related reading
+
+<Columns cols={2}>
+  <Card
+    title="Best practices"
+    icon="dumbbell"
+    href="/tips-tricks/best-practices"
+  >
+    Learn how to use images, reference links, and visual editing to build apps more accurately.
+  </Card>
+
+  <Card
+    title="Create an app"
+    icon="wand-sparkles"
+    href="/tips-tricks/create-app-let-it-work-on-your-store"
+  >
+    Learn how to create and configure an app in Meowgic.
+  </Card>
+
+  <Card
+    title="App integrations"
+    icon="store"
+    href="/integrations/introduction"
+  >
+    Learn how to integrate an app with your store.
+  </Card>
+
+  <Card
+    title="Welcome to Meowgic"
+    icon="paw-print"
+    href="/"
+  >
+    Learn about Meowgic's core capabilities and the complete workflow from creating to publishing an app.
+  </Card>
+</Columns>
+
+<br />
+
+<Update label="08/04/2026">
+  ## Article created
+
+  Created this article.
+</Update>
