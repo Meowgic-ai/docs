@@ -9,6 +9,31 @@ description: "本指南将引导你将 Meowgic 的应用集成到 SHOPLINE 店�
   <img src="https://assets.staticmeow.com/meowgic/static/images/20260707/2558e77f-c8b2-4cfa-8bb4-d36ec9225404.png?x-oss-process=image/format,webp" alt="Integrate with SHOPLINE" />
 </Frame>
 
+<div class="w-full border mt-10 rounded-2xl p-6">
+  <div class="w-full flex gap-5 items-start">
+    <img 
+    src="https://assets.staticmeow.com/meowgic/static/images/20260813/d7038933-b406-41b8-97f0-3de6edcfd6b0.png?x-oss-process=image/format,webp" 
+    class="w-16 h-16 shirink-0 border rounded-2xl shadow-xs m-0" alt="Integrate with SHOPLINE" 
+    style={{ borderColor: "oklch(86.9% 0.005 56.366)" }}
+    noZoom />
+    <div class="flex-1 flex flex-col gap-2">
+      <h3 class="text-xl font-semibold m-0" noAnchor>Meowgic: AI 店铺功能搭建工具</h3>
+      <p class="m-0 text-sm">用 AI 创建店铺真正需要的功能。你可以制作 Section、Block、页面、工具和轻量应用，将它们添加到店铺主题中，并随时调整更新。无需编写代码，也能快速上线。</p>
+    </div>
+  </div>
+  <div class="border-t mt-6 pt-6">
+    <a href="https://apps.shopline.com/detail/meowgic" target="_blank" class="app-store-button">
+      <svg class="shrink-0" width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10.9517 8.82231C10.723 8.82069 10.4989 8.88704 10.3079 9.01293C10.1169 9.13883 9.96768 9.31862 9.87901 9.52948C9.79034 9.74034 9.76627 9.97279 9.80986 10.1973C9.85355 10.4219 9.96288 10.6284 10.124 10.7908C10.2852 10.953 10.491 11.0638 10.7152 11.1091C10.9394 11.1543 11.172 11.1319 11.3835 11.0447C11.595 10.9576 11.7758 10.8096 11.9031 10.6195C12.0303 10.4295 12.0982 10.2059 12.0982 9.97711C12.0983 9.67225 11.9778 9.37975 11.7629 9.16343C11.5482 8.94709 11.2565 8.82447 10.9517 8.82231Z" fill="#ffffff"/>
+      <path d="M12 1.99999C10.0218 1.99999 8.0881 2.58669 6.44342 3.68587C4.79874 4.78504 3.51701 6.34731 2.76041 8.17505C2.0038 10.0028 1.80624 12.0139 2.19274 13.9539C2.57923 15.894 3.53244 17.6758 4.93187 19.074C6.33121 20.4722 8.11374 21.4239 10.0541 21.8089C11.9945 22.1938 14.0054 21.9946 15.8325 21.2365C17.6596 20.4783 19.2208 19.1953 20.3187 17.5497C21.4165 15.9042 22.0017 13.9699 22 11.9918C22 10.679 21.7413 9.37901 21.2386 8.16621C20.736 6.95341 19.9992 5.85156 19.0705 4.92363C18.1419 3.99569 17.0394 3.25987 15.8262 2.75822C14.613 2.25657 13.3128 1.99891 12 1.99999ZM10.0508 20.7305L8.59291 15.1285L13.2776 20.8616C12.8543 20.9207 12.4275 20.9508 12 20.9516C11.3441 20.9496 10.6904 20.8755 10.0508 20.7305ZM8.41279 14.3014L17.0942 19.371C16.0814 20.0679 14.9354 20.5476 13.7281 20.7797L8.41279 14.3014ZM17.4218 19.1335L8.28175 13.8018L6.85668 8.33906C6.81649 8.17733 6.84117 8.00632 6.9253 7.8625C7.00944 7.71867 7.14649 7.61342 7.30709 7.5692L12.7126 6.05405L20.7797 10.2883C20.8953 10.8625 20.9528 11.4469 20.9517 12.0327C20.9428 13.4055 20.6157 14.7574 19.9961 15.9824C19.3766 17.2073 18.4813 18.272 17.3809 19.0926L17.4218 19.1335Z" fill="#ffffff"/>
+      </svg>
+      <div class="flex-1 flex flex-col">
+        <p class="m-0 text-sm text-white">找到 Meowgic 应用</p>
+        <p class="m-0 text-xl text-white">SHOPLINE App Store</p>
+      </div>
+    </a>
+  </div>
+</div>
 
 ## 准备好你的应用
 
@@ -35,9 +60,33 @@ description: "本指南将引导你将 Meowgic 的应用集成到 SHOPLINE 店�
 - 自动集成：如果你的 Meowgic 账号已连接 SHOPLINE 店铺，可以直接选择目标主题，自动完成应用的添加与后续更新。
 - 手动集成：从 SHOPLINE 店铺下载主题文件并上传至 Meowgic，由 Meowgic AI 自动完成集成。完成后，下载更新后的主题文件，并将其重新导入 SHOPLINE 店铺。
 
-### 自动集成（即将上线）
+### 自动集成
 
-<Note>此功能即将上线，敬请期待。</Note>
+选择已连接的店铺。
+
+<Frame>
+  <img src="https://assets.staticmeow.com/meowgic/static/images/20260813/0a6e48e8-ee97-431a-ac6e-56ca24df9aac.png?x-oss-process=image/format,webp" alt="Integrate with SHOPLINE" />
+</Frame>
+
+选择店铺中的主题。
+
+<Note>当前只能选择草稿主题来修改，不支持线上主题直接修改。</Note>
+
+<Frame>
+  <img src="https://assets.staticmeow.com/meowgic/static/images/20260813/2fd606c1-f30b-48f1-876e-3bd20dbf8fba.png?x-oss-process=image/format,webp" alt="Integrate with SHOPLINE" />
+</Frame>
+
+集成完成后，可以点击「编辑主题」直接跳转到 SHOPLINE 的主题编辑页面。
+
+<Frame>
+  <img src="https://assets.staticmeow.com/meowgic/static/images/20260813/7ffa692b-25e0-4525-8e90-ceee1dcf3f46.png?x-oss-process=image/format,webp" alt="Integrate with SHOPLINE" />
+</Frame>
+
+进入应用对应的页面模板后，Meowgic 应用会默认嵌入主题中。你只需选中该应用，即可启用并开始配置。
+
+<Frame>
+  <img src="https://assets.staticmeow.com/meowgic/static/images/20260707/7674f9eb-4b0f-4f84-816c-4aa76e4bb321.png?x-oss-process=image/format,webp" alt="Integrate with SHOPLINE" />
+</Frame>
 
 ### 手动集成
 
