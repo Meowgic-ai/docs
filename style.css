@@ -1,6 +1,4 @@
 .app-store-button {
-  width: 100%;
-  max-width: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,4 +10,17 @@
 }
 .app-store-button:hover {
   background-color: #3A7EFF;
+}
+
+.app-signup-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid #3A7EFF;
+  padding: 16px 20px;
+  gap: 12px;
+}
+.app-signup-button:hover {
+  background-color: oklch(97% 0.014 254.604);
 }
