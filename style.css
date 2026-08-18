@@ -2,14 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #356EFF;
+  
   border-radius: 8px;
   padding: 16px 20px;
   gap: 12px;
   border: none;
-}
-.app-store-button:hover {
-  background-color: #3A7EFF;
 }
 
 .app-signup-button {
@@ -21,6 +18,31 @@
   padding: 16px 20px;
   gap: 12px;
 }
-.app-signup-button:hover {
+
+/* shopline */
+.app-store-button.app-shopline {
+  background-color: #356EFF;
+}
+.app-store-button.app-shopline:hover {
+  background-color: #3A7EFF;
+}
+.app-signup-button.app-shopline {
+  border-color: #356EFF;
+}
+.app-signup-button.app-shopline:hover {
   background-color: oklch(97% 0.014 254.604);
+}
+
+/* shoplazza */
+.app-store-button.app-shoplazza {
+  background-color: #FF0301;
+}
+.app-store-button.app-shoplazza:hover {
+  background-color: #FF4C4C;
+}
+.app-signup-button.app-shoplazza {
+  border-color: #FF0301;
+}
+.app-signup-button.app-shoplazza:hover {
+  background-color: #fff4f4;
 }
