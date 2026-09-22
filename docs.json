@@ -68,9 +68,10 @@
                 "group": "How to use Meowgic",
                 "pages": [
                   "tips-tricks/best-practices",
+                  "tips-tricks/how-to-use-task",
                   "tips-tricks/create-app-let-it-work-on-your-store",
-                  "tips-tricks/how-to-submit-your-app-to-the-meowgic-app-store",
-                  "tips-tricks/how-product-customization-orders-work"
+                  "tips-tricks/how-product-customization-orders-work",
+                  "tips-tricks/how-to-submit-your-app-to-the-meowgic-app-store"
                 ]
               }
             ]
@@ -146,9 +147,10 @@
                 "group": "如何使用 Meowgic",
                 "pages": [
                   "zh/tips-tricks/best-practices",
+                  "zh/tips-tricks/how-to-use-task",
                   "zh/tips-tricks/create-app-let-it-work-on-your-store",
-                  "zh/tips-tricks/how-to-submit-your-app-to-the-meowgic-app-store",
-                  "zh/tips-tricks/how-product-customization-orders-work"
+                  "zh/tips-tricks/how-product-customization-orders-work",
+                  "zh/tips-tricks/how-to-submit-your-app-to-the-meowgic-app-store"
                 ]
               }
             ]
