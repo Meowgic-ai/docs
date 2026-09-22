@@ -46,3 +46,101 @@
 .app-signup-button.app-shoplazza:hover {
   background-color: #fff4f4;
 }
+
+/* Task platform guide cards */
+.task-platform-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 88px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  color: #fff !important;
+  text-decoration: none !important;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+  transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+}
+
+.task-platform-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.18);
+  filter: saturate(1.06);
+}
+
+.task-platform-shopify {
+  background: linear-gradient(135deg, #6f9f35 0%, #4f7f20 100%);
+}
+
+.task-platform-shopline {
+  background: linear-gradient(135deg, #3f7aff 0%, #2858e8 100%);
+}
+
+.task-platform-shoplazza {
+  background: linear-gradient(135deg, #ff3434 0%, #e60000 100%);
+}
+
+.task-platform-logo {
+  display: block;
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  background-color: #fff;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+}
+
+.task-platform-shopify .task-platform-logo {
+  mask-image: url("https://assets.staticmeow.com/meowgic/static/images/20260921/975c39a9-3c93-4efb-8990-8c57262f42ee.svg");
+  -webkit-mask-image: url("https://assets.staticmeow.com/meowgic/static/images/20260921/975c39a9-3c93-4efb-8990-8c57262f42ee.svg");
+}
+
+.task-platform-shopline .task-platform-logo {
+  mask-image: url("https://assets.staticmeow.com/meowgic/static/images/20260921/3553b873-2374-40e5-8a24-7e27b67769e9.svg");
+  -webkit-mask-image: url("https://assets.staticmeow.com/meowgic/static/images/20260921/3553b873-2374-40e5-8a24-7e27b67769e9.svg");
+}
+
+.task-platform-shoplazza .task-platform-logo {
+  mask-image: url("https://assets.staticmeow.com/meowgic/static/images/20260921/6df7084a-7062-4214-8f82-76884dc1090a.svg");
+  -webkit-mask-image: url("https://assets.staticmeow.com/meowgic/static/images/20260921/6df7084a-7062-4214-8f82-76884dc1090a.svg");
+}
+
+.task-platform-copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.task-platform-kicker,
+.task-platform-name {
+  display: block;
+  color: #fff;
+}
+
+.task-platform-kicker {
+  margin-bottom: 2px;
+  font-size: 12px;
+  line-height: 1.25;
+  opacity: 0.82;
+}
+
+.task-platform-name {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.task-platform-arrow {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.16);
+  font-size: 17px;
+  line-height: 1;
+}
