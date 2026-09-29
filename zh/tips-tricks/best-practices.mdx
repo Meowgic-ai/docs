@@ -4,6 +4,8 @@ icon: "dumbbell"
 description: "了解如何通过截图、参考链接和可视化编辑更准确地构建应用，并避开常见问题。"
 ---
 
+import { ZoomableImage } from "/snippets/zoomable-image.jsx";
+
 ## 用图片构建应用
 你可以在对话中上传图片、通过 Visual Editing 替换图片，或使用外部图片 URL 添加素材。这样能让应用 UI 更贴近参考图，也能让界面风格方向更清晰。
 
@@ -11,10 +13,10 @@ description: "了解如何通过截图、参考链接和可视化编辑更准确
 
 <Columns cols={2}>
 <Frame>
-  <img src="https://assets.staticmeow.com/meowgic/static/images/20260616/2b436ff9-59d5-47e9-9d95-6ecbc04e7df7.webp" alt="通过图片构建应用" />
+  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260616/2b436ff9-59d5-47e9-9d95-6ecbc04e7df7.webp" alt="通过图片构建应用" />
 </Frame>
 <Frame>
-  <img src="https://assets.staticmeow.com/meowgic/static/images/20260616/494c1b74-b4bb-48d3-8104-b1146dea8dc6.webp" alt="通过图片构建应用" />
+  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260616/494c1b74-b4bb-48d3-8104-b1146dea8dc6.webp" alt="通过图片构建应用" />
 </Frame>
 </Columns>
 
