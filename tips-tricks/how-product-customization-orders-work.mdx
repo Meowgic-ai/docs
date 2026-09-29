@@ -5,10 +5,12 @@ description: "Build a no-code product customization order workflow with Meowgic,
 sidebarTitle: "Product customization flow"
 ---
 
+import { ZoomableImage } from "/snippets/zoomable-image.jsx";
+
 A complete product customization experience requires both customer-facing customization options and a reliable order workflow.
 
 <Frame caption="Customers see the customization content, but the complete order workflow is what makes the transaction possible.">
-  <img
+  <ZoomableImage
     src="https://assets.staticmeow.com/meowgic/static/images/20260804/c4a408c4-60b0-426e-8c3f-585f21090569.png?x-oss-process=image/format,webp"
     alt="Product customization iceberg model: input fields, live preview, image upload, and the customization button appear above the surface, while data storage, customization ID generation, product linking, cart and order integration, and admin lookup form the order workflow below."
   />
@@ -43,7 +45,7 @@ This setup has the least impact on other parts of your store, minimizes the work
 When creating your app, add the following order workflow requirements to the feature description:
 
 <Frame>
-  <img
+  <ZoomableImage
     src="https://assets.staticmeow.com/meowgic/static/images/20260804/2f2274e1-1fc2-44aa-8fe4-11b27488fe87.png?x-oss-process=image/format,webp"
     alt="Entering product customization order workflow requirements in Meowgic, including saving customization data, generating a customization ID, and linking it to the cart and order."
   />
@@ -80,7 +82,7 @@ The steps below use Shopify as an example. Other ecommerce platforms may use dif
 In the Shopify theme editor, create a dedicated template for customizable products based on the default product template.
 
 <Frame>
-  <img
+  <ZoomableImage
     src="https://assets.staticmeow.com/meowgic/static/images/20260804/f479c981-4be3-46cc-b68d-697cd3639582.png?x-oss-process=image/format,webp"
     alt="Selecting Create template from the product template menu in the Shopify theme editor to create a separate template for customizable products."
   />
@@ -91,7 +93,7 @@ In the Shopify theme editor, create a dedicated template for customizable produc
 Enter a template name, then click **Create template**.
 
 <Frame>
-  <img
+  <ZoomableImage
     src="https://assets.staticmeow.com/meowgic/static/images/20260804/1a8b82f6-0745-4542-9416-6908ce9cc414.png?x-oss-process=image/format,webp"
     alt="Entering Custom Pillow in the Shopify Create a template dialog and clicking Create template."
   />
@@ -102,7 +104,7 @@ Enter a template name, then click **Create template**.
 Find the **Buy buttons** block and click the visibility icon on the right.
 
 <Frame>
-  <img
+  <ZoomableImage
     src="https://assets.staticmeow.com/meowgic/static/images/20260804/41638017-9306-462e-bcfe-561a5f7ef0a2.png?x-oss-process=image/format,webp"
     alt="Locating the Buy buttons block in the customizable product template and clicking the visibility icon to hide the native purchase buttons."
   />
@@ -113,7 +115,7 @@ Find the **Buy buttons** block and click the visibility icon on the right.
 Confirm that **Buy buttons** is hidden and that only **Custom Now** remains on the product page.
 
 <Frame>
-  <img
+  <ZoomableImage
     src="https://assets.staticmeow.com/meowgic/static/images/20260804/d7a74061-99c4-4af8-8e69-b44ed464cca6.png?x-oss-process=image/format,webp"
     alt="The Buy buttons block is hidden in the Shopify theme editor, leaving only the Custom Now button on the customizable product page."
   />
@@ -124,7 +126,7 @@ Confirm that **Buy buttons** is hidden and that only **Custom Now** remains on t
 Check whether other product templates contain the product customization Block. If they do, hide it so it does not affect regular products.
 
 <Frame>
-  <img
+  <ZoomableImage
     src="https://assets.staticmeow.com/meowgic/static/images/20260804/29056887-5685-4a06-861d-332efa2f7406.png?x-oss-process=image/format,webp"
     alt="Checking the default product template for the Pillow Customizer block to prevent the customization entry from appearing on regular products."
   />
@@ -135,7 +137,7 @@ Check whether other product templates contain the product customization Block. I
 Go to the Shopify product editor and find the **Theme template** setting.
 
 <Frame>
-  <img
+  <ZoomableImage
     src="https://assets.staticmeow.com/meowgic/static/images/20260804/99186796-ad92-4361-ba22-869c4d59f550.png?x-oss-process=image/format,webp"
     alt="Locating the Theme template setting on the Shopify product editing page, where the product currently uses the Default product template."
   />
@@ -146,7 +148,7 @@ Go to the Shopify product editor and find the **Theme template** setting.
 Select **custom-pillow**, then click **Save**.
 
 <Frame>
-  <img
+  <ZoomableImage
     src="https://assets.staticmeow.com/meowgic/static/images/20260804/bfe5edc7-869a-4741-9425-5fe9267b34c1.png?x-oss-process=image/format,webp"
     alt="Assigning the custom-pillow theme template to the customizable product and clicking Save."
   />
@@ -163,7 +165,7 @@ After you hide the original purchase buttons, customers must complete the custom
 Check the customizable product.
 
 <Frame>
-  <img
+  <ZoomableImage
     src="https://assets.staticmeow.com/meowgic/static/images/20260804/084da29e-2f3b-4065-aaf3-52133685e50b.png?x-oss-process=image/format,webp"
     alt="The customizable product page displays only the Custom Now button, with the native Add to cart and Buy it now buttons hidden."
   />
@@ -174,7 +176,7 @@ Check the customizable product.
 Check another product.
 
 <Frame>
-  <img
+  <ZoomableImage
     src="https://assets.staticmeow.com/meowgic/static/images/20260804/781d044f-0c7c-4147-bc35-58e287b0d6a2.png?x-oss-process=image/format,webp"
     alt="A regular gift bag product page displays the quantity selector, Add to cart, and Buy it now buttons without a Custom Now button, showing that it is unaffected by the customizable product template."
   />
@@ -193,7 +195,7 @@ A customization ID works like a claim ticket:
 A Shopify `line item property` is an extra piece of information attached to an item in the order.
 
 <Frame>
-  <img
+  <ZoomableImage
     src="https://assets.staticmeow.com/meowgic/static/images/20260804/cf089f1e-4a50-4fce-a217-1f17388a1819.png?x-oss-process=image/format,webp"
     alt="A customization ID works like a claim ticket: full customization details stay in the app, the cart and order store only the ID, and the merchant uses the customization ID from the order to retrieve the complete details."
   />
@@ -212,7 +214,7 @@ Before publishing, complete an entire order as a real customer would.
 Open the customizable product page. Confirm that it displays only **Custom Now** and that the native **Add to cart** and **Buy it now** buttons are hidden.
 
 <Frame>
-  <img
+  <ZoomableImage
     src="https://assets.staticmeow.com/meowgic/static/images/20260804/084da29e-2f3b-4065-aaf3-52133685e50b.png?x-oss-process=image/format,webp"
     alt="The customizable product page displays only the Custom Now button, with the native Add to cart and Buy it now buttons hidden."
   />
@@ -225,7 +227,7 @@ Open the customizable product page. Confirm that it displays only **Custom Now**
 Click **Custom Now** and upload a test image that represents a realistic customer request.
 
 <Frame>
-  <img
+  <ZoomableImage
     src="https://assets.staticmeow.com/meowgic/static/images/20260804/1d08deb5-a3ec-4450-886a-a95d8bea86f1.png?x-oss-process=image/format,webp"
     alt="After the customer clicks Custom Now, the image upload dialog lets them upload a JPG, PNG, or WebP image and choose Remove background or Face cutout."
   />
@@ -238,7 +240,7 @@ Click **Custom Now** and upload a test image that represents a realistic custome
 Drag the crop frame to select the part of the image you want to keep. Choose **Remove background** or **Face cutout** based on the product, then click **Confirm & continue**.
 
 <Frame>
-  <img
+  <ZoomableImage
     src="https://assets.staticmeow.com/meowgic/static/images/20260804/05b737d6-d052-4b7c-82b3-aa25b901c465.png?x-oss-process=image/format,webp"
     alt="After uploading a cat photo, the customer adjusts the crop frame, selects Remove background, and clicks Confirm and continue."
   />
@@ -251,7 +253,7 @@ Drag the crop frame to select the part of the image you want to keep. Choose **R
 After the preview loads, adjust the outline width and color, then click **Confirm & add to cart**.
 
 <Frame>
-  <img
+  <ZoomableImage
     src="https://assets.staticmeow.com/meowgic/static/images/20260804/782d7086-f80c-435b-8275-dc7f9c4bdee6.png?x-oss-process=image/format,webp"
     alt="The custom pillow preview shows the cat with its background removed, along with controls for outline width and color and a Confirm and add to cart button."
   />
@@ -262,7 +264,7 @@ After the preview loads, adjust the outline width and color, then click **Confir
 Wait for the system to save the design. Do not close the page or click the button again until saving is complete.
 
 <Frame>
-  <img
+  <ZoomableImage
     src="https://assets.staticmeow.com/meowgic/static/images/20260804/08cad1e5-ca6e-4d18-808d-fc67b2bac6b3.png?x-oss-process=image/format,webp"
     alt="The custom pillow preview is saving the design, with the button showing a Saving your design status."
   />
@@ -275,7 +277,7 @@ Wait for the system to save the design. Do not close the page or click the butto
 Once the design is saved, a dialog displays the customization ID and confirms that the product has been added to the cart.
 
 <Frame>
-  <img
+  <ZoomableImage
     src="https://assets.staticmeow.com/meowgic/static/images/20260804/6686df43-be20-406e-848e-95061392b450.png?x-oss-process=image/format,webp"
     alt="After customization is complete, a success dialog displays the customization ID PC-79HMCYR2 and confirms that the product was added to the cart."
   />
@@ -286,7 +288,7 @@ Once the design is saved, a dialog displays the customization ID and confirms th
 Open the cart and confirm that the same customization ID appears below the product.
 
 <Frame>
-  <img
+  <ZoomableImage
     src="https://assets.staticmeow.com/meowgic/static/images/20260804/2210c913-8849-42e3-84f7-9c04596a6a3c.png?x-oss-process=image/format,webp"
     alt="The customized pillow in the shopping cart displays the customization ID PC-79HMCYR2."
   />
@@ -297,7 +299,7 @@ Open the cart and confirm that the same customization ID appears below the produ
 After checkout, check the customization ID on the order confirmation page.
 
 <Frame>
-  <img
+  <ZoomableImage
     src="https://assets.staticmeow.com/meowgic/static/images/20260804/1c3c24ff-6f9b-45da-8ed4-c45eab784048.png?x-oss-process=image/format,webp"
     alt="The customized product on the order confirmation page displays the same customization ID, PC-79HMCYR2, as the shopping cart."
   />
@@ -308,7 +310,7 @@ After checkout, check the customization ID on the order confirmation page.
 Open the corresponding order in the Shopify admin and confirm that the same ID appears below the product.
 
 <Frame>
-  <img
+  <ZoomableImage
     src="https://assets.staticmeow.com/meowgic/static/images/20260804/08fed512-edb9-4ee6-8111-4746079e8438.png?x-oss-process=image/format,webp"
     alt="The Shopify order details page displays the customization ID PC-79HMCYR2 beneath the customized product."
   />
@@ -321,7 +323,7 @@ Open the corresponding order in the Shopify admin and confirm that the same ID a
 Enter the customization ID from the order in the Meowgic app admin, then search for it.
 
 <Frame>
-  <img
+  <ZoomableImage
     src="https://assets.staticmeow.com/meowgic/static/images/20260804/555306a7-4ca8-43a9-8314-70a3382944cc.png?x-oss-process=image/format,webp"
     alt="Entering the customization ID PC-79HMCYR2 in the Meowgic app admin to find the corresponding customer customization record."
   />
@@ -332,7 +334,7 @@ Enter the customization ID from the order in the Meowgic app admin, then search 
 Open the result and confirm that you can view the complete customization data submitted by the customer.
 
 <Frame>
-  <img
+  <ZoomableImage
     src="https://assets.staticmeow.com/meowgic/static/images/20260804/fe550900-6a3d-4f4a-b6cc-cc3adac19f1a.png?x-oss-process=image/format,webp"
     alt="The Meowgic app admin displays the complete data for customization ID PC-79HMCYR2, including the original image, background-removed image, and trimmed result."
   />
