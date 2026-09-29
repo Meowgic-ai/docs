@@ -144,3 +144,136 @@
   font-size: 17px;
   line-height: 1;
 }
+
+/* Image preview: a short fade and scale animation without moving the page. */
+@keyframes toggle-zoom-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes toggle-zoom-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes toggle-zoom-scale-in {
+  from { opacity: 0; transform: scale(0.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes toggle-zoom-scale-out {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.92); }
+}
+
+.toggle-zoom-dialog[open]:not(.is-closing) {
+  animation: toggle-zoom-fade-in 240ms ease-out both;
+}
+
+.toggle-zoom-dialog[open]:not(.is-closing) .toggle-zoom-panel {
+  animation: toggle-zoom-scale-in 240ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.toggle-zoom-dialog[open].is-closing {
+  animation: toggle-zoom-fade-out 280ms ease-in both;
+}
+
+.toggle-zoom-dialog[open].is-closing .toggle-zoom-panel {
+  animation: toggle-zoom-scale-out 280ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+/* Welcome page visuals */
+.welcome-feature-visual {
+  margin: 18px 0 22px;
+  overflow: hidden;
+  border: 1px solid #eae7e2;
+  border-radius: 16px;
+  background: #f7f6f3;
+}
+
+.welcome-feature-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.welcome-tools-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px 0 22px;
+}
+
+.welcome-tools-gallery a {
+  overflow: hidden;
+  border: 1px solid #eae7e2;
+  border-radius: 14px;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+}
+
+.welcome-tools-gallery a:hover {
+  border-color: #ff8a50;
+}
+
+.welcome-tools-gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 40 / 21;
+  object-fit: contain;
+  margin: 0;
+}
+
+.welcome-tools-gallery a > span:last-child {
+  display: block;
+  padding: 11px 13px;
+  font-weight: 600;
+}
+
+.welcome-launch-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 28px;
+  margin: 18px 0 22px;
+}
+
+.welcome-launch-card {
+  margin: 0;
+}
+
+.welcome-launch-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  margin: 0;
+  border: 1px solid #eae7e2;
+  border-radius: 14px;
+}
+
+.welcome-launch-caption {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.welcome-launch-label {
+  color: #171b29;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .welcome-tools-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toggle-zoom-dialog[open],
+  .toggle-zoom-dialog[open] .toggle-zoom-panel {
+    animation: none;
+  }
+}
