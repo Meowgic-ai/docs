@@ -1,0 +1,333 @@
+---
+title: "Create and use Meowgic Skills"
+sidebarTitle: "Use Skills"
+icon: "book-open"
+description: "Learn how to create, import, use, and manage Meowgic Skills to reuse instructions for product copy, customer replies, and page reviews."
+keywords:
+  - Meowgic Skills
+  - reusable AI instructions
+  - workspace skills
+  - Meowgic Task skills
+  - AI workflows
+---
+
+Skills save instructions for recurring tasks. Create a skill in your workspace, then select it in different Meowgic Task conversations instead of repeating the same workflow each time.
+
+Each skill has a name, a description, and instructions. The description explains when to use it; the instructions define the steps, rules, and output format. Select a skill from the `/` menu or enable **Automatic use** to let Meowgic consider it based on your request and its description.
+
+## When to use skills
+
+Use skills when you want to reuse a focused workflow, such as reviewing a product page or drafting customer replies in your brand's tone.
+
+Common use cases include:
+
+- **Product copy:** Draft descriptions with a consistent structure using the product facts you provide.
+- **Customer replies:** Draft replies using your brand tone and handling rules.
+- **Page reviews:** Check whether customization steps, prices, and delivery information are clear.
+- **Launch checks:** Review an app against a release checklist.
+
+For example, save your product-copy structure, tone, and factual requirements as a skill. Select it when drafting copy for a new product, then provide that product’s details.
+
+<Note>
+A skill guides the AI task. Review the output before applying changes to your store or publishing an app. Selecting a skill does not guarantee that every instruction is followed exactly.
+</Note>
+
+## Open Skills
+
+Click your avatar in the lower-left corner, choose **Account** or **Settings**, then select **Skills** in the settings dialog.
+
+Both menu items open the same dialog. The **Skills** page contains:
+
+- **Workspace skills:** Custom skills you create or upload.
+- **Skills built by Meowgic:** The built-in skills currently available to you. For example, **Skill Creator** helps create skills. Refer to the list in your account for the current selection.
+
+## Create a skill
+
+Click **Add** on the **Skills** page and choose the method that fits your needs:
+
+- **Build with Meowgic:** Describe your workflow in a conversation and let Meowgic help write the skill.
+- **Write manually:** Enter the name, description, and instructions yourself.
+- **Upload ZIP:** Import an existing skill archive.
+
+### Build with Meowgic
+
+<Steps>
+  <Step title="Open a creation conversation">
+    Choose **Add → Build with Meowgic**. Meowgic opens a new Task with a prefilled prompt. Send it to begin.
+  </Step>
+  <Step title="Tell Meowgic what you need">
+    Answer Meowgic's questions about what the skill should do, when to use it, and any rules or output requirements. Continue the conversation to make adjustments.
+  </Step>
+  <Step title="Check the created skill">
+    When Meowgic confirms that the skill is saved, click **View my skills**. Open the new skill and check that its description and instructions match your requirements.
+  </Step>
+</Steps>
+
+In an existing Task conversation, you can also enter `/skill-creator` and describe your requirements to start creating a skill.
+
+### Write manually
+
+Choose **Add → Write manually**. Complete these fields:
+
+| Field | What to enter |
+| :-- | :-- |
+| **Name** | A short identifier such as `product-description-copy` or `support-reply`. Use lowercase letters, numbers, and hyphens. The name field allows up to 64 characters. |
+| **Description** | Explain when the skill applies, including its trigger, scope, and boundaries. For example: “Use when I ask to review a product page.” |
+| **Content** | Write the steps, constraints, examples, and expected output. The editor supports headings, bold, italic, and lists. |
+
+Click **Add skill** to save it. Check that it appears under **Workspace skills**.
+
+The list can display a formatted name: for example, `product-description-copy` appears as **Product Description Copy**. The identifier in the name field remains unchanged.
+
+### Upload a ZIP
+
+Choose **Add → Upload ZIP**, click **Drag and drop or browse** to select your ZIP file, then click **Import archive**. After importing, check that the skill appears under **Workspace skills**.
+
+If the import does not finish, see [Upload does not finish](#troubleshooting). You can also create the skill manually or through a Meowgic conversation.
+
+<Check>
+After creating or importing a skill, confirm that it appears under **Workspace skills** and can be selected from the `/` menu in a Task. If a new skill is missing from the menu, refresh the Task page and check again.
+</Check>
+
+## Write effective skill instructions
+
+Keep the description and instructions distinct: **Description** explains when the skill applies; **Content** explains how to complete the task once the skill is used.
+
+- **Give each skill one task.** Split broad workflows into separate skills, such as product copy, product-page reviews, and customer replies.
+- **Define the scope and boundaries.** State what to do, which situations the skill does not cover, and which actions need your confirmation.
+- **Use concrete steps and examples.** Organize instructions with short sections and lists. Include example copy or expected output where useful.
+- **Keep the content current.** Update the skill when your process or requirements change. Turn off automatic use when you no longer need it.
+
+**Too vague:**
+
+```text
+Help me write product descriptions.
+```
+
+**Specific and scoped:**
+
+```text wrap
+Use when I ask for product-page copy. Draft English copy from the product details I provide. Do not invent product information or change or publish products.
+```
+
+The second description explains when the skill applies, what it can work on, and what it must avoid. Use **Content** to define the copy structure and factual requirements.
+
+### Example: a product-description skill
+
+This skill drafts product copy with a consistent structure. Choose **Write manually** and enter the three parts below into **Name**, **Description**, and **Content**.
+
+**Name**
+
+```text
+product-description-copy
+```
+
+**Description**
+
+```text wrap
+Use when I ask for product-page copy. Draft English copy from the product details I provide. Do not invent product information or change or publish products.
+```
+
+**Content**
+
+```text wrap
+Use only the product facts provided in the current request. Ask for missing details instead of inventing materials, certifications, delivery times, or after-sales promises.
+
+Use these three sections:
+1. Product overview: introduce the product in 1 to 2 sentences.
+2. Key features: list the provided specifications, price, and package contents as bullet points.
+3. Use and care: include only the provided use and care instructions.
+
+Keep the tone concise and natural. Draft copy only. Do not access, change, or publish store products.
+```
+
+Once saved, follow [Use a skill](#use-a-skill) below to select it and provide the product details.
+
+<Accordion title="More examples: an app launch checklist" id="launch-checklist-example">
+
+This pre-launch checklist is an example for an app with account and database features. When using **Write manually**, enter the three parts below into **Name**, **Description**, and **Content**. Adjust the checks to fit your app.
+
+**Name**
+
+```text
+launch-checklist
+```
+
+**Description**
+
+```text wrap
+Use when I say I'm about to launch, ship, share, or release a project, or when I ask whether it is ready to go live. Run the checklist below before giving a go/no-go.
+```
+
+**Instructions**
+
+```text wrap
+Launch checklist
+
+Before approving the launch, walk through this checklist and report back on each item with pass, fail, or "needs manual check". Do not skip ahead.
+
+Account flows
+- Sign-up, sign-in, sign-out, and password reset are wired up end to end.
+- Signed-out users cannot reach pages that require an account.
+- Signed-in users land on the right page after login.
+
+Core surfaces
+- The home page and every primary route render without console errors.
+- Every list, table, or feed has a real empty state, not "No data".
+- Long-running actions show a loading state and surface errors with a retry path.
+- At mobile width (375px) there is no horizontal scroll and primary actions are reachable.
+
+Data and permissions
+- Database tables that hold user data have row level security enabled.
+- A user in one account cannot read or write another account's data. Flag this as "needs manual check". Ask me to verify with a second test account before launch.
+- Destructive actions (delete, cancel, refund) ask for confirmation.
+
+Content and trust
+- App name, favicon, social preview image, and meta description are set.
+- Footer links to a working privacy policy and terms page.
+- No placeholder copy left in the UI ("Lorem ipsum", "TODO", "Your headline here").
+
+Environment
+- No dev URLs, localhost references, or test API keys (for example, Stripe `sk_test_*`) in production code.
+- Required production environment variables and secrets are set.
+- Analytics or product events fire on the actions you want to measure.
+
+Final step
+- Summarize anything that failed or needs a manual check, in priority order.
+- Do not say "ready to launch" unless every item above passes or has been explicitly waived.
+```
+
+</Accordion>
+
+## Use a skill
+
+### Select a skill directly
+
+Type `/` in the Task input to open the skill menu. Highlight a skill to view its description. Select it to add a skill tag to the input, then describe the task and send your message.
+
+After creating the `product-description-copy` skill above, select **Product Description Copy** and provide the product details:
+
+```text wrap
+Draft an English product description for the Luna handmade ceramic cup.
+
+Known details: 350ml capacity, ivory color, price ¥89, hand washing recommended, no lid included.
+
+Draft copy only. Do not access or change the store.
+```
+
+After sending, check the skill tag on your message and compare the response with the skill's instructions. Check whether the steps and output format match your requirements.
+
+### Automatic use
+
+New custom skills have **Automatic use** enabled by default. This setting lets Meowgic consider a skill when your request matches its description. Describe the task clearly and check whether the response follows the skill.
+
+<Tip>
+To use a particular skill for the current task, select it from the `/` menu. Review the output whether you selected the skill manually or used automatic use.
+</Tip>
+
+A skill with automatic use disabled remains available for manual selection.
+
+## Edit and manage skills
+
+Open **Avatar → Account or Settings → Skills**, then open a custom skill to view its description, content, and management actions.
+
+### Edit a skill
+
+Click **Edit**, change **Description** or **Content**, then click **Save**. Reopen the skill to confirm that your changes were saved.
+
+The **Name** field is disabled when editing an existing skill. If you need a different identifier, create a new skill.
+
+### Enable or disable automatic use
+
+Open the skill's details and change **Automatic use**. Wait for the update to finish, then reopen the skill's details to check the switch's state. Turning it off keeps the skill available in the `/` menu for manual use.
+
+### Download a skill
+
+Click **Download** in the skill's details to download a ZIP copy. Use it to back up the skill's instructions. Check the receiving tool's format requirements before using the archive elsewhere.
+
+### Delete a skill
+
+Click **Delete** in the skill's details. Meowgic opens a confirmation dialog. Choose **Cancel** to keep the skill, or confirm **Delete** to remove it.
+
+<Warning>
+Deleting a skill cannot be undone. Download a backup before confirming if you want to keep its instructions.
+</Warning>
+
+## Credits
+
+Creating or modifying a skill through AI conversations, and running a Task that uses a skill, consume task credits. Check **Avatar → Account or Settings → Usage → Tasks** for the recorded usage. Consumption varies with the work performed.
+
+See [Subscription and credits](/getting-started/subscription-ai-credits) for task credit rules.
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Can I rename a saved skill?">
+    The name field is disabled when you edit a saved skill. You can edit its description and content. Create a new skill if you need a different identifier.
+  </Accordion>
+  <Accordion title="Can I use a saved skill in another Task?">
+    Yes. Open another Task, type `/`, and select the saved workspace skill. If it is missing, refresh the page and check the Skills settings to confirm it was saved.
+  </Accordion>
+  <Accordion title="How are Meowgic Skills different from ordinary prompts?">
+    A prompt describes the current task. A skill saves rules and workflows you can reuse. When using a skill, still provide the details for the current task, such as the product name, specifications, or page to review.
+  </Accordion>
+  <Accordion title="Do AI tasks using skills consume credits?">
+    Yes. AI creation and tasks using skills appear in **Usage → Tasks**. Review the recorded consumption there; do not treat an example task's usage as a fixed price.
+  </Accordion>
+  <Accordion title="Does downloading a skill make it compatible with other AI tools?">
+    Click **Download** to export a ZIP copy. Other tools can have different import requirements, so check their required format before importing it.
+  </Accordion>
+  <Accordion title="Does deleting a skill have a recovery option?">
+    The deletion confirmation states that the action cannot be undone. Back up the skill before confirming if you need to retain it.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The saved skill does not appear in the slash menu">
+    Check **Avatar → Account or Settings → Skills** for the skill. If it is there, refresh the Task page and reopen `/`. If it is absent from settings, confirm that creation or importing completed. If the issue remains, provide support with the skill name, Task link, and screenshots of both lists.
+  </Accordion>
+  <Accordion title="The response does not follow the selected skill">
+    Check the tag on your sent message and compare the response with the skill's content. If you relied on automatic use, select the skill explicitly from `/`. Clarify the request, trigger, and expected output. If the issue remains, provide the Task link, skill name, and the specific instruction that was not followed.
+  </Accordion>
+  <Accordion title="Upload does not finish">
+    If **Import archive** returns to a clickable state but no skill appears, check the Skills list before assuming the import succeeded. Keep the archive and record the file name, size, time, and any visible error. Continue with manual or AI creation and provide those details to support.
+  </Accordion>
+</AccordionGroup>
+
+## Related reading
+
+<Columns cols={2}>
+  <Card
+    title="Use Task"
+    icon="list-checks"
+    href="/tips-tricks/how-to-use-task"
+  >
+    Learn how the Meowgic AI team helps you plan campaigns, analyze store data, and handle e-commerce work.
+  </Card>
+
+  <Card
+    title="Create and install apps"
+    icon="book-open"
+    href="/tips-tricks/create-app-let-it-work-on-your-store"
+  >
+    Learn how to create, publish, and integrate a Meowgic app with your store.
+  </Card>
+
+  <Card
+    title="Product customization flow"
+    icon="shopping-cart"
+    href="/tips-tricks/how-product-customization-orders-work"
+  >
+    Save customer customization data, link it to carts and orders, and retrieve it in your app admin.
+  </Card>
+
+  <Card
+    title="Submit your app to the App Store"
+    icon="rocket"
+    href="/tips-tricks/how-to-submit-your-app-to-the-meowgic-app-store"
+  >
+    Learn how to complete your Meowgic App Store listing, submit an app for review, and check its review status.
+  </Card>
+</Columns>
