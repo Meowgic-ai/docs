@@ -67,6 +67,14 @@
   filter: saturate(1.06);
 }
 
+.task-platform-card[aria-disabled="true"],
+.task-platform-card[aria-disabled="true"]:hover {
+  background: #4b5563;
+  box-shadow: none;
+  transform: none;
+  filter: none;
+}
+
 .task-platform-shopify {
   background: linear-gradient(135deg, #6f9f35 0%, #4f7f20 100%);
 }

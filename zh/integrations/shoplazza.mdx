@@ -1,36 +1,45 @@
 ---
-title: "将 Meowgic 应用集成到 Shoplazza"
+title: "连接 Shoplazza 店铺与集成应用"
 sidebarTitle: "Shoplazza"
 icon: "https://assets.staticmeow.com/meowgic/static/images/20260707/4ece11b0-94d8-40ef-a6d3-df15d9716116.svg"
-description: "本指南将引导你将 Meowgic 的应用集成到 Shoplazza 店铺中，并完成后续配置与使用。"
+description: "从 Shoplazza App Store 安装 Meowgic 并连接店铺后，你可以使用 Task 处理店铺业务，或将创建的应用集成到主题。"
 ---
 
 import { ZoomableImage } from "/snippets/zoomable-image.jsx";
 
-<Frame>
-  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260818/2685c5f3-6e47-4912-b328-b75edf14fd43.png?x-oss-process=image/format,webp" alt="Integrate with Shoplazza" />
-</Frame>
+## 为什么建议先连接店铺
+
+我们强烈建议在开展店铺业务前先安装 Meowgic。连接后，你可以：
+
+- 使用 **Task** 分析订单、商品和库存，检查主题，并在确认修改内容后执行授权范围内的操作。
+- 使用 **Apps** 创建店铺功能，再按本页后半部分的指引将其集成到主题。
+
+例如，运营人员可以先让 Task 分析订单；个性化商品商家可以创建商品选项 Block，再把它加入商品页。只使用 Tools，或让 Task 根据你提供的资料规划工作时，可以直接开始。
+
+## 安装 Meowgic 并连接店铺 {#connect-store}
+
+准备好你的 Shoplazza 店铺账号，并确认你有安装应用的权限。建议先登录你准备使用的 Meowgic 账号，再安装，以便店铺信息同步到该账号。已经连接的店铺可以直接在 Task 中选择，无需重复安装。
 
 <div class="w-full border mt-10 rounded-2xl p-6">
   <div class="w-full flex gap-5 items-start">
-    <img 
-    src="https://assets.staticmeow.com/meowgic/static/images/20260813/d7038933-b406-41b8-97f0-3de6edcfd6b0.png?x-oss-process=image/format,webp" 
-    class="w-16 h-16 shirink-0 border rounded-2xl shadow-xs m-0" alt="Integrate with Shoplazza" 
+    <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260813/d7038933-b406-41b8-97f0-3de6edcfd6b0.png?x-oss-process=image/format,webp"
+    class="w-16 h-16 shirink-0 border rounded-2xl shadow-xs m-0" alt="Meowgic 应用图标，帮助商家确认要安装的应用。"
     style={{ borderColor: "oklch(86.9% 0.005 56.366)" }}
     noZoom />
     <div class="flex-1 flex flex-col gap-2">
-      <h3 class="text-xl font-semibold m-0" noAnchor>Meowgic: AI 店铺功能搭建工具</h3>
-      <p class="m-0 text-sm">用 AI 创建店铺真正需要的功能。你可以制作 Section、Block、页面、工具和轻量应用，将它们添加到店铺主题中，并随时调整更新。无需编写代码，也能快速上线。</p>
+      <p class="text-xl font-semibold m-0">Meowgic：你的 AI 电商团队</p>
+      <p class="m-0 text-sm">连接店铺，让 Task 结合真实业务信息处理运营工作；使用 Apps 创建需要的功能，再将店铺前台功能集成到主题。</p>
     </div>
   </div>
   <div class="border-t mt-6 pt-6 flex flex-col gap-5 md:flex-row">
-    <a href="https://appstore.shoplazza.com/listing/meowgic/" target="_blank" class="app-store-button app-shoplazza" style={{ flex: 1 }}>
+    <a href="https://appstore.shoplazza.com/listing/meowgic/?locale=en-US" target="_blank" class="app-store-button app-shoplazza" style={{ flex: 1 }}>
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
       <path d="M9.01992 21.56L3.13525 23L4.5687 13H8.34093C6.6057 12.44 5.17226 10.84 5.17226 8.51999C5.17226 5.72 7.2847 3.08 10.2271 3.08C12.0377 3.08 13.8484 4.2 14.4519 6.04L14.9801 2.44L20.8647 1L19.3559 11H15.5836C17.3188 11.56 18.7523 13.16 18.7523 15.48C18.7523 18.28 16.6398 20.92 13.6975 20.92C11.8868 20.92 10.0761 19.8 9.47257 17.96L9.01992 21.56Z" fill="#ffffff"/>
       </svg>
 
       <div class="flex-1 flex flex-col">
-        <p class="m-0 text-sm text-white">找到 Meowgic 应用</p>
+        <p class="m-0 text-sm text-white">安装 Meowgic 并连接店铺</p>
         <p class="m-0 text-xl text-white">Shoplazza App Store</p>
       </div>
     </a>
@@ -43,74 +52,126 @@ import { ZoomableImage } from "/snippets/zoomable-image.jsx";
   </div>
 </div>
 
-## 准备好你的应用
+<Steps>
+  <Step title="确认目标店铺并打开安装页面">
+    登录 Shoplazza 后台，确认本次要连接的店铺。打开上方的 **Shoplazza App Store** 链接，或在平台 App Store 搜索 Meowgic。
+  </Step>
+  <Step title="安装 Meowgic">
+    点击 **Add app**，然后在安装页面点击 **Install app**。查看安装页面列出的权限，并按页面提示完成授权与安装。
+  </Step>
+  <Step title="在自动打开的 Meowgic 标签页中确认账号">
+    在店铺后台完成安装后，浏览器会自动打开 Meowgic 标签页。如果你已经登录 Meowgic，店铺信息会自动同步到当前账号。
+
+    如果尚未登录，请先完成登录，再检查店铺连接状态。
+  </Step>
+  <Step title="确认目标店铺可用">
+    在 Meowgic 点击 **New task**，说明你想读取或分析的店铺信息，并选择刚安装 Meowgic 的 Shoplazza 店铺。确认店铺名称和平台正确。如果需要核对连接，可以先要求 Task 只读取信息，不修改店铺数据。
+  </Step>
+</Steps>
+
+<Check>
+  在 Task 中可以选择目标 Shoplazza 店铺，表明你可以继续使用该店铺开展工作。
+</Check>
+
+<Note>
+  安装 Meowgic 用于连接店铺，不会自动把你创建的功能加入主题。只使用 Task 时，不需要先创建、发布或集成应用。
+</Note>
+
+## 连接后，选择下一步
+
+<CardGroup cols={2}>
+  <Card title="开始使用 Task" icon="list-checks" href="/zh/tips-tricks/how-to-use-task">
+    让 AI 团队分析或处理店铺工作。只使用 Task 的用户，到这里即可开始。
+  </Card>
+  <Card title="继续集成已创建的应用" icon="blocks" href="#integrate-app">
+    已经创建店铺前台功能，希望顾客在店铺页面使用它？继续阅读下面的主题集成教程。
+  </Card>
+</CardGroup>
+
+## 将创建的应用集成到主题 {#integrate-app}
+
+以下步骤适用于已经创建应用、准备把 Section 或 Block 等功能添加到 Shoplazza 店铺页面的用户。独立运行的仪表板或内部工具不需要加入主题。
+
+准备好已发布的应用版本和需要集成的主题。修改应用后，请先重新发布，再进行对应版本的主题集成。
+
+<Tip>
+  先在草稿或复制的主题中集成和测试。手动集成时，保留原始主题文件；上传或发布更新后的主题前，检查原有自定义内容是否保留。
+</Tip>
+
+<Frame>
+  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260818/2685c5f3-6e47-4912-b328-b75edf14fd43.png?x-oss-process=image/format,webp" alt="Shoplazza 应用主题集成示意图，说明连接店铺后的应用集成阶段。" />
+</Frame>
+
+### 准备好你的应用
 
 进入你的应用，点击右上角的「发布」按钮，然后选择「安装到你的店铺」。
 
 <Columns cols={2}>
   <Frame>
-    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/24b0a8c4-4bd9-46d0-97d9-8c50fd3ba0f2.png?x-oss-process=image/format,webp" alt="Integrate with Shoplazza" />
+    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/24b0a8c4-4bd9-46d0-97d9-8c50fd3ba0f2.png?x-oss-process=image/format,webp" alt="发布 Meowgic 应用，准备将已发布的版本集成到主题。" />
   </Frame>
   <Frame>
-    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/5ef3030b-bfbd-4475-9619-6da412296070.png?x-oss-process=image/format,webp" alt="Integrate with Shoplazza" />
+    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/5ef3030b-bfbd-4475-9619-6da412296070.png?x-oss-process=image/format,webp" alt="选择将已发布的 Meowgic 应用安装到店铺。" />
   </Frame>
 </Columns>
 
 选择要集成的平台（Shoplazza），即可进入应用集成流程。
 
 <Frame>
-  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/3242a69e-76a9-41f5-80d0-2781b7165990.png?x-oss-process=image/format,webp" alt="Integrate with Shoplazza" />
+  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/3242a69e-76a9-41f5-80d0-2781b7165990.png?x-oss-process=image/format,webp" alt="选择 Shoplazza 作为应用集成的目标平台。" />
 </Frame>
 
-## 开始集成
+### 选择集成方式
 
 集成分自动和手动两种方式：
-- 自动集成：如果你的 Meowgic 账号已连接 Shoplazza 店铺，可以直接选择目标主题，自动完成应用的添加与后续更新。
+- 自动集成：如果你的 Meowgic 账号已连接 Shoplazza 店铺，可以直接选择目标主题，由 Meowgic 完成应用主题集成。
 - 手动集成：从 Shoplazza 店铺下载主题文件并上传至 Meowgic，由 Meowgic AI 自动完成集成。完成后，下载更新后的主题文件，并将其重新导入 Shoplazza 店铺。
 
-### 自动集成（即将上线）
+#### 自动集成
 
-<Note>此功能即将上线，敬请期待。</Note>
+在应用集成页面选择已连接的 Shoplazza 店铺和目标主题，按页面提示完成集成。完成后，进入 Shoplazza 主题编辑器，打开应用对应的页面模板，启用并配置功能，再按下方检查清单预览。
 
-### 手动集成
+如果采用手动集成，请继续阅读下面的主题文件流程。
+
+#### 手动集成
 
 进入集成页面后，你可以查看当前应用版本和目标店铺平台，也可以切换不同版本，查看对应的集成记录。
 
 <Frame>
-  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/6e8cadc8-6ce7-4255-9678-e9b2526ffc99.png?x-oss-process=image/format,webp" alt="Integrate with Shoplazza" />
+  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/6e8cadc8-6ce7-4255-9678-e9b2526ffc99.png?x-oss-process=image/format,webp" alt="查看应用版本、目标平台和主题集成记录。" />
 </Frame>
 
 访问你的 Shoplazza 后台并下载店铺主题文件。
 
 <Frame>
-  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/d7e40b45-222e-4329-be08-d7de705c7e7b.png?x-oss-process=image/format,webp" alt="Integrate with Shoplazza" />
+  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/d7e40b45-222e-4329-be08-d7de705c7e7b.png?x-oss-process=image/format,webp" alt="从 Shoplazza 后台下载要集成的主题文件。" />
 </Frame>
 
 上传主题文件，完成后「开始」集成。
 
 <Columns cols={2}>
   <Frame>
-    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/347a02f4-6448-4222-a82b-c11149138c29.png?x-oss-process=image/format,webp" alt="Integrate with Shoplazza" />
+    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/347a02f4-6448-4222-a82b-c11149138c29.png?x-oss-process=image/format,webp" alt="将 Shoplazza 主题文件上传至 Meowgic。" />
   </Frame>
   <Frame>
-    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/0535a4a3-c036-4698-878d-ef23ecb39aa5.png?x-oss-process=image/format,webp" alt="Integrate with Shoplazza" />
+    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/0535a4a3-c036-4698-878d-ef23ecb39aa5.png?x-oss-process=image/format,webp" alt="在 Meowgic 开始 Shoplazza 主题集成。" />
   </Frame>
 </Columns>
 
 Meowgic AI 会自动解析你的主题文件，并将应用嵌入其中。集成完成后，系统将生成修改后的主题文件，点击「下载主题文件」即可保存。
 
 <Frame>
-  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/b903ec31-3ae5-4ed1-aa3e-97eeeafd275d.png?x-oss-process=image/format,webp" alt="Integrate with Shoplazza" />
+  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/b903ec31-3ae5-4ed1-aa3e-97eeeafd275d.png?x-oss-process=image/format,webp" alt="下载集成完成后的 Shoplazza 主题文件。" />
 </Frame>
 
 回到你的 Shoplazza 店铺，上传修改后的主题文件。
 
 <Columns cols={2}>
   <Frame>
-    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/887fa789-66c9-4475-bacd-f7ab125cd077.png?x-oss-process=image/format,webp" alt="Integrate with Shoplazza" />
+    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/887fa789-66c9-4475-bacd-f7ab125cd077.png?x-oss-process=image/format,webp" alt="在 Shoplazza 后台上传更新后的主题文件。" />
   </Frame>
   <Frame>
-    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/d423f17b-f65c-4a2a-8d7f-44a4da36d1b7.png?x-oss-process=image/format,webp" alt="Integrate with Shoplazza" />
+    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/d423f17b-f65c-4a2a-8d7f-44a4da36d1b7.png?x-oss-process=image/format,webp" alt="确认更新后的主题已导入 Shoplazza。" />
   </Frame>
 </Columns>
 
@@ -118,10 +179,10 @@ Meowgic AI 会自动解析你的主题文件，并将应用嵌入其中。集成
 
 <Columns cols={2}>
   <Frame>
-    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/3c3d346f-dff1-40d2-8351-4beb880212ac.png?x-oss-process=image/format,webp" alt="Integrate with Shoplazza" />
+    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/3c3d346f-dff1-40d2-8351-4beb880212ac.png?x-oss-process=image/format,webp" alt="在 Shoplazza 后台编辑导入后的主题。" />
   </Frame>
   <Frame>
-    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/78b8f81e-d766-45c1-b95a-d9c97f876448.png?x-oss-process=image/format,webp" alt="Integrate with Shoplazza" />
+    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/78b8f81e-d766-45c1-b95a-d9c97f876448.png?x-oss-process=image/format,webp" alt="打开与 Meowgic 应用对应的页面模板。" />
   </Frame>
 </Columns>
 
@@ -132,20 +193,73 @@ Meowgic AI 会自动解析你的主题文件，并将应用嵌入其中。集成
 进入应用对应的页面模板后，Meowgic 应用会默认嵌入主题中。你只需选中该应用，即可启用并开始配置。
 
 <Frame>
-  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/3670d1b8-e760-4dca-80ca-ca2eaf361f65.png?x-oss-process=image/format,webp" alt="Integrate with Shoplazza" />
+  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/3670d1b8-e760-4dca-80ca-ca2eaf361f65.png?x-oss-process=image/format,webp" alt="在 Shoplazza 页面模板中启用并配置已集成的应用。" />
 </Frame>
 
-完成配置后，保存主题并发布到线上。至此，你已完成 Meowgic 应用与 Shoplazza 店铺的集成。
+完成配置后，先按下方检查清单预览主题，确认效果和原有功能，再保存并发布主题。
 
 返回 Meowgic 集成页面后，你可以查看当前应用版本下的所有集成记录及对应的修改记录。
 
 <Frame>
-  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/9007bdf4-3383-4354-8b89-bdd6ed592fd1.png?x-oss-process=image/format,webp" alt="Integrate with Shoplazza" />
+  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/9007bdf4-3383-4354-8b89-bdd6ed592fd1.png?x-oss-process=image/format,webp" alt="查看当前版本的 Shoplazza 集成和修改记录。" />
 </Frame>
 
-## 小技巧
+## 预览、检查与发布主题
+
+在 Shoplazza 主题编辑器和店铺预览中检查：
+
+- 应用是否出现在正确的页面模板和位置。
+- 应用设置、主要交互和移动端展示是否符合要求。
+- 商品选项、图片上传或加入购物车等相关流程是否能完成。
+- 原有导航、商品展示、购物车和自定义内容是否正常。
+
+确认检查通过后，再保存并发布主题。发布 Meowgic 应用和发布店铺主题是两个动作。
+
+<Check>
+  在店铺前台打开目标页面，可以看到并使用该功能，才表示主题中的功能已经对顾客生效。
+</Check>
+
+## 更新与管理
+
+修改应用后，先预览并重新发布应用。在集成页面核对已发布版本、目标店铺和主题，再完成该版本的集成。自动集成使用已连接的店铺和主题；手动集成需要下载、上传更新后的主题文件，并重新检查和发布。
+
+不要只根据编辑器中的最新代码判断店铺已经更新。请结合集成记录和店铺前台效果确认目标版本已生效。
+
+### 在集成页面继续调整
 
 - 如果在店铺中配置 Meowgic 应用时遇到问题，或需要进一步调整，可以直接在集成页面告诉 Meowgic AI 你的问题或需求，它会自动完成修改。只有当应用的管理后台或核心功能发生较大变更时，才需要返回应用编辑页面进行调整。
 - 如果你的 Meowgic 应用涉及商品相关场景，例如颜色选项、在线定制器或礼品功能，系统会根据你在应用编辑阶段提出的要求自动完成集成。完成后，你还可以继续向 Meowgic AI 提出更多需求，例如在加入购物车时携带指定参数，或调整购物车的样式与交互逻辑，Meowgic AI 都可以直接协助完成。
 - 你还可以尝试 Meowgic AI 来设计你的主题。
 - 更多功能与应用场景，等待你进一步探索。
+
+## 常见问题
+
+<AccordionGroup>
+  <Accordion title="我只想使用 Task，也需要先创建应用吗？">
+    不需要。安装 Meowgic 并确认目标店铺可用后，就可以开始需要真实店铺信息的 Task。根据你提供的资料进行规划时，也可以不连接店铺直接开始。
+  </Accordion>
+  <Accordion title="安装 Meowgic 后，创建的应用会自动出现在店铺里吗？">
+    不会。安装 Meowgic 用于连接店铺。Section、Block 等店铺前台功能还需要发布应用、集成到主题，并在对应页面模板中完成配置和测试。
+  </Accordion>
+  <Accordion title="连接店铺会让 Task 自动修改数据吗？">
+    不会。Task 可以读取和分析授权范围内的信息；需要修改店铺数据时，会先展示准备修改的内容，由你确认后执行。
+  </Accordion>
+  <Accordion title="编辑应用后，店铺会立即使用新版本吗？">
+    不要把编辑器中的最新代码视为店铺已更新。重新发布应用后，还需要核对并完成对应版本的主题集成，再检查店铺前台效果。
+  </Accordion>
+</AccordionGroup>
+
+## 故障排查
+
+<AccordionGroup>
+  <Accordion title="安装后，Task 中找不到目标店铺">
+    如果平台后台已经安装 Meowgic，但 Task 中无法选择店铺，先确认安装时选择的店铺，以及自动打开的 Meowgic 标签页所使用的账号。已经登录时，店铺信息同步到当前账号。
+
+    再检查平台后台是否显示 Meowgic 已安装。不要先删除应用或重新安装。如果仍无法选择店铺，请向支持提供平台、店铺名称、安装完成页面和当前连接状态的截图。不要发送密码或授权令牌。
+  </Accordion>
+  <Accordion title="应用完成集成，但店铺页面没有显示功能">
+    先核对目标店铺、集成版本、主题和页面模板，再检查功能是否已启用，主题是否保存并发布。使用目标主题的预览检查，不要只查看 Meowgic 应用预览。
+
+    如果仍未显示，请向支持提供应用版本、集成记录、目标主题和页面模板，以及主题预览截图。
+  </Accordion>
+</AccordionGroup>

@@ -1,36 +1,45 @@
 ---
-title: "Integrate your Meowgic app with Shoplazza"
+title: "Connect your Shoplazza store and integrate apps"
 sidebarTitle: "Shoplazza"
 icon: "https://assets.staticmeow.com/meowgic/static/images/20260707/4ece11b0-94d8-40ef-a6d3-df15d9716116.svg"
-description: "Learn how to integrate your Meowgic app into a Shoplazza store and complete setup and configuration."
+description: "Install Meowgic from the Shoplazza App Store and connect your store. You can use Task for store operations or integrate apps you create into your theme."
 ---
 
 import { ZoomableImage } from "/snippets/zoomable-image.jsx";
 
-<Frame>
-  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/7fabe3f9-591d-47e0-8b48-9ea1d32579e1.png?x-oss-process=image/format,webp" alt="Integrate a Meowgic app with Shoplazza" />
-</Frame>
+## Why connect your store first
+
+We strongly recommend installing Meowgic before starting store-related work. Once connected, you can:
+
+- Use **Task** to review orders, products, and inventory, inspect your theme, and apply authorized changes after confirming what will change.
+- Use **Apps** to create store features, then follow the second part of this guide to integrate them into your theme.
+
+For example, an operator can ask Task to analyze orders, while a personalized-product seller can create a product options Block and add it to a product page. You can start directly with Tools or use Task to plan from information you provide.
+
+## Install Meowgic and connect your store {#connect-store}
+
+Have your Shoplazza store account ready and confirm that you have permission to install apps. We recommend signing in to the Meowgic account you want to use before installation, so the store information syncs to that account. If the store is already connected, select it in Task without installing Meowgic again.
 
 <div class="w-full border mt-10 rounded-2xl p-6">
   <div class="w-full flex gap-5 items-start">
-    <img 
-    src="https://assets.staticmeow.com/meowgic/static/images/20260813/d7038933-b406-41b8-97f0-3de6edcfd6b0.png?x-oss-process=image/format,webp" 
-    class="w-16 h-16 shirink-0 border rounded-2xl shadow-xs m-0" alt="Integrate with Shoplazza" 
+    <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260813/d7038933-b406-41b8-97f0-3de6edcfd6b0.png?x-oss-process=image/format,webp"
+    class="w-16 h-16 shirink-0 border rounded-2xl shadow-xs m-0" alt="Meowgic app icon to identify the app to install."
     style={{ borderColor: "oklch(86.9% 0.005 56.366)" }}
     noZoom />
     <div class="flex-1 flex flex-col gap-2">
-      <h3 class="text-xl font-semibold m-0" noAnchor>Meowgic: Build Store Features with AI</h3>
-      <p class="m-0 text-sm">Build the features your store actually needs using AI. Create Sections, Blocks, pages, tools, and lightweight apps, add them to your store theme, and update them anytime. No coding required.</p>
+      <p class="text-xl font-semibold m-0">Meowgic: Your AI commerce team</p>
+      <p class="m-0 text-sm">Connect your store so Task can work with real business information. Use Apps to create the features you need, then integrate storefront features into your theme.</p>
     </div>
   </div>
   <div class="border-t mt-6 pt-6 flex flex-col gap-5 md:flex-row">
-    <a href="https://appstore.shoplazza.com/listing/meowgic/" target="_blank" class="app-store-button app-shoplazza" style={{ flex: 1 }}>
+    <a href="https://appstore.shoplazza.com/listing/meowgic/?locale=en-US" target="_blank" class="app-store-button app-shoplazza" style={{ flex: 1 }}>
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
       <path d="M9.01992 21.56L3.13525 23L4.5687 13H8.34093C6.6057 12.44 5.17226 10.84 5.17226 8.51999C5.17226 5.72 7.2847 3.08 10.2271 3.08C12.0377 3.08 13.8484 4.2 14.4519 6.04L14.9801 2.44L20.8647 1L19.3559 11H15.5836C17.3188 11.56 18.7523 13.16 18.7523 15.48C18.7523 18.28 16.6398 20.92 13.6975 20.92C11.8868 20.92 10.0761 19.8 9.47257 17.96L9.01992 21.56Z" fill="#ffffff"/>
       </svg>
 
       <div class="flex-1 flex flex-col">
-        <p class="m-0 text-sm text-white">Find Meowgic on</p>
+        <p class="m-0 text-sm text-white">Install Meowgic and connect your store</p>
         <p class="m-0 text-xl text-white">Shoplazza App Store</p>
       </div>
     </a>
@@ -43,7 +52,57 @@ import { ZoomableImage } from "/snippets/zoomable-image.jsx";
   </div>
 </div>
 
-## Prepare your app
+<Steps>
+  <Step title="Confirm the store and open the installation page">
+    Sign in to your Shoplazza admin and confirm which store you want to connect. Open the **Shoplazza App Store** link above, or search for Meowgic in your platform's App Store.
+  </Step>
+  <Step title="Install Meowgic">
+    Click **Add app**, then click **Install app** on the installation page. Review the permissions listed on the installation page and follow its prompts to authorize and complete installation.
+  </Step>
+  <Step title="Check the account in the Meowgic tab that opens">
+    After you complete installation in your store admin, the browser automatically opens a Meowgic tab. If you are already signed in to Meowgic, the store information syncs automatically to that account.
+
+    If you are not signed in, sign in first, then check the store connection.
+  </Step>
+  <Step title="Confirm that the store is available">
+    In Meowgic, click **New task**, describe the store information you want to read or analyze, and select the Shoplazza store where you installed Meowgic. Check that its name and platform are correct. To check the connection, you can ask Task to read information without changing store data.
+  </Step>
+</Steps>
+
+<Check>
+  When you can select the target Shoplazza store in Task, you can continue working with that store.
+</Check>
+
+<Note>
+  Installing Meowgic connects your store. It does not automatically add features you create to your theme. You do not need to create, publish, or integrate an app to use Task.
+</Note>
+
+## Choose what to do next
+
+<CardGroup cols={2}>
+  <Card title="Start using Task" icon="list-checks" href="/tips-tricks/how-to-use-task">
+    Ask your AI team to analyze or work on store tasks. If you only need Task, you can start here.
+  </Card>
+  <Card title="Integrate an app you created" icon="blocks" href="#integrate-app">
+    Already created a storefront feature that shoppers should use? Continue with the theme integration guide below.
+  </Card>
+</CardGroup>
+
+## Integrate an app into your theme {#integrate-app}
+
+The following steps apply when you have created an app and want to add a Section, Block, or similar feature to Shoplazza storefront pages. Dashboards and internal tools that run independently do not need to be added to a theme.
+
+Have the published app version and target theme ready. After editing an app, publish it again before integrating that version into your theme.
+
+<Tip>
+  Integrate and test in a draft or duplicated theme first. For manual integration, keep the original theme file. Before uploading or publishing the updated theme, check that existing customizations are preserved.
+</Tip>
+
+<Frame>
+  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/7fabe3f9-591d-47e0-8b48-9ea1d32579e1.png?x-oss-process=image/format,webp" alt="Integrate a Meowgic app with Shoplazza" />
+</Frame>
+
+### Prepare your app
 
 Open your app, click **Publish** in the upper-right corner, and select **Install to your store**.
 
@@ -62,18 +121,20 @@ Select **Shoplazza** as the target platform to begin the integration process.
   <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/3242a69e-76a9-41f5-80d0-2781b7165990.png?x-oss-process=image/format,webp" alt="Select Shoplazza as the integration platform" />
 </Frame>
 
-## Start integration
+### Choose an integration method
 
 Meowgic supports two integration methods:
 
-* **Automatic integration:** If your Meowgic account is connected to a Shoplazza store, you can select a target theme and let Meowgic automatically add the app and apply future updates.
+* **Automatic integration:** If your Meowgic account is connected to a Shoplazza store, you can select a target theme and let Meowgic complete the app theme integration.
 * **Manual integration:** Download your theme file from Shoplazza and upload it to Meowgic. Meowgic AI will integrate the app into the theme automatically. Once complete, download the updated theme file and import it back into your Shoplazza store.
 
-### Automatic integration (coming soon)
+#### Automatic integration
 
-<Note>This feature is coming soon.</Note>
+On the app integration page, select your connected Shoplazza store and target theme, then follow the prompts to complete integration. Open the associated page template in the Shoplazza theme editor, enable and configure the feature, then preview it using the checklist below.
 
-### Manual integration
+For manual integration, continue with the theme file workflow below.
+
+#### Manual integration
 
 On the integration page, you can view the current app version and target platform. You can also switch between versions to review their integration history.
 
@@ -129,7 +190,7 @@ After the theme file has been uploaded, click **Edit theme**, then open the page
 <Warning>
 When you create or edit an app, Meowgic AI uses your conversation and app details to determine the most suitable location in the theme.
 
-For example, if you asked for a countdown timer to appear in the product information area, the app will only be available within product page templates. 
+For example, if you asked for a countdown timer to appear in the product information area, the app will only be available within product page templates.
 </Warning>
 
 After opening the relevant page template, the Meowgic app will already be embedded in the theme. Select the app to enable it and begin configuring its settings.
@@ -138,7 +199,7 @@ After opening the relevant page template, the Meowgic app will already be embedd
   <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/3670d1b8-e760-4dca-80ca-ca2eaf361f65.png?x-oss-process=image/format,webp" alt="Enable and configure the Meowgic app in Shoplazza" />
 </Frame>
 
-Once the configuration is complete, save the theme and publish it to your live store. Your Meowgic app is now integrated with Shoplazza.
+After configuration, preview the theme using the checklist below. Confirm that the feature and existing store functions work before saving and publishing the theme.
 
 Return to the Meowgic integration page to view all integrations and modification records associated with the current app version.
 
@@ -146,9 +207,62 @@ Return to the Meowgic integration page to view all integrations and modification
   <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/9007bdf4-3383-4354-8b89-bdd6ed592fd1.png?x-oss-process=image/format,webp" alt="View Shoplazza integration and modification history" />
 </Frame>
 
-## Tips
+## Preview, test, and publish the theme
+
+Check the following in the Shoplazza theme editor and store preview:
+
+- The feature appears in the correct page template and location.
+- Settings, main interactions, and mobile layout work as intended.
+- Relevant flows, such as product options, image uploads, or add-to-cart, complete successfully.
+- Existing navigation, product displays, cart behavior, and customizations still work.
+
+After these checks pass, save and publish the theme. Publishing a Meowgic app and publishing a store theme are separate actions.
+
+<Check>
+  Open the target storefront page and confirm that you can see and use the feature. This verifies that it is available to shoppers in that theme.
+</Check>
+
+## Update and manage
+
+After editing an app, preview and publish it again. Check the published version, target store, and theme on the integration page, then complete integration for that version. Automatic integration uses the connected store and theme. Manual integration requires downloading and uploading the updated theme file, then checking and publishing it again.
+
+Do not treat the latest code in the editor as confirmation that your store is updated. Check the integration records and storefront behavior to confirm the intended version is active.
+
+### Continue adjusting the integration
 
 * If you encounter an issue while configuring the Meowgic app in your store, or need to make further adjustments, describe the issue or request directly to Meowgic AI from the integration page. Meowgic AI can update the integration for you. You only need to return to the main app editor when making major changes to the app's admin system or core functionality.
 * If your app is related to products, such as color options, an online customizer, or gifting features, Meowgic will integrate it according to the requirements you provided while building the app. After the initial integration, you can continue asking Meowgic AI to add cart parameters, modify the cart design, or adjust its interaction logic.
 * You can also use Meowgic AI to customize and redesign your store theme.
 * Explore more features and integration possibilities as you continue building with Meowgic.
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Do I need to create an app if I only want to use Task?">
+    No. Install Meowgic and confirm that your target store is available, then start a Task that needs real store information. You can also plan from information you provide without connecting a store.
+  </Accordion>
+  <Accordion title="Does installing Meowgic add the apps I create to my storefront?">
+    No. Installing Meowgic connects your store. Storefront features such as Sections and Blocks also require app publishing, theme integration, configuration, and testing in the associated page template.
+  </Accordion>
+  <Accordion title="Will Task change store data automatically after I connect?">
+    No. Task can read and analyze information within the permissions you grant. Before changing store data, it shows the proposed changes and waits for your confirmation.
+  </Accordion>
+  <Accordion title="Does my store immediately use the latest version after I edit an app?">
+    Do not treat the latest code in the editor as confirmation that your store is updated. Publish the app again, check and complete theme integration for that version, then verify the storefront behavior.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The target store is missing in Task after installation">
+    If Meowgic is installed in your platform admin but the store is unavailable in Task, check which store you installed it in and which account is used in the Meowgic tab that opened. If you were already signed in, the store information syncs to that account.
+
+    Check that your platform admin shows Meowgic as installed. Avoid deleting or reinstalling the app as the first step. If the store remains unavailable, send support the platform, store name, and screenshots of the completed installation and current connection state. Do not send passwords or authorization tokens.
+  </Accordion>
+  <Accordion title="The feature is missing from storefront pages after integration">
+    Check the target store, integrated version, theme, and page template. Confirm that the feature is enabled and that the theme is saved and published. Use the target theme's preview, not only the Meowgic app preview.
+
+    If the feature is still missing, send support the app version, integration records, target theme and page template, and a theme preview screenshot.
+  </Accordion>
+</AccordionGroup>

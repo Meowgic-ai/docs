@@ -1,26 +1,35 @@
 ---
-title: "Integrate your Meowgic app with SHOPLINE"
+title: "Connect your SHOPLINE store and integrate apps"
 sidebarTitle: "SHOPLINE"
 icon: "https://assets.staticmeow.com/meowgic/static/images/20260707/1b95ca14-7b44-484e-83f7-b3652fccef4e.svg"
-description: "Learn how to integrate your Meowgic app into a SHOPLINE store and complete setup and configuration."
+description: "Install Meowgic from the SHOPLINE App Store and connect your store. You can use Task for store operations or integrate apps you create into your theme."
 ---
 
 import { ZoomableImage } from "/snippets/zoomable-image.jsx";
 
-<Frame>
-  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260814/9f3c5cb9-9a6d-4f35-928c-acc2ff774ad8.png?x-oss-process=image/format,webp" alt="Integrate with SHOPLINE" />
-</Frame>
+## Why connect your store first
+
+We strongly recommend installing Meowgic before starting store-related work. Once connected, you can:
+
+- Use **Task** to review orders, products, and inventory, inspect your theme, and apply authorized changes after confirming what will change.
+- Use **Apps** to create store features, then follow the second part of this guide to integrate them into your theme.
+
+For example, an operator can ask Task to analyze orders, while a personalized-product seller can create a product options Block and add it to a product page. You can start directly with Tools or use Task to plan from information you provide.
+
+## Install Meowgic and connect your store {#connect-store}
+
+Have your SHOPLINE store account ready and confirm that you have permission to install apps. We recommend signing in to the Meowgic account you want to use before installation, so the store information syncs to that account. If the store is already connected, select it in Task without installing Meowgic again.
 
 <div class="w-full border mt-10 rounded-2xl p-6">
   <div class="w-full flex gap-5 items-start">
-    <img 
-    src="https://assets.staticmeow.com/meowgic/static/images/20260813/d7038933-b406-41b8-97f0-3de6edcfd6b0.png?x-oss-process=image/format,webp" 
-    class="w-16 h-16 shirink-0 border rounded-2xl shadow-xs m-0" alt="Integrate with SHOPLINE" 
+    <img
+    src="https://assets.staticmeow.com/meowgic/static/images/20260813/d7038933-b406-41b8-97f0-3de6edcfd6b0.png?x-oss-process=image/format,webp"
+    class="w-16 h-16 shirink-0 border rounded-2xl shadow-xs m-0" alt="Meowgic app icon to identify the app to install."
     style={{ borderColor: "oklch(86.9% 0.005 56.366)" }}
     noZoom />
     <div class="flex-1 flex flex-col gap-2">
-      <h3 class="text-xl font-semibold m-0" noAnchor>Meowgic: AI Store Builder</h3>
-      <p class="m-0 text-sm">Create the exact features your store needs with AI. Build sections, blocks, pages, tools, and simple apps, then add them to your theme, customize anytime, and launch without coding.</p>
+      <p class="text-xl font-semibold m-0">Meowgic: Your AI commerce team</p>
+      <p class="m-0 text-sm">Connect your store so Task can work with real business information. Use Apps to create the features you need, then integrate storefront features into your theme.</p>
     </div>
   </div>
   <div class="border-t mt-6 pt-6 flex flex-col gap-5 md:flex-row">
@@ -30,7 +39,7 @@ import { ZoomableImage } from "/snippets/zoomable-image.jsx";
       <path d="M12 1.99999C10.0218 1.99999 8.0881 2.58669 6.44342 3.68587C4.79874 4.78504 3.51701 6.34731 2.76041 8.17505C2.0038 10.0028 1.80624 12.0139 2.19274 13.9539C2.57923 15.894 3.53244 17.6758 4.93187 19.074C6.33121 20.4722 8.11374 21.4239 10.0541 21.8089C11.9945 22.1938 14.0054 21.9946 15.8325 21.2365C17.6596 20.4783 19.2208 19.1953 20.3187 17.5497C21.4165 15.9042 22.0017 13.9699 22 11.9918C22 10.679 21.7413 9.37901 21.2386 8.16621C20.736 6.95341 19.9992 5.85156 19.0705 4.92363C18.1419 3.99569 17.0394 3.25987 15.8262 2.75822C14.613 2.25657 13.3128 1.99891 12 1.99999ZM10.0508 20.7305L8.59291 15.1285L13.2776 20.8616C12.8543 20.9207 12.4275 20.9508 12 20.9516C11.3441 20.9496 10.6904 20.8755 10.0508 20.7305ZM8.41279 14.3014L17.0942 19.371C16.0814 20.0679 14.9354 20.5476 13.7281 20.7797L8.41279 14.3014ZM17.4218 19.1335L8.28175 13.8018L6.85668 8.33906C6.81649 8.17733 6.84117 8.00632 6.9253 7.8625C7.00944 7.71867 7.14649 7.61342 7.30709 7.5692L12.7126 6.05405L20.7797 10.2883C20.8953 10.8625 20.9528 11.4469 20.9517 12.0327C20.9428 13.4055 20.6157 14.7574 19.9961 15.9824C19.3766 17.2073 18.4813 18.272 17.3809 19.0926L17.4218 19.1335Z" fill="#ffffff"/>
       </svg>
       <div class="flex-1 flex flex-col">
-        <p class="m-0 text-sm text-white">Find Meowgic on</p>
+        <p class="m-0 text-sm text-white">Install Meowgic and connect your store</p>
         <p class="m-0 text-xl text-white">SHOPLINE App Store</p>
       </div>
     </a>
@@ -43,37 +52,87 @@ import { ZoomableImage } from "/snippets/zoomable-image.jsx";
   </div>
 </div>
 
-## Prepare your app
+<Steps>
+  <Step title="Confirm the store and open the installation page">
+    Sign in to your SHOPLINE admin and confirm which store you want to connect. Open the **SHOPLINE App Store** link above, or search for Meowgic in your platform's App Store.
+  </Step>
+  <Step title="Install Meowgic">
+    Click **Install**. Review the permissions listed on the installation page and follow its prompts to authorize and complete installation.
+  </Step>
+  <Step title="Check the account in the Meowgic tab that opens">
+    After you complete installation in your store admin, the browser automatically opens a Meowgic tab. If you are already signed in to Meowgic, the store information syncs automatically to that account.
+
+    If you are not signed in, sign in first, then check the store connection.
+  </Step>
+  <Step title="Confirm that the store is available">
+    In Meowgic, click **New task**, describe the store information you want to read or analyze, and select the SHOPLINE store where you installed Meowgic. Check that its name and platform are correct. To check the connection, you can ask Task to read information without changing store data.
+  </Step>
+</Steps>
+
+<Check>
+  When you can select the target SHOPLINE store in Task, you can continue working with that store.
+</Check>
+
+<Note>
+  Installing Meowgic connects your store. It does not automatically add features you create to your theme. You do not need to create, publish, or integrate an app to use Task.
+</Note>
+
+## Choose what to do next
+
+<CardGroup cols={2}>
+  <Card title="Start using Task" icon="list-checks" href="/tips-tricks/how-to-use-task">
+    Ask your AI team to analyze or work on store tasks. If you only need Task, you can start here.
+  </Card>
+  <Card title="Integrate an app you created" icon="blocks" href="#integrate-app">
+    Already created a storefront feature that shoppers should use? Continue with the theme integration guide below.
+  </Card>
+</CardGroup>
+
+## Integrate an app into your theme {#integrate-app}
+
+The following steps apply when you have created an app and want to add a Section, Block, or similar feature to SHOPLINE storefront pages. Dashboards and internal tools that run independently do not need to be added to a theme.
+
+Have the published app version and target theme ready. After editing an app, publish it again before integrating that version into your theme.
+
+<Tip>
+  Integrate and test in a draft or duplicated theme first. For manual integration, keep the original theme file. Before uploading or publishing the updated theme, check that existing customizations are preserved.
+</Tip>
+
+<Frame>
+  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260814/9f3c5cb9-9a6d-4f35-928c-acc2ff774ad8.png?x-oss-process=image/format,webp" alt="SHOPLINE app theme integration illustration for the stage after connecting a store." />
+</Frame>
+
+### Prepare your app
 
 Open your app, click **Publish** in the upper-right corner, then select **Install to your store**.
 
 <Columns cols={2}>
   <Frame>
-    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/24b0a8c4-4bd9-46d0-97d9-8c50fd3ba0f2.png?x-oss-process=image/format,webp" alt="Integrate with SHOPLINE" />
+    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/24b0a8c4-4bd9-46d0-97d9-8c50fd3ba0f2.png?x-oss-process=image/format,webp" alt="Publish the Meowgic app before theme integration." />
   </Frame>
   <Frame>
-    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/5ef3030b-bfbd-4475-9619-6da412296070.png?x-oss-process=image/format,webp" alt="Integrate with SHOPLINE" />
+    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/5ef3030b-bfbd-4475-9619-6da412296070.png?x-oss-process=image/format,webp" alt="Choose to install the published Meowgic app to a store." />
   </Frame>
 </Columns>
 
 Choose **SHOPLINE** as the target platform to start the integration flow.
 
 <Frame>
-  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/98e9cdcd-9c40-43a0-9f0f-a0c4ee8c48bc.png?x-oss-process=image/format,webp" alt="Integrate with SHOPLINE" />
+  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/98e9cdcd-9c40-43a0-9f0f-a0c4ee8c48bc.png?x-oss-process=image/format,webp" alt="Select SHOPLINE as the target platform for app integration." />
 </Frame>
 
-## Start integration
+### Choose an integration method
 
 You can integrate your app in two ways:
-- Automatic integration: If your Meowgic account is already connected to your SHOPLINE store, you can pick a target theme and let Meowgic handle installation and future updates automatically.
+- Automatic integration: If your Meowgic account is already connected to your SHOPLINE store, you can pick a target theme and let Meowgic complete the app theme integration.
 - Manual integration: Download your theme file from SHOPLINE and upload it to Meowgic. Meowgic AI applies the integration, and you then download the updated theme file and upload it back to SHOPLINE.
 
-### Automatic integration
+#### Automatic integration
 
 Choose a store that is already linked to your account.
 
 <Frame>
-  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260813/0a6e48e8-ee97-431a-ac6e-56ca24df9aac.png?x-oss-process=image/format,webp" alt="Integrate with SHOPLINE" />
+  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260813/0a6e48e8-ee97-431a-ac6e-56ca24df9aac.png?x-oss-process=image/format,webp" alt="Select a connected SHOPLINE store for automatic integration." />
 </Frame>
 
 Select the theme you want to update in that store.
@@ -81,61 +140,61 @@ Select the theme you want to update in that store.
 <Note>Right now, you can only edit draft themes. Direct updates to live themes are not supported.</Note>
 
 <Frame>
-  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260813/2fd606c1-f30b-48f1-876e-3bd20dbf8fba.png?x-oss-process=image/format,webp" alt="Integrate with SHOPLINE" />
+  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260813/2fd606c1-f30b-48f1-876e-3bd20dbf8fba.png?x-oss-process=image/format,webp" alt="Select the target theme in the SHOPLINE store." />
 </Frame>
 
 After the integration finishes, click **Edit theme** to open the SHOPLINE theme editor directly.
 
 <Frame>
-  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260813/7ffa692b-25e0-4525-8e90-ceee1dcf3f46.png?x-oss-process=image/format,webp" alt="Integrate with SHOPLINE" />
+  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260813/7ffa692b-25e0-4525-8e90-ceee1dcf3f46.png?x-oss-process=image/format,webp" alt="Open the SHOPLINE theme editor after integration completes." />
 </Frame>
 
 When you open the page template linked to this app, the Meowgic app is already embedded by default. Select it to enable it and start configuring.
 
 <Frame>
-  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/7674f9eb-4b0f-4f84-816c-4aa76e4bb321.png?x-oss-process=image/format,webp" alt="Integrate with SHOPLINE" />
+  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/7674f9eb-4b0f-4f84-816c-4aa76e4bb321.png?x-oss-process=image/format,webp" alt="Enable and configure the Meowgic app in its page template." />
 </Frame>
 
 
-### Manual integration
+#### Manual integration
 
 On the integration page, you can view the current app version and target platform. You can also switch versions to review their integration history.
 
 <Frame>
-  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/7d3a6477-db3e-4b29-ba27-f9e6e26cb905.png?x-oss-process=image/format,webp" alt="Integrate with SHOPLINE" />
+  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/7d3a6477-db3e-4b29-ba27-f9e6e26cb905.png?x-oss-process=image/format,webp" alt="Review the app version, target platform, and integration records." />
 </Frame>
 
 Go to your SHOPLINE admin and download your store theme file.
 
 <Frame>
-  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/5da6800d-52a2-4b7f-ab59-9f2993c4712b.png?x-oss-process=image/format,webp" alt="Integrate with SHOPLINE" />
+  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/5da6800d-52a2-4b7f-ab59-9f2993c4712b.png?x-oss-process=image/format,webp" alt="Download the target theme file from the SHOPLINE admin." />
 </Frame>
 
 Upload the theme file, then click **Start** to begin integration.
 
 <Columns cols={2}>
   <Frame>
-    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/08723166-6b39-4024-bfe1-7121da7fdd4d.png?x-oss-process=image/format,webp" alt="Integrate with SHOPLINE" />
+    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/08723166-6b39-4024-bfe1-7121da7fdd4d.png?x-oss-process=image/format,webp" alt="Upload the SHOPLINE theme file to Meowgic." />
   </Frame>
   <Frame>
-    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/c042a6a1-738e-496d-84a6-0860c41fa2c2.png?x-oss-process=image/format,webp" alt="Integrate with SHOPLINE" />
+    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/c042a6a1-738e-496d-84a6-0860c41fa2c2.png?x-oss-process=image/format,webp" alt="Start SHOPLINE theme integration in Meowgic." />
   </Frame>
 </Columns>
 
 Meowgic AI analyzes your theme file and embeds the app for you. When integration is complete, it generates an updated theme file. Click **Download theme file** to save it.
 
 <Frame>
-  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/bcaea448-b52a-455b-9d91-1193c9d8483e.png?x-oss-process=image/format,webp" alt="Integrate with SHOPLINE" />
+  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/bcaea448-b52a-455b-9d91-1193c9d8483e.png?x-oss-process=image/format,webp" alt="Download the updated SHOPLINE theme file after integration." />
 </Frame>
 
 Return to SHOPLINE and upload the updated theme file.
 
 <Columns cols={2}>
   <Frame>
-    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/0948ff39-ca3f-4ba3-b475-b85f57dc7668.png?x-oss-process=image/format,webp" alt="Integrate with SHOPLINE" />
+    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/0948ff39-ca3f-4ba3-b475-b85f57dc7668.png?x-oss-process=image/format,webp" alt="Upload the updated theme file in the SHOPLINE admin." />
   </Frame>
   <Frame>
-    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/b36748e8-94c2-4fb1-9e59-98df78d9fa5a.png?x-oss-process=image/format,webp" alt="Integrate with SHOPLINE" />
+    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/b36748e8-94c2-4fb1-9e59-98df78d9fa5a.png?x-oss-process=image/format,webp" alt="Confirm that the updated theme is imported into SHOPLINE." />
   </Frame>
 </Columns>
 
@@ -143,10 +202,10 @@ After the upload finishes, click **Edit theme**, then locate the page template t
 
 <Columns cols={2}>
   <Frame>
-    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/76ff6bdb-ea90-4a7d-8866-1634c5429b78.png?x-oss-process=image/format,webp" alt="Integrate with SHOPLINE" />
+    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/76ff6bdb-ea90-4a7d-8866-1634c5429b78.png?x-oss-process=image/format,webp" alt="Edit the imported theme in the SHOPLINE admin." />
   </Frame>
   <Frame>
-    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/a0d3b05f-ff93-4253-88ff-56d6a63bd74d.png?x-oss-process=image/format,webp" alt="Integrate with SHOPLINE" />
+    <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/a0d3b05f-ff93-4253-88ff-56d6a63bd74d.png?x-oss-process=image/format,webp" alt="Open the page template associated with the Meowgic app." />
   </Frame>
 </Columns>
 
@@ -157,21 +216,73 @@ When you create or edit an app, Meowgic AI uses both your conversation context a
 Once you open the app's template, the Meowgic app is already embedded by default. Select it to enable it and start configuration.
 
 <Frame>
-  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/7674f9eb-4b0f-4f84-816c-4aa76e4bb321.png?x-oss-process=image/format,webp" alt="Integrate with SHOPLINE" />
+  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/7674f9eb-4b0f-4f84-816c-4aa76e4bb321.png?x-oss-process=image/format,webp" alt="Enable and configure the integrated app in the SHOPLINE page template." />
 </Frame>
 
-After setup, save the theme and publish it. Your Meowgic app is now integrated with your SHOPLINE store.
+After configuration, preview the theme using the checklist below. Confirm that the feature and existing store functions work before saving and publishing the theme.
 
 Back on the Meowgic integration page, you can review all integration runs and related change records for the current app version.
 
 <Frame>
-  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/a8b29238-c8bc-4205-93b7-7ee82ed2cc17.png?x-oss-process=image/format,webp" alt="Integrate with SHOPLINE" />
+  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20260707/a8b29238-c8bc-4205-93b7-7ee82ed2cc17.png?x-oss-process=image/format,webp" alt="Review SHOPLINE integration and modification records for the current app version." />
 </Frame>
 
-## Tips
+## Preview, test, and publish the theme
+
+Check the following in the SHOPLINE theme editor and store preview:
+
+- The feature appears in the correct page template and location.
+- Settings, main interactions, and mobile layout work as intended.
+- Relevant flows, such as product options, image uploads, or add-to-cart, complete successfully.
+- Existing navigation, product displays, cart behavior, and customizations still work.
+
+After these checks pass, save and publish the theme. Publishing a Meowgic app and publishing a store theme are separate actions.
+
+<Check>
+  Open the target storefront page and confirm that you can see and use the feature. This verifies that it is available to shoppers in that theme.
+</Check>
+
+## Update and manage
+
+After editing an app, preview and publish it again. Check the published version, target store, and theme on the integration page, then complete integration for that version. Automatic integration uses the connected store and theme. Manual integration requires downloading and uploading the updated theme file, then checking and publishing it again.
+
+Do not treat the latest code in the editor as confirmation that your store is updated. Check the integration records and storefront behavior to confirm the intended version is active.
+
+### Continue adjusting the integration
 
 - If you run into issues while configuring your Meowgic app in SHOPLINE, or want further adjustments, describe what you need directly on the integration page. Meowgic AI can apply the changes automatically. You usually only need to return to the app editor when the app's admin settings or core behavior changes significantly.
 - If your app covers product-related scenarios, such as color options, product customization, or gift features, the system integrates based on the requirements you defined during app creation. After integration, you can keep refining behavior with Meowgic AI, such as attaching custom parameters on add-to-cart or adjusting cart styles and interactions.
 - You can also use Meowgic AI to design your theme.
 - Explore more features and use cases as your store evolves.
 
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Do I need to create an app if I only want to use Task?">
+    No. Install Meowgic and confirm that your target store is available, then start a Task that needs real store information. You can also plan from information you provide without connecting a store.
+  </Accordion>
+  <Accordion title="Does installing Meowgic add the apps I create to my storefront?">
+    No. Installing Meowgic connects your store. Storefront features such as Sections and Blocks also require app publishing, theme integration, configuration, and testing in the associated page template.
+  </Accordion>
+  <Accordion title="Will Task change store data automatically after I connect?">
+    No. Task can read and analyze information within the permissions you grant. Before changing store data, it shows the proposed changes and waits for your confirmation.
+  </Accordion>
+  <Accordion title="Does my store immediately use the latest version after I edit an app?">
+    Do not treat the latest code in the editor as confirmation that your store is updated. Publish the app again, check and complete theme integration for that version, then verify the storefront behavior.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The target store is missing in Task after installation">
+    If Meowgic is installed in your platform admin but the store is unavailable in Task, check which store you installed it in and which account is used in the Meowgic tab that opened. If you were already signed in, the store information syncs to that account.
+
+    Check that your platform admin shows Meowgic as installed. Avoid deleting or reinstalling the app as the first step. If the store remains unavailable, send support the platform, store name, and screenshots of the completed installation and current connection state. Do not send passwords or authorization tokens.
+  </Accordion>
+  <Accordion title="The feature is missing from storefront pages after integration">
+    Check the target store, integrated version, theme, and page template. Confirm that the feature is enabled and that the theme is saved and published. Use the target theme's preview, not only the Meowgic app preview.
+
+    If the feature is still missing, send support the app version, integration records, target theme and page template, and a theme preview screenshot.
+  </Accordion>
+</AccordionGroup>
