@@ -58,6 +58,12 @@
                   "integrations/shopline",
                   "integrations/shoplazza"
                 ]
+              },
+              {
+                "group": "External tools",
+                "pages": [
+                  "integrations/mcp-connectors"
+                ]
               }
             ]
           },
@@ -137,6 +143,12 @@
                   "zh/integrations/shopify",
                   "zh/integrations/shopline",
                   "zh/integrations/shoplazza"
+                ]
+              },
+              {
+                "group": "外部工具",
+                "pages": [
+                  "zh/integrations/mcp-connectors"
                 ]
               }
             ]

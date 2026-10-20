@@ -1,0 +1,257 @@
+---
+title: "Meowgic MCP connectors: setup and Task workflows"
+sidebarTitle: "MCP Connectors"
+icon: "plug"
+description: "Connect external tools and business systems to Meowgic Tasks. Learn how to authorize services, use custom MCP connectors, and manage data access."
+keywords:
+  - Meowgic MCP connectors
+  - Model Context Protocol
+  - Meowgic Task integrations
+  - custom MCP server
+---
+
+Bring emails, documents, and business information into a [Meowgic Task](/tips-tricks/how-to-use-task). Use connected tools to analyze information, prepare content, and organize everyday e-commerce work within the permissions you grant.
+
+You can use connectors without connecting a store. If your task also needs store data, see the [integrations overview](/integrations/introduction).
+
+<Note>
+Check the connector directory in your account for available services and supported actions. The service examples on this page apply only when the required connectors are available and connected.
+</Note>
+
+## What are MCP connectors?
+
+Meowgic MCP connectors use Model Context Protocol (MCP) to connect external tools and business systems to Meowgic. They let your AI team retrieve information and perform supported actions in connected services as part of a Task, within the permissions you grant.
+
+Depending on the connector, Meowgic can search emails, read files, retrieve reports, or create and update content. Available actions depend on the connector’s capabilities, your account’s access rights, and the permissions you grant.
+
+## When to use connectors
+
+Use connectors when your task needs data or actions from the services you use. Common scenarios include:
+
+<CardGroup cols={2}>
+  <Card icon="mail" className="[&_[data-component-part=card-content]]:text-gray-600 dark:[&_[data-component-part=card-content]]:text-gray-400">
+    <p className="not-prose m-0 mb-1 font-semibold text-base text-gray-800 dark:text-white">Customer and supplier communication</p>
+    Turn customer and supplier emails, conversations, and attachments into follow-up lists and reply drafts.
+  </Card>
+  <Card icon="chart-no-axes-combined" className="[&_[data-component-part=card-content]]:text-gray-600 dark:[&_[data-component-part=card-content]]:text-gray-400">
+    <p className="not-prose m-0 mb-1 font-semibold text-base text-gray-800 dark:text-white">Performance analysis</p>
+    Summarize changes in accessible traffic, advertising, and business reports to identify performance trends and areas for improvement.
+  </Card>
+  <Card icon="search" className="[&_[data-component-part=card-content]]:text-gray-600 dark:[&_[data-component-part=card-content]]:text-gray-400">
+    <p className="not-prose m-0 mb-1 font-semibold text-base text-gray-800 dark:text-white">Product and market research</p>
+    Organize product, price, and competitor information from accessible websites into comparisons that support product and market decisions.
+  </Card>
+  <Card icon="palette" className="[&_[data-component-part=card-content]]:text-gray-600 dark:[&_[data-component-part=card-content]]:text-gray-400">
+    <p className="not-prose m-0 mb-1 font-semibold text-base text-gray-800 dark:text-white">Content and design</p>
+    Prepare product copy and campaign materials using product specifications, brand guidelines, and design references.
+  </Card>
+  <Card icon="clipboard-list" className="[&_[data-component-part=card-content]]:text-gray-600 dark:[&_[data-component-part=card-content]]:text-gray-400">
+    <p className="not-prose m-0 mb-1 font-semibold text-base text-gray-800 dark:text-white">Team operations</p>
+    Organize spreadsheets and documents, and turn campaign schedules into clear working plans.
+  </Card>
+  <Card icon="blocks" className="[&_[data-component-part=card-content]]:text-gray-600 dark:[&_[data-component-part=card-content]]:text-gray-400">
+    <p className="not-prose m-0 mb-1 font-semibold text-base text-gray-800 dark:text-white">Custom business systems</p>
+    Retrieve information from compatible finance, ERP, customer support, or other business systems to support daily reviews and follow-ups within the available tools and permissions.
+  </Card>
+</CardGroup>
+
+You can also start a Task using only the information you provide. Connect a service when work needs it.
+
+## Connect a service
+
+Before you start, have the account or access credentials required by the service. Some services also require a paid plan, API access, or administrator approval.
+
+<Steps>
+  <Step title="Find a service">
+    Open **Connectors** in the left sidebar. Search for a service by name or browse the connector cards.
+  </Step>
+  <Step title="Review the connector details">
+    Click a connector card to open its details. Read the description and **Example prompts** to see how you might use it in your work.
+  </Step>
+  <Step title="Connect your account">
+    Click **Connect** and follow the setup instructions. Depending on the service, you may need to sign in and approve permissions or provide an API key.
+  </Step>
+  <Step title="Check the connection">
+    Complete the setup, then [verify access in Task](#verify-access-in-task). If authorization expires or is revoked, reconnect the service.
+  </Step>
+</Steps>
+
+<Note>
+Each connector currently supports **one account at a time**. To switch accounts, disconnect the current account, then connect the new one.
+</Note>
+
+## Use connectors in a Task
+
+Meowgic uses the available connected tools to complete your request. A Task can work across multiple services when the required tools and permissions are available.
+
+<Steps>
+  <Step title="Start a Task and describe your goal">
+    Select **New task** and describe the work you want Meowgic to complete.
+  </Step>
+  <Step title="Specify the service, scope, and output">
+    Specify the connected service, the information to work with, and the result you need. For reports, include the account and date range. For documents or spreadsheets, provide a name or link when available.
+
+    For example, if Gmail is available and connected:
+
+    ```text wrap
+    View emails from the past two weeks in Gmail and generate a to-do list of important tasks and deadlines arranged by priority.
+    ```
+  </Step>
+  <Step title="Check the results and refine the request">
+    Review the results and ask for changes in the same Task.
+  </Step>
+</Steps>
+
+<Warning>
+If your request involves sending a Gmail message, Meowgic asks for your **explicit confirmation** before sending it. You can review and revise the message first.
+</Warning>
+
+### Verify access in Task
+
+When you first use a connector that provides tools for reading information, you can check access with a read-only request: name the service and ask Task to retrieve an email, document, or record you can check in the original service. Specify that it should only read information, without sending messages or changing records.
+
+Compare the result with the source to confirm that Task can access the information needed for this request. If Task reports an authorization or permissions error, check the connector setup and the permissions granted by the service.
+
+### Example: compare supplier quotations
+
+If Gmail is available and connected, give your Task a clear date range, the fields to extract, and the actions you want it to take:
+
+```text wrap
+Review supplier quotation emails in Gmail from the past two weeks.
+
+Create a comparison table with the supplier, product, quantity, quoted unit price and currency, delivery lead time, and questions that still need clarification. Include the email date and subject so I can check each quotation.
+
+Mark missing information as "Not provided". Do not infer prices or delivery times.
+
+Draft follow-up questions for each supplier. Do not send any messages or change records.
+```
+
+Review the table against the source emails, then ask for corrections or revised drafts in the same Task.
+
+## Custom MCP connectors
+
+Connect Meowgic to the systems your business uses by adding a compatible MCP server URL.
+
+Use custom connectors to work with finance, ERP, customer support, and other business systems that expose a compatible MCP service. Meowgic can retrieve information and perform supported actions through the tools provided by that server.
+
+Before you start, ask your service provider or system administrator for a compatible MCP server URL and any required authentication details.
+
+<Steps>
+  <Step title="Open Custom MCP and name the connection">
+    In **Connectors**, click **Custom MCP**. Enter a recognizable name in **Name**. The form also includes **Icon** and **Note (optional)** to help describe the connection.
+  </Step>
+  <Step title="Enter the MCP server URL">
+    In **MCP Server URL**, enter the address supplied by your service provider or system administrator.
+  </Step>
+  <Step title="Configure authentication">
+    If the service requires authentication, choose its method in **Advanced settings (optional)** and provide the information requested by your provider. See the reference below for the available options.
+  </Step>
+  <Step title="Add and check the connection">
+    Click **Add MCP** and complete any authentication prompts. Then [verify access in Task](#verify-access-in-task) using a supported read-only request, if the server provides reading tools.
+  </Step>
+</Steps>
+
+<Accordion title="Authentication settings reference" id="custom-mcp-authentication">
+  Use the authentication method specified by your service provider or system administrator.
+
+  - **OAuth 2.0:** The form includes **Client ID** and **Client Secret**. Follow your provider’s instructions for the values to enter.
+  - **None:** Select this only when your provider confirms that the MCP service does not require authentication.
+  - **Bearer Token:** The access token supplied by your provider.
+  - **Basic Auth:** The authentication credentials required by your provider.
+  - **API Key:** The credential location, **Key name**, and **API Key** specified by your provider.
+
+  Enter credentials in the connector’s settings rather than in a Task prompt.
+</Accordion>
+
+<Tip>
+Use the **MCP server URL** rather than the system’s regular website address. Available actions depend on server compatibility, the tools it provides, and your permissions.
+</Tip>
+
+## Data access and permissions
+
+### Access to connected services
+
+You choose which services to connect and approve the requested permissions. Meowgic requests the access needed for connected features and operates within those permissions and the connector’s capabilities.
+
+<Note>
+Connecting a service does not automatically send messages or change records.
+</Note>
+
+### How your data is used
+
+Meowgic uses relevant information from connected services to complete the tasks you request or enable. Where needed, this information is processed by the AI and service providers described in our [Privacy Policy](https://meowgic.ai/article/privacy-policy).
+
+<Check>
+Your data, including connected-service information and content derived from it, is **not used to train AI models**. This also applies to anonymized and aggregated versions of that data. Service providers processing this data on our behalf are subject to the same restriction.
+</Check>
+
+We do not sell connected-service data or use it to target ads, build advertising audiences, or make credit decisions.
+
+### Revoke access and delete saved data
+
+You can revoke access through the connected service’s settings where available.
+
+<Warning>
+Revoking access stops future access through that authorization. It **does not automatically delete** content already saved in Meowgic or original records in the connected service. Connection expiry also does not determine how long previously saved content is retained.
+</Warning>
+
+To request deletion of content saved in Meowgic, contact [support@meowgic.ai](mailto:support@meowgic.ai). See our [Privacy Policy](https://meowgic.ai/article/privacy-policy) for retention and deletion details. Deleting content held by Meowgic does not itself delete the original records in the connected service.
+
+### Google API data
+
+Meowgic’s use and transfer to any other app of information received from Google APIs will adhere to the [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), including the Limited Use requirements. For Google services, visit your [Google Account connections](https://myaccount.google.com/connections).
+
+## FAQ
+
+### Connection and usage
+
+<AccordionGroup>
+  <Accordion title="Do I need to connect to a store to use connectors?">
+    No. You can use connectors independently.<br />
+    Connect and select a store only when your task also needs store data.
+  </Accordion>
+  <Accordion title="Do I need an account with the service I want to connect?">
+    Most services require an account.<br />
+    Some also require a paid plan, API access, or administrator approval.<br />
+    Check the service’s requirements before connecting.
+  </Accordion>
+  <Accordion title="Can I use multiple connectors in one task?">
+    A Meowgic Task can use multiple connectors when the required tools and permissions are available.<br />
+    For example, if Gmail and Google Sheets are available and connected, Meowgic can review supplier emails in Gmail and organize quotation details in Google Sheets.
+  </Accordion>
+  <Accordion title="Can I connect to a service that is not listed?">
+    You can connect a service that is not listed if it provides a compatible MCP service.<br />
+    Ask your provider or system administrator for the MCP server URL and any required authentication details, then follow the [custom MCP connector steps](#custom-mcp-connectors).<br />
+    Available actions depend on the server’s tools and your permissions.
+  </Accordion>
+  <Accordion title="Why are some features of a connected service unavailable?">
+    A connection gives Meowgic access to the tools the connector provides, within your account’s access rights and the permissions you grant.<br />
+    Review the connector’s feature description, then check the permissions and plan requirements for your service account.
+  </Accordion>
+  <Accordion title="Can I connect multiple accounts to the same connector?">
+    Each connector currently supports one account at a time.<br />
+    To switch accounts, disconnect the current account, then connect the new one.
+  </Accordion>
+  <Accordion title="When do I need to reconnect a service?">
+    Reconnect a service if authorization expires, access is revoked, or account permissions change.<br />
+    Follow the [connection steps](#connect-a-service) to restore access.
+  </Accordion>
+</AccordionGroup>
+
+### Permissions and data
+
+<AccordionGroup>
+  <Accordion title="Will Meowgic send Gmail messages without my approval?">
+    Meowgic sends Gmail messages only after your explicit confirmation.<br />
+    You can review and revise the message before sending.
+  </Accordion>
+  <Accordion title="Does revoking access delete my data?">
+    Revoking access does not delete original records in the connected service or content already saved in Meowgic.<br />
+    It stops future access through that authorization.<br />
+    To request deletion of saved content, contact [support@meowgic.ai](mailto:support@meowgic.ai).
+  </Accordion>
+  <Accordion title="Is my connected-service data used to train AI models?">
+    Connected-service data and content derived from it are not used to train AI models.<br />
+    This includes summaries and responses generated from that data.
+  </Accordion>
+</AccordionGroup>
