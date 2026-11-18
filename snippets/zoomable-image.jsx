@@ -46,7 +46,7 @@ export const ZoomableImage = ({
       <button
         ref={triggerRef}
         type="button"
-        aria-label={zoomLabel}
+        aria-label={alt ? `${zoomLabel}: ${alt}` : zoomLabel}
         className="block w-full cursor-zoom-in"
         onClick={() => setOpen(true)}
       >

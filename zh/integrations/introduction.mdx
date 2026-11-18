@@ -5,6 +5,8 @@ icon: "blocks"
 description: "按工作需要选择集成方式：连接店铺以使用业务数据，将应用功能加入店铺主题，或通过 MCP 连接器让 Task 使用外部工具和业务系统。"
 ---
 
+import { IntegrationGuideCard } from "/snippets/integration-guide-card.jsx";
+
 Meowgic 的集成覆盖连接店铺、集成应用和连接外部工具三种需求。根据你要完成的工作，选择对应的指南。
 
 ## 按工作需要选择集成方式
@@ -44,18 +46,20 @@ Meowgic 的集成覆盖连接店铺、集成应用和连接外部工具三种需
     href="/zh/integrations/shoplazza">
     安装 Meowgic、连接并确认目标店铺，再按需将创建的应用集成到 Shoplazza 主题。
   </Card>
-  <Card
+  <IntegrationGuideCard
     title="WooCommerce"
-    img="/images/integrations/woocommerce/banner.webp"
+    src="/images/integrations/woocommerce/banner.webp"
+    alt="连接 WooCommerce 店铺：店主在店门口展示手机上的 Meowgic 界面。"
     href="/zh/integrations/woocommerce">
-    在 **My Stores** 添加 WooCommerce 店铺，并填写店铺网址。
-  </Card>
-  <Card
+    在 <strong>My Stores</strong> 添加 WooCommerce 店铺，并填写店铺网址。
+  </IntegrationGuideCard>
+  <IntegrationGuideCard
     title="Etsy"
-    img="/images/integrations/etsy/banner.webp"
+    src="/images/integrations/etsy/banner.webp"
+    alt="连接 Etsy 店铺：陶艺店主在工作室门口展示手工陶杯。"
     href="/zh/integrations/etsy">
-    在 **My Stores** 选择 Etsy，再登录管理店铺的 Etsy 账号进行授权。
-  </Card>
+    在 <strong>My Stores</strong> 选择 Etsy，再登录管理店铺的 Etsy 账号进行授权。
+  </IntegrationGuideCard>
 </Columns>
 
 连接完成后，只想处理店铺业务的用户可以前往[Meowgic Task 使用指南](/zh/tips-tricks/how-to-use-task)开始工作。

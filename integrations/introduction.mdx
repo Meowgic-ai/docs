@@ -5,6 +5,8 @@ icon: "blocks"
 description: "Choose how to connect your store for business data, add an app to your store theme, or connect external tools and business systems to Meowgic Task."
 ---
 
+import { IntegrationGuideCard } from "/snippets/integration-guide-card.jsx";
+
 Meowgic integrations cover connecting your store, integrating an app, and connecting external tools. Choose the guide that matches the work you want to do.
 
 ## Choose the integration your work needs
@@ -44,18 +46,20 @@ Follow your platform's guide to connect your store before starting work that nee
     href="/integrations/shoplazza">
     Install Meowgic, connect and check your target store, then integrate apps you create into your Shoplazza theme as needed.
   </Card>
-  <Card
+  <IntegrationGuideCard
     title="WooCommerce"
-    img="/images/integrations/woocommerce/banner.webp"
+    src="/images/integrations/woocommerce/banner.webp"
+    alt="Connect your Woo store: a shop owner shows Meowgic on a phone."
     href="/integrations/woocommerce">
-    Add a WooCommerce store in **My Stores** and enter your store URL.
-  </Card>
-  <Card
+    Add a WooCommerce store in <strong>My Stores</strong> and enter your store URL.
+  </IntegrationGuideCard>
+  <IntegrationGuideCard
     title="Etsy"
-    img="/images/integrations/etsy/banner.webp"
+    src="/images/integrations/etsy/banner.webp"
+    alt="Connect your Etsy shop: a ceramicist holds up a handmade mug outside her studio."
     href="/integrations/etsy">
-    Select Etsy in **My Stores**, then sign in to the Etsy account that manages your shop to authorize the connection.
-  </Card>
+    Select Etsy in <strong>My Stores</strong>, then sign in to the Etsy account that manages your shop to authorize the connection.
+  </IntegrationGuideCard>
 </Columns>
 
 Once connected, users who only need store-related work can start with the [Meowgic Task guide](/tips-tricks/how-to-use-task).
