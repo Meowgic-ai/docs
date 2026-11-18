@@ -1,0 +1,144 @@
+---
+title: "Connect your WooCommerce store"
+sidebarTitle: "WooCommerce"
+icon: "/images/woocommerce.svg"
+description: "Connect your WooCommerce store to Meowgic Task or package a Meowgic app as a plugin and install it on your store."
+keywords:
+  - Meowgic WooCommerce integration
+  - Connect a WooCommerce store
+  - WooCommerce store URL
+---
+
+import { ZoomableImage } from "/snippets/zoomable-image.jsx";
+
+<Frame>
+  <ZoomableImage src="/images/integrations/woocommerce/banner.webp" alt="Cover for the guide to connecting a WooCommerce store to Meowgic." />
+</Frame>
+
+## Why connect your store
+
+Connecting WooCommerce lets Meowgic Task answer questions using your store data. You can check stock status before restocking products or group orders by status for a weekly report.
+
+To make a storefront feature you built in Meowgic available to shoppers, install the app as a WooCommerce plugin.
+
+## Connect your WooCommerce store {#connect-store}
+
+Have a WordPress store with WooCommerce active, a store account that can approve app connections, and your full store URL.
+
+<div className="not-prose mt-10 w-full rounded-2xl border p-6">
+  <div className="flex w-full items-start gap-5">
+    <img src="https://assets.staticmeow.com/meowgic/static/images/20261015/9266b2a1-8a23-4b53-9f0a-c042079f7a19.png?x-oss-process=image/format,webp" alt="" className="m-0 h-16 w-16 shrink-0 rounded-2xl border shadow-xs" noZoom />
+    <div className="flex flex-1 flex-col gap-2">
+      <p className="m-0 text-xl font-semibold">Meowgic: Your AI commerce team</p>
+      <p className="m-0 text-sm">Hire your AI commerce team to manage products, improve your store, build custom features, plan campaigns, and get everyday e-commerce tasks done.</p>
+    </div>
+  </div>
+  <div className="mt-6 flex flex-col gap-5 border-t pt-6 md:flex-row">
+    <a className="app-store-button app-woocommerce text-white no-underline md:flex-1" href="https://app.meowgic.ai/en/my-stores" target="_blank" rel="noopener noreferrer">
+      <img src="/images/woocommerce.svg" alt="" className="m-0 h-10 w-10 shrink-0" noZoom />
+      <span className="flex flex-1 flex-col text-white">
+        <span className="text-sm font-semibold">Connect your WooCommerce store</span>
+        <span className="text-xl font-semibold">Open My Stores</span>
+      </span>
+    </a>
+    <a className="app-signup-button app-woocommerce no-underline md:flex-1" href="https://woocommerce.com/start/" target="_blank" rel="noopener noreferrer">
+      <span className="flex flex-1 flex-col">
+        <span className="text-sm font-semibold">Don't have a store yet?</span>
+        <span className="text-xl font-semibold">Start a WooCommerce store</span>
+      </span>
+    </a>
+  </div>
+</div>
+
+<Steps>
+  <Step title="Select WooCommerce">
+    Sign in to the Meowgic account you want to connect the store to. In **My Stores**, select **Add new store → WooCommerce** to open the connection form.
+
+    <Frame>
+      <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20261118/99cb2e63-584b-4445-a14c-9dca5d569fa0.webp" alt="Select Add new store in My Stores, then choose WooCommerce from the platform menu." />
+    </Frame>
+  </Step>
+  <Step title="Enter your store URL">
+    Enter your full WooCommerce store URL in **Your store url**, then click **Connect**. The browser opens the store's WooCommerce authorization page in a new tab.
+
+    <Frame>
+      <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20261118/4bb6ce84-6e4e-49a9-b92b-4f6c9dfe44ed.webp" alt="Illustration of the WooCommerce connection dialog showing where to enter your store URL and select Connect." />
+    </Frame>
+  </Step>
+  <Step title="Approve access in WooCommerce">
+    If prompted, sign in to WordPress. Make sure the authorization page is for your store and names Meowgic. Review the permissions, then click **Approve**. WooCommerce displays the button in your store's language.
+
+    <Frame>
+      <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20261118/d255d782-4f15-4105-9cdc-9c616420065b.webp" alt="Illustration of the WooCommerce authorization page showing the permissions to review before selecting Approve." />
+    </Frame>
+  </Step>
+  <Step title="Confirm your store is connected">
+    Return to **My Stores**. Check the store name and WooCommerce icon, then confirm that the store appears as **Enabled**.
+
+    <Frame>
+      <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20261118/b493946b-53ce-4ab9-8286-0edd92558b83.webp" alt="A connected WooCommerce store in My Stores with an Enabled status." />
+    </Frame>
+  </Step>
+</Steps>
+
+## Choose what to do next
+
+<CardGroup cols={2}>
+  <Card title="Start using Task" icon="list-checks" href="/tips-tricks/how-to-use-task">
+    Ask your AI team to check product stock, summarize orders, or review coupons.
+  </Card>
+  <Card title="Install an app you created" icon="blocks" href="#install-app">
+    Package a published storefront feature as a ZIP plugin and upload it to WordPress to install it.
+  </Card>
+</CardGroup>
+
+## What you can ask Task after connecting
+
+Click **New task** and name the WooCommerce store in your request. If Task asks you to choose a store, select the one you connected. Start with one of these read-only tasks.
+
+| What you want to do | What to ask Task to look up |
+| :-- | :-- |
+| Check products and inventory | Product names, prices, stock status, and quantities for products with stock management enabled |
+| Summarize orders | Order totals for a date range, broken down by order status |
+| Review coupons | The number of coupons in the store |
+
+```text wrap
+Check the last 30 days of orders for my WooCommerce store, [store name]. Give me the total number of orders and a breakdown by status. Only read the data. Do not modify any orders or include customer information.
+```
+
+See the [Task guide](/tips-tricks/how-to-use-task) for help scoping your request and describing the outcome you want.
+
+## Install an app on WooCommerce {#install-app}
+
+Meowgic can package a published app as a WooCommerce plugin. Use a WordPress account with permission to install and activate plugins.
+
+1. **Choose the installation platform.** After publishing the app, open **Publish → Install on your store → Install on WooCommerce** in the app editor.
+2. **Generate and download the plugin.** Click **Start**. When Meowgic finishes generating the plugin, click **Download plugin file** to download the `.zip` file.
+3. **Upload and activate the plugin.** In WordPress admin, go to **Plugins → Add New → Upload Plugin**, select the downloaded `.zip` file, and click **Install Now**. Click **Activate Plugin** when installation completes, then open the relevant store page to check that the feature works.
+
+For step-by-step screenshots, see [How to create, publish, and install a Meowgic app in your store](/tips-tricks/create-app-let-it-work-on-your-store#woocommerce).
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Which WooCommerce URL should I enter?">
+    Enter the base address of the WooCommerce store site. Open the address in your browser first to check that it points to the store you want to connect.
+  </Accordion>
+  <Accordion title="Do I need a plugin or a manually generated API key to connect a store for Task?">
+    Click **Approve** on the WooCommerce authorization page. WooCommerce generates the API credentials for the connection.
+  </Accordion>
+  <Accordion title="How is connecting a store different from integrating an app?">
+    Connecting a store gives Task access to store data. To use a feature you created on your store, [download and install the app's plugin package](#install-app).
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The authorization page does not open after I click Connect">
+    Check whether your browser opened a new tab or blocked it. Confirm that **Your store url** contains your store site's address, then try again.
+  </Accordion>
+  <Accordion title="My store is missing from My Stores after approval">
+    Check that you clicked **Approve** on the WooCommerce page, then return to the Meowgic account you used to start the connection. Refresh **My Stores**. If the store still does not appear, share the store URL and the error message or a screenshot with support. Hide any account details and credentials.
+  </Accordion>
+</AccordionGroup>

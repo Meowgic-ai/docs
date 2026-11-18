@@ -1,0 +1,144 @@
+---
+title: "连接 WooCommerce 店铺"
+sidebarTitle: "WooCommerce"
+icon: "/images/woocommerce.svg"
+description: "将 WooCommerce 店铺连接到 Meowgic Task，或把在 Meowgic 中创建的应用打包为插件并安装到店铺。"
+keywords:
+  - Meowgic WooCommerce 集成
+  - 连接 WooCommerce 店铺
+  - WooCommerce 店铺网址
+---
+
+import { ZoomableImage } from "/snippets/zoomable-image.jsx";
+
+<Frame>
+  <ZoomableImage src="/images/integrations/woocommerce/banner.webp" alt="Meowgic 与 WooCommerce 店铺连接指南封面。" />
+</Frame>
+
+## 为什么要连接店铺
+
+连接 WooCommerce 后，你可以让 Meowgic Task 基于店铺数据回答运营问题。比如补货前核对商品的库存状态，或在周报里按状态统计订单数量。
+
+要让顾客使用你在 Meowgic 中创建的店铺功能，可以将应用作为插件安装到 WooCommerce。
+
+## 连接 WooCommerce 店铺 {#connect-store}
+
+准备好一个已启用 WooCommerce 的 WordPress 店铺、可批准应用连接的店铺账号，以及店铺网站的完整网址。
+
+<div className="not-prose mt-10 w-full rounded-2xl border p-6">
+  <div className="flex w-full items-start gap-5">
+    <img src="https://assets.staticmeow.com/meowgic/static/images/20261015/9266b2a1-8a23-4b53-9f0a-c042079f7a19.png?x-oss-process=image/format,webp" alt="" className="m-0 h-16 w-16 shrink-0 rounded-2xl border shadow-xs" noZoom />
+    <div className="flex flex-1 flex-col gap-2">
+      <p className="m-0 text-xl font-semibold">Meowgic：你的 AI 电商团队</p>
+      <p className="m-0 text-sm">雇用你的 AI 电商团队，管理商品、优化店铺、开发定制功能、策划营销活动，完成日常电商任务。</p>
+    </div>
+  </div>
+  <div className="mt-6 flex flex-col gap-5 border-t pt-6 md:flex-row">
+    <a className="app-store-button app-woocommerce text-white no-underline md:flex-1" href="https://app.meowgic.ai/en/my-stores" target="_blank" rel="noopener noreferrer">
+      <img src="/images/woocommerce.svg" alt="" className="m-0 h-10 w-10 shrink-0" noZoom />
+      <span className="flex flex-1 flex-col text-white">
+        <span className="text-sm font-semibold">连接你的 WooCommerce 店铺</span>
+        <span className="text-xl font-semibold">打开 My Stores</span>
+      </span>
+    </a>
+    <a className="app-signup-button app-woocommerce no-underline md:flex-1" href="https://woocommerce.com/start/" target="_blank" rel="noopener noreferrer">
+      <span className="flex flex-1 flex-col">
+        <span className="text-sm font-semibold">还没有店铺？</span>
+        <span className="text-xl font-semibold">开始搭建 WooCommerce 店铺</span>
+      </span>
+    </a>
+  </div>
+</div>
+
+<Steps>
+  <Step title="选择 WooCommerce">
+    登录要关联店铺的 Meowgic 账号。在 **My Stores** 中点击 **Add new store → WooCommerce**，打开连接表单。
+
+    <Frame>
+      <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20261118/99cb2e63-584b-4445-a14c-9dca5d569fa0.webp" alt="在 My Stores 中点击 Add new store，然后从平台菜单选择 WooCommerce。" />
+    </Frame>
+  </Step>
+  <Step title="填写店铺网址">
+    在 **Your store url** 中输入 WooCommerce 店铺网站的完整网址，点击 **Connect**。浏览器会在新标签页打开店铺的 WooCommerce 授权页面。
+
+    <Frame>
+      <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20261118/4bb6ce84-6e4e-49a9-b92b-4f6c9dfe44ed.webp" alt="WooCommerce 连接表单示意图，标明填写店铺网址的位置和 Connect 按钮。" />
+    </Frame>
+  </Step>
+  <Step title="在 WooCommerce 中批准授权">
+    如果店铺要求登录，请先登录 WordPress。确认页面显示的是你的店铺和 Meowgic，阅读列出的访问权限，再点击 **接受**（**Approve**）。
+
+    <Frame>
+      <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20261118/a1d4a0a0-cee5-47b3-844e-1b9f8ae84100.webp" alt="WooCommerce 授权页面示意图，显示点击接受前需要核对的权限。" />
+    </Frame>
+  </Step>
+  <Step title="确认店铺已连接">
+    授权完成后，回到 **My Stores**。核对新店铺的名称和 WooCommerce 图标，并确认状态为 **Enabled**。
+
+    <Frame>
+      <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20261118/b493946b-53ce-4ab9-8286-0edd92558b83.webp" alt="My Stores 中已连接的 WooCommerce 店铺，状态为 Enabled。" />
+    </Frame>
+  </Step>
+</Steps>
+
+## 连接后，选择下一步
+
+<CardGroup cols={2}>
+  <Card title="开始使用 Task" icon="list-checks" href="/zh/tips-tricks/how-to-use-task">
+    让 AI 团队查看商品库存、汇总订单或盘点优惠券。
+  </Card>
+  <Card title="安装已创建的应用" icon="blocks" href="#install-app">
+    将已发布的店铺功能打包成 ZIP 插件，再上传到 WordPress 后台安装。
+  </Card>
+</CardGroup>
+
+## 连接后可以让 Task 做什么
+
+点击 **New task**，在请求里写明 WooCommerce 店铺的名称。如果 Task 请你选择店铺，选中刚连接的那家。你可以从以下只读任务开始。
+
+| 想完成的工作 | 可以请 Task 查询什么 |
+| :-- | :-- |
+| 检查商品和库存 | 商品名称、价格、库存状态，以及启用库存管理的商品数量 |
+| 汇总订单 | 指定时间范围内的订单总数，以及按订单状态统计的数量 |
+| 盘点优惠券 | 店铺中的优惠券数量 |
+
+```text wrap
+查看我的 WooCommerce 店铺「店铺名称」过去 30 天的订单。告诉我订单总数，并按状态汇总数量。只读取数据，不修改订单，也不输出顾客信息。
+```
+
+想了解如何指定任务范围和期望结果，可以查看 [Task 使用指南](/zh/tips-tricks/how-to-use-task)。
+
+## 将应用安装到 WooCommerce {#install-app}
+
+Meowgic 可以将已发布的应用打包成 WooCommerce 插件。准备好一个有权限安装和启用插件的 WordPress 账号。
+
+1. **选择安装平台。** 发布应用后，在应用编辑器中打开 **Publish → Install on your store → Install on WooCommerce**。
+2. **生成并下载插件。** 点击 **Start**。Meowgic 生成插件后，点击 **Download plugin file** 下载 `.zip` 文件。
+3. **上传并启用插件。** 在店铺的 WordPress 后台打开 **插件 → 安装插件 → 上传插件**，选择下载的 `.zip` 文件，点击 **立即安装**。安装完成后点击 **启用插件**，再打开应用对应的店铺页面检查功能。
+
+带截图的完整步骤见[如何创建、发布并安装 Meowgic 应用到你的店铺](/zh/tips-tricks/create-app-let-it-work-on-your-store#woocommerce)。
+
+## 常见问题
+
+<AccordionGroup>
+  <Accordion title="应该填写哪个 WooCommerce 网址？">
+    填写 WooCommerce 店铺网站的基础网址。你可以先在浏览器打开这个地址，确认它指向目标店铺。
+  </Accordion>
+  <Accordion title="为 Task 连接店铺时，需要安装插件或手动生成 API 密钥吗？">
+    在 WooCommerce 的授权页面点击 **接受** 即可完成授权。WooCommerce 会为该连接生成 API 凭据。
+  </Accordion>
+  <Accordion title="连接店铺和集成应用有什么区别？">
+    连接店铺让 Task 可以读取店铺数据。要在店铺中使用你创建的功能，请[下载并安装应用的插件包](#install-app)。
+  </Accordion>
+</AccordionGroup>
+
+## 故障排查
+
+<AccordionGroup>
+  <Accordion title="点击 Connect 后没有看到授权页">
+    查看浏览器是否打开了新的标签页，或是否拦截了新标签页。再确认 **Your store url** 填写的是店铺网站地址，然后重试。
+  </Accordion>
+  <Accordion title="授权后在 My Stores 里找不到店铺">
+    确认你已在 WooCommerce 页面点击 **接受**，并返回发起连接时使用的 Meowgic 账号。刷新 **My Stores**。如果仍未显示，请向支持提供店铺网址、错误提示或截图，并遮住账号与凭据信息。
+  </Accordion>
+</AccordionGroup>

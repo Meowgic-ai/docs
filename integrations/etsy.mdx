@@ -1,0 +1,118 @@
+---
+title: "Connect your Etsy shop"
+sidebarTitle: "Etsy"
+icon: "/images/etsy.svg"
+description: "Connect your Etsy shop to Meowgic and use Task to review, optimize, and publish listings."
+keywords:
+  - Meowgic Etsy integration
+  - Connect an Etsy shop
+  - Etsy shop authorization
+  - Etsy listing optimization
+---
+
+import { ZoomableImage } from "/snippets/zoomable-image.jsx";
+
+<Frame>
+  <ZoomableImage src="/images/integrations/etsy/banner.webp" alt="Cover for the guide to connecting an Etsy shop to Meowgic." />
+</Frame>
+
+Connect your Etsy shop to use Meowgic Task to review listings, improve existing content, or prepare titles, descriptions, tags, and attributes for new products. Preview the results, then decide whether to sync changes or new listings to Etsy.
+
+## Connect your Etsy shop {#connect-store}
+
+Sign in to the Meowgic account you want to connect and have the Etsy account that manages your shop ready.
+
+<div className="not-prose mt-10 w-full rounded-2xl border p-6">
+  <div className="flex w-full items-start gap-5">
+    <img src="https://assets.staticmeow.com/meowgic/static/images/20261015/9266b2a1-8a23-4b53-9f0a-c042079f7a19.png?x-oss-process=image/format,webp" alt="" className="m-0 h-16 w-16 shrink-0 rounded-2xl border shadow-xs" noZoom />
+    <div className="flex flex-1 flex-col gap-2">
+      <p className="m-0 text-xl font-semibold">Meowgic: Your AI commerce team</p>
+      <p className="m-0 text-sm">Use Task to review Etsy products, improve listings, and prepare new products for launch.</p>
+    </div>
+  </div>
+  <div className="mt-6 flex flex-col gap-5 border-t pt-6 md:flex-row">
+    <a className="app-store-button app-etsy no-underline md:flex-1" href="https://app.meowgic.ai/en/my-stores" target="_blank" rel="noopener noreferrer">
+      <img src="/images/etsy.svg" alt="" className="m-0 h-10 w-10 shrink-0" noZoom />
+      <span className="flex flex-1 flex-col">
+        <span className="text-sm font-semibold">Connect your Etsy shop</span>
+        <span className="text-xl font-semibold">Open My Stores</span>
+      </span>
+    </a>
+    <a className="app-signup-button app-etsy no-underline md:flex-1" href="https://www.etsy.com/sell" target="_blank" rel="noopener noreferrer">
+      <span className="flex flex-1 flex-col">
+        <span className="text-sm font-semibold">Don't have a store yet?</span>
+        <span className="text-xl font-semibold">Create an Etsy shop</span>
+      </span>
+    </a>
+  </div>
+</div>
+
+<Steps>
+  <Step title="Select Etsy">
+    In **My Stores**, select **Add new store → Etsy**. Your browser opens the Etsy connection page.
+
+    <Frame>
+      <ZoomableImage src="/images/integrations/etsy/select-platform.webp" alt="In Meowgic My Stores, select Add new store, then choose Etsy from the platform menu." />
+    </Frame>
+  </Step>
+  <Step title="Sign in to Etsy and follow the verification prompts">
+    Sign in with the Etsy account that manages the shop. If Etsy requires two-step verification, enter the code as directed. If Etsy asks you to approve access, review the requested permissions before continuing. When the connection is complete, your browser returns to **My Stores**.
+
+    <Frame>
+      <ZoomableImage src="/images/integrations/etsy/sign-in.webp" alt="Illustration of Etsy sign-in showing the email, password, and verification code screens when prompted." />
+    </Frame>
+  </Step>
+  <Step title="Confirm your shop is connected">
+    Find the newly connected shop in **My Stores**. Check its name and Etsy icon, then confirm its status is **Enabled**.
+
+    <Frame>
+      <ZoomableImage src="/images/integrations/etsy/connected-shop.webp" alt="An Etsy shop in My Stores with its status shown as Enabled." />
+    </Frame>
+  </Step>
+</Steps>
+
+## Manage listings with Task {#use-task}
+
+Select **New task** and name your Etsy shop in the request. If Task asks you to select a shop, choose the one you just connected.
+
+| What you want to do | What to ask Task to do |
+| :-- | :-- |
+| Review existing products | Find active, draft, or inactive listings and review their titles, descriptions, tags, and images |
+| Improve listing content | Draft a new title, description, or tags for a specific listing for you to preview and approve |
+| Prepare a new listing | Use your product details to prepare a title, description, tags, and attributes for you to review before syncing to Etsy |
+
+Start with a read-only request to check the connection.
+
+```text wrap
+Review the Etsy shop I selected. List the titles and tags of up to five active listings. Pick one and suggest improvements. Read and make recommendations only. Do not edit or publish any listings.
+```
+
+<Card title="Learn how to use Task" icon="list-checks" href="/tips-tricks/how-to-use-task">
+  See how to specify a shop, describe your goal, and review the results.
+</Card>
+
+## Etsy permissions
+
+Meowgic requests permission to read and write Etsy listings so it can review products, create listings, and update existing ones. Review and confirm the results before publishing a new listing or saving changes. This connection does not provide access to orders, buyer information, payments, messages, or shop settings, and does not delete listings.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Which Etsy account should I use?">
+    Use the Etsy account that manages the shop you want to connect. If you're already signed in to Etsy, check that you're using the right account before you authorize the connection.
+  </Accordion>
+  <Accordion title="Can I install a Meowgic app in my Etsy shop?">
+    Installing Meowgic apps in Etsy shops is currently unavailable. Once connected, use **Task** to work with Etsy listings.
+  </Accordion>
+  <Accordion title="How do I revoke access on Etsy?">
+    In Etsy, find Meowgic under **Connected apps** and revoke its access. Meowgic can no longer use that authorization to access your listings. For details, see [Etsy's guide to disconnecting apps](https://help.etsy.com/hc/en-us/articles/360001931728-How-to-Use-Apps-to-Manage-Your-Shop).
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Your Etsy shop is missing after you return to My Stores">
+    Refresh **My Stores**. Confirm that you returned to the same Meowgic account that started the connection and signed in to the Etsy account that manages the shop. If the shop is still missing, try **Add new store → Etsy** again. If the issue persists, send support your shop name and the message you see. Keep your password and verification code private.
+  </Accordion>
+</AccordionGroup>
