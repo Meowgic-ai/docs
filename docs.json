@@ -2,7 +2,7 @@
   "$schema": "https://www.mintlify.com/docs.json",
   "theme": "mint",
   "name": "Meowgic Documentation",
-  "description": "Meowgic Documentation — Build store apps, customize storefronts, connect tools, and solve issues across Shopify, SHOPLINE, and Shoplazza.",
+  "description": "Learn how to connect your store, work with Meowgic Task, build e-commerce apps, and integrate storefront features.",
   "colors": {
     "primary": "#FF5C01",
     "light": "#FF5C01",
@@ -56,7 +56,9 @@
                 "pages": [
                   "integrations/shopify",
                   "integrations/shopline",
-                  "integrations/shoplazza"
+                  "integrations/shoplazza",
+                  "integrations/woocommerce",
+                  "integrations/etsy"
                 ]
               },
               {
@@ -142,7 +144,9 @@
                 "pages": [
                   "zh/integrations/shopify",
                   "zh/integrations/shopline",
-                  "zh/integrations/shoplazza"
+                  "zh/integrations/shoplazza",
+                  "zh/integrations/woocommerce",
+                  "zh/integrations/etsy"
                 ]
               },
               {

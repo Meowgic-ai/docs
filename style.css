@@ -47,6 +47,49 @@
   background-color: #fff4f4;
 }
 
+.app-store-button.app-woocommerce {
+  background-color: #6728de;
+}
+
+.app-store-button.app-woocommerce:hover {
+  background-color: #5420bd;
+}
+
+.app-store-button:is(.app-woocommerce, .app-etsy) img {
+  filter: brightness(0) invert(1);
+}
+
+.app-signup-button.app-woocommerce {
+  color: #6728de;
+  border-color: currentColor;
+}
+
+.app-signup-button.app-woocommerce:hover {
+  background-color: rgb(103 40 222 / 8%);
+}
+
+.dark .app-signup-button.app-woocommerce {
+  color: #c6abff;
+}
+
+.app-store-button.app-etsy {
+  background-color: #f1641e;
+  color: #fff;
+}
+
+.app-store-button.app-etsy:hover {
+  background-color: #e65a19;
+}
+
+.app-signup-button.app-etsy {
+  color: #f1641e;
+  border-color: #f1641e;
+}
+
+.app-signup-button.app-etsy:hover {
+  background-color: rgb(241 100 30 / 8%);
+}
+
 /* Task platform guide cards */
 .task-platform-card {
   display: flex;

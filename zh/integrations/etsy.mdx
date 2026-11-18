@@ -1,0 +1,118 @@
+---
+title: "连接 Etsy 店铺"
+sidebarTitle: "Etsy"
+icon: "/images/etsy.svg"
+description: "将 Etsy 店铺连接到 Meowgic，在 Task 中查看、优化和发布商品刊登。"
+keywords:
+  - Meowgic Etsy 集成
+  - 连接 Etsy 店铺
+  - Etsy 店铺授权
+  - Etsy 商品刊登优化
+---
+
+import { ZoomableImage } from "/snippets/zoomable-image.jsx";
+
+<Frame>
+  <ZoomableImage src="/images/integrations/etsy/banner.webp" alt="Meowgic 与 Etsy 店铺连接指南封面。" />
+</Frame>
+
+连接 Etsy 店铺后，你可以用 Meowgic Task 查看商品刊登（Listing）、优化现有内容，或为新品准备标题、描述、标签和属性。你可以先预览，再确认是否将修改或新品同步到 Etsy。
+
+## 连接 Etsy 店铺 {#connect-store}
+
+登录你要用来连接店铺的 Meowgic 账号，并准备好管理目标店铺的 Etsy 账号。
+
+<div className="not-prose mt-10 w-full rounded-2xl border p-6">
+  <div className="flex w-full items-start gap-5">
+    <img src="https://assets.staticmeow.com/meowgic/static/images/20261015/9266b2a1-8a23-4b53-9f0a-c042079f7a19.png?x-oss-process=image/format,webp" alt="" className="m-0 h-16 w-16 shrink-0 rounded-2xl border shadow-xs" noZoom />
+    <div className="flex flex-1 flex-col gap-2">
+      <p className="m-0 text-xl font-semibold">Meowgic：你的 AI 电商团队</p>
+      <p className="m-0 text-sm">在 Task 中查看 Etsy 商品，优化刊登内容，为新品上架做准备。</p>
+    </div>
+  </div>
+  <div className="mt-6 flex flex-col gap-5 border-t pt-6 md:flex-row">
+    <a className="app-store-button app-etsy no-underline md:flex-1" href="https://app.meowgic.ai/en/my-stores" target="_blank" rel="noopener noreferrer">
+      <img src="/images/etsy.svg" alt="" className="m-0 h-10 w-10 shrink-0" noZoom />
+      <span className="flex flex-1 flex-col">
+        <span className="text-sm font-semibold">连接你的 Etsy 店铺</span>
+        <span className="text-xl font-semibold">打开 My Stores</span>
+      </span>
+    </a>
+    <a className="app-signup-button app-etsy no-underline md:flex-1" href="https://www.etsy.com/sell" target="_blank" rel="noopener noreferrer">
+      <span className="flex flex-1 flex-col">
+        <span className="text-sm font-semibold">还没有店铺？</span>
+        <span className="text-xl font-semibold">创建一个 Etsy 店铺</span>
+      </span>
+    </a>
+  </div>
+</div>
+
+<Steps>
+  <Step title="选择 Etsy">
+    在 **My Stores** 中点击 **Add new store → Etsy**。浏览器会打开 Etsy 的连接页面。
+
+    <Frame>
+      <ZoomableImage src="/images/integrations/etsy/select-platform.webp" alt="在 Meowgic 的 My Stores 中点击 Add new store，然后从平台菜单选择 Etsy。" />
+    </Frame>
+  </Step>
+  <Step title="登录 Etsy，按提示完成验证">
+    使用管理目标店铺的 Etsy 账号登录。如果 Etsy 要求两步验证，请按页面提示输入验证码。如果页面显示授权确认，请核对权限后再继续。完成后，浏览器会返回 **My Stores**。
+
+    <Frame>
+      <ZoomableImage src="/images/integrations/etsy/sign-in.webp" alt="Etsy 登录流程示意图，依次显示邮箱、密码和按提示输入验证码的页面。" />
+    </Frame>
+  </Step>
+  <Step title="确认店铺已连接">
+    在 **My Stores** 列表中找到刚连接的店铺，核对店铺名称、Etsy 图标和 **Enabled** 状态。
+
+    <Frame>
+      <ZoomableImage src="/images/integrations/etsy/connected-shop.webp" alt="My Stores 中的 Etsy 店铺条目，状态显示为 Enabled。" />
+    </Frame>
+  </Step>
+</Steps>
+
+## 连接后，用 Task 管理商品刊登 {#use-task}
+
+点击 **New task**，在请求里写明 Etsy 店铺的名称。如果 Task 请你选择店铺，选中刚连接的那家。
+
+| 想完成的工作 | 可以请 Task 做什么 |
+| :-- | :-- |
+| 查看现有商品 | 查看在售、草稿或已下架的刊登，了解现有标题、描述、标签和图片 |
+| 优化商品内容 | 为指定商品起草新的标题、描述或标签，供你预览和确认 |
+| 准备新品上架 | 根据商品资料准备标题、描述、标签和属性，预览确认后再同步到 Etsy |
+
+可以先用一个只读任务检查连接：
+
+```text wrap
+查看我选中的 Etsy 店铺。列出最多 5 个在售商品的标题和标签，并选一个商品说明可以怎么优化。只查看和给出建议，不修改或发布任何商品。
+```
+
+<Card title="了解如何使用 Task" icon="list-checks" href="/zh/tips-tricks/how-to-use-task">
+  查看如何指定店铺、说明任务目标并检查执行结果。
+</Card>
+
+## Etsy 授权范围
+
+Meowgic 向 Etsy 申请商品刊登的读取和写入权限，用来查看商品、创建新品和更新现有刊登。发布新品或保存修改前，请先核对内容，再确认同步。此连接不用于读取订单、买家信息或支付数据，也不用于私信、店铺设置或删除商品。
+
+## 常见问题
+
+<AccordionGroup>
+  <Accordion title="连接时应该用哪个 Etsy 账号？">
+    使用管理目标店铺的 Etsy 账号。如果浏览器已经登录了 Etsy，先确认当前账号对应的是你要连接的店铺，再继续授权。
+  </Accordion>
+  <Accordion title="可以把构建的 Meowgic App 安装到 Etsy 吗？">
+    目前没有把 Meowgic App 安装到 Etsy 店铺的流程。连接店铺后，你可以在 **Task** 中处理商品刊登。
+  </Accordion>
+  <Accordion title="如何撤销 Etsy 授权？">
+    在 Etsy 的 **Connected apps** 中找到 Meowgic，然后撤销访问权限。撤销后，Meowgic 将无法继续通过这次授权访问你的刊登。详见 [Etsy 的断开应用连接说明](https://help.etsy.com/hc/en-us/articles/360001931728-How-to-Use-Apps-to-Manage-Your-Shop)。
+  </Accordion>
+</AccordionGroup>
+
+## 故障排查
+
+<AccordionGroup>
+  <Accordion title="返回 My Stores 后找不到 Etsy 店铺">
+    刷新 **My Stores**，确认你回到了发起连接时使用的 Meowgic 账号，并在 Etsy 中登录了管理目标店铺的账号。如果列表里仍没有店铺，可以重新从 **Add new store → Etsy** 发起连接。如果问题持续，请向支持提供店铺名称和页面提示，避免附上密码或验证码。
+  </Accordion>
+</AccordionGroup>
