@@ -1,0 +1,162 @@
+---
+title: "连接 SHOPYY 店铺"
+sidebarTitle: "SHOPYY"
+icon: "/images/shopyy.svg"
+description: "在 SHOPYY 创建开发者应用，按要求设置权限，再用店铺域名和应用 Token 连接 Meowgic Task。"
+keywords:
+  - Meowgic SHOPYY 集成
+  - 连接 SHOPYY 店铺
+  - SHOPYY 店铺授权
+---
+
+import { ZoomableImage } from "/snippets/zoomable-image.jsx";
+
+<Frame>
+  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20261123/45f8b457-7235-4eed-862b-684c6057a731.webp" alt="Meowgic × SHOPYY 店铺连接指南，画面中的店主手持手机和包裹。" zoomLabel="放大图片" closeLabel="关闭图片" />
+</Frame>
+
+## 为什么要连接店铺
+
+将 SHOPYY 店铺连接到 Meowgic 后，Task 可以在授权范围内使用店铺信息。需要结合自己的店铺数据开展工作时，你可以在任务中指定目标店铺。
+
+## 连接 SHOPYY 店铺 {#connect-store}
+
+准备好 SHOPYY 店铺域名，以及可以在该店铺新建开发者应用的后台账号。登录要连接这家店铺的 Meowgic 账号。
+
+<div className="not-prose mt-10 w-full rounded-2xl border p-6">
+  <div className="flex w-full items-start gap-5">
+    <img src="https://assets.staticmeow.com/meowgic/static/images/20261118/be1b1b36-7aa4-454c-8873-6364659b189c.png?x-oss-process=image/format,webp" alt="Meowgic 应用图标" className="m-0 h-16 w-16 shrink-0 rounded-2xl border shadow-xs" noZoom />
+    <div className="flex flex-1 flex-col gap-2">
+      <p className="m-0 text-xl font-semibold">Meowgic：你的 AI 电商团队</p>
+      <p className="m-0 text-sm">连接 SHOPYY 店铺，在 Task 中使用授权范围内的店铺信息。</p>
+    </div>
+  </div>
+  <div className="mt-6 flex flex-wrap gap-5 border-t pt-6">
+    <a className="app-store-button app-shopyy text-white no-underline" href="https://app.meowgic.ai/en/my-stores" target="_blank" rel="noopener noreferrer">
+      <img src="/images/shopyy.png" alt="" className="m-0 h-10 w-10 shrink-0" noZoom />
+      <span className="flex flex-1 flex-col text-white">
+        <span className="text-sm font-semibold">连接你的 SHOPYY 店铺</span>
+        <span className="text-xl font-semibold">打开 My Stores</span>
+      </span>
+    </a>
+    <a className="app-signup-button app-shopyy no-underline" href="https://account.shopyy.com/register" target="_blank" rel="noopener noreferrer">
+      <span className="flex flex-1 flex-col">
+        <span className="text-sm font-semibold">还没有店铺？</span>
+        <span className="text-xl font-semibold">开设 SHOPYY 店铺</span>
+      </span>
+    </a>
+  </div>
+</div>
+
+<Steps>
+  <Step title="打开 SHOPYY 的开发者页面">
+    在 SHOPYY 店铺后台，打开 **店铺设置 → 系统设置**，再点击 **开发者**。
+
+    <Frame>
+      <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20261123/d53b33a3-b6a6-46b5-a6ee-ef389830da18.webp" alt="SHOPYY 后台的系统设置页，左侧标出「系统设置」，右侧标出「开发者」入口。" zoomLabel="放大图片" closeLabel="关闭图片" />
+    </Frame>
+  </Step>
+  <Step title="打开新建应用表单">
+    在 **开发者应用** 标签页点击 **新建应用**。
+
+    <Frame>
+      <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20261123/4323f3cb-ce05-4735-9b14-f48db262240d.webp" alt="SHOPYY 开发者应用列表，标出右上角的「新建应用」按钮。" zoomLabel="放大图片" closeLabel="关闭图片" />
+    </Frame>
+  </Step>
+  <Step title="填写应用名称、设置权限并保存">
+    在 **应用名称** 中输入 `Meowgic`，再按下表逐项设置应用权限、API 详情链接和数据脱敏。
+
+    | 设置区 | 项目 | 必选值 |
+    | :-- | :-- | :-- |
+    | 权限 | 订单、商品、专辑、评论、顾客、Webhooks、自定义代码、路径代理、营销活动、自定义页面、博客、物流设置、支付设置、系统设置、自定义文件 | **管理** |
+    | 权限 | 店铺、数据统计 | **只读** |
+    | API详情链接 | 订单销售链接、商品链接、专辑链接、营销活动链接、自定义页面链接、博客链接 | **店铺临时域名** |
+    | 数据脱敏 | 订单邮箱、订单收货手机号 | **不脱敏** |
+
+    <Warning>
+      **不脱敏**会让通过此应用访问的订单邮箱和收货手机号保留原始值。请妥善保管应用 Token。
+    </Warning>
+
+    核对完成后，点击右上角的 **保存**。
+
+    <Frame>
+      <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20261123/0b2406fd-aba8-47e2-81ab-47221d13cf4c.webp" alt="SHOPYY 应用表单，标出 Meowgic 应用名称、权限、API 详情链接、数据脱敏设置和右上角的「保存」按钮。" zoomLabel="放大图片" closeLabel="关闭图片" />
+    </Frame>
+  </Step>
+  <Step title="返回应用列表并复制 Token">
+    点击 **返回开发者应用列表**。
+
+    <Frame>
+      <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20261123/a43fd304-09ee-4a62-8d9b-6e3bcb8a9e11.webp" alt="SHOPYY 编辑应用页面，标出左上角的「返回开发者应用列表」入口。" zoomLabel="放大图片" closeLabel="关闭图片" />
+    </Frame>
+
+    找到名为 `Meowgic` 的那一行，点击 **Token** 一栏右侧的复制图标。
+
+    <Frame>
+      <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20261123/40ac0139-3857-4efd-841a-43903dd9e031.webp" alt="SHOPYY 开发者应用列表，标出 Meowgic 这一行的 Token 字段及右侧的复制图标。" zoomLabel="放大图片" closeLabel="关闭图片" />
+    </Frame>
+  </Step>
+  <Step title="在 Meowgic 中选择 SHOPYY">
+    打开 **My Stores → Add new store**，在平台列表中选择 **SHOPYY**。
+
+    <Frame>
+      <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20261123/49a60e99-ac28-4ebc-9401-f307375a1ea7.webp" alt="Meowgic 的 My Stores 页面，在「Add new store」菜单底部标出「SHOPYY」选项。" zoomLabel="放大图片" closeLabel="关闭图片" />
+    </Frame>
+  </Step>
+  <Step title="填写店铺域名和应用 Token">
+    输入这家 SHOPYY 店铺的**店铺域名**，粘贴刚刚复制的**应用 Token**，再提交连接。
+
+    <Frame>
+      <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20261123/29f7c240-d05c-45df-84af-dcf2716e994a.webp" alt="SHOPYY 连接表单，店铺域名填在 Store domain 栏，应用 Token 粘贴到 App token 栏。" zoomLabel="放大图片" closeLabel="关闭图片" />
+    </Frame>
+  </Step>
+</Steps>
+
+<Check>
+  连接完成后，在 **My Stores** 中找到新增的 SHOPYY 店铺，并核对店铺名称。
+</Check>
+
+## 连接后，开始使用 Task
+
+点击 **New task**，在请求里写明 SHOPYY 店铺名称。如果 Task 请你选择店铺，选中刚连接的那家。
+
+### 今天什么商品卖得最好
+
+```text wrap
+我的 SHOPYY 店铺「店铺名称」今天什么商品卖得最好？按售出件数列出销量前 5 的商品，附上商品名称和销量。
+```
+
+### 今天的流量怎么样
+
+```text wrap
+帮我分析 SHOPYY 店铺「店铺名称」今天截至目前的流量，和昨天同一时段比，访问量涨了还是跌了？如果能查到渠道明细，也告诉我哪个渠道带来的访问最多、哪个渠道的访问量变化最大。
+```
+
+<Card title="查看 Task 使用指南" icon="list-checks" href="/zh/tips-tricks/how-to-use-task">
+  了解如何指定店铺、描述任务目标并检查执行结果。
+</Card>
+
+## 常见问题
+
+<AccordionGroup>
+  <Accordion title="应该使用哪个 SHOPYY Token？">
+    使用目标店铺后台 **开发者应用** 列表中，`Meowgic` 应用对应的 **Token**。店铺域名和 Token 应来自同一家店铺。
+  </Accordion>
+  <Accordion title="我有多个店铺，怎样让 Task 使用正确的 SHOPYY 店铺？">
+    在请求里写明平台和店铺名称。如果 Task 显示店铺选择器，核对选中的店铺后再继续。
+  </Accordion>
+  <Accordion title="Task 能查询哪些 SHOPYY 店铺数据？">
+    Task 可使用的店铺数据取决于 SHOPYY 集成支持的操作和你授予的权限。
+  </Accordion>
+</AccordionGroup>
+
+## 故障排查
+
+<AccordionGroup>
+  <Accordion title="提交店铺域名和 Token 后连接失败">
+    核对店铺域名，再回到该店铺的开发者应用列表，重新复制 `Meowgic` 应用的 **Token**。确认应用已按[连接步骤](#connect-store)设置权限并保存。如果 SHOPYY 提示已配置 **IP白名单**，请联系店铺管理员检查白名单设置。
+  </Accordion>
+  <Accordion title="返回 My Stores 后找不到 SHOPYY 店铺">
+    确认你回到发起连接时使用的 Meowgic 账号，刷新 **My Stores**，然后重新检查店铺列表。如果问题持续，请向支持提供店铺名称和错误提示。发送截图前请遮住 Token。
+  </Accordion>
+</AccordionGroup>
