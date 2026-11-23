@@ -58,8 +58,7 @@
                   "integrations/shopline",
                   "integrations/shoplazza",
                   "integrations/woocommerce",
-                  "integrations/etsy",
-                  "integrations/shopyy"
+                  "integrations/etsy"
                 ]
               },
               {
@@ -147,8 +146,7 @@
                   "zh/integrations/shopline",
                   "zh/integrations/shoplazza",
                   "zh/integrations/woocommerce",
-                  "zh/integrations/etsy",
-                  "zh/integrations/shopyy"
+                  "zh/integrations/etsy"
                 ]
               },
               {

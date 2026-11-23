@@ -5,3 +5,7 @@
 # Draft content
 drafts/
 *.draft.mdx
+
+# Temporarily unpublished SHOPYY connection guides
+/integrations/shopyy.mdx
+/zh/integrations/shopyy.mdx
