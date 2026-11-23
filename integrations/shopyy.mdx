@@ -1,0 +1,162 @@
+---
+title: "Connect your SHOPYY store"
+sidebarTitle: "SHOPYY"
+icon: "/images/shopyy.svg"
+description: "Create a SHOPYY developer app, set the required permissions, and connect your store to Meowgic Task using its domain and app token."
+keywords:
+  - Meowgic SHOPYY integration
+  - Connect a SHOPYY store
+  - SHOPYY store authorization
+---
+
+import { ZoomableImage } from "/snippets/zoomable-image.jsx";
+
+<Frame>
+  <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20261123/45f8b457-7235-4eed-862b-684c6057a731.webp" alt="Meowgic and SHOPYY store connection guide, with a shop owner holding a phone and a parcel." />
+</Frame>
+
+## Why connect your store
+
+Connect your SHOPYY store to Meowgic so Task can use store information within the permissions you grant. When you need to work with data from a specific store, name the store in your task.
+
+## Connect your SHOPYY store {#connect-store}
+
+Have your SHOPYY store domain ready. Use a SHOPYY admin account that can create developer apps, and sign in to the Meowgic account you want to connect the store to.
+
+<div className="not-prose mt-10 w-full rounded-2xl border p-6">
+  <div className="flex w-full items-start gap-5">
+    <img src="https://assets.staticmeow.com/meowgic/static/images/20261118/be1b1b36-7aa4-454c-8873-6364659b189c.png?x-oss-process=image/format,webp" alt="Meowgic app icon" className="m-0 h-16 w-16 shrink-0 rounded-2xl border shadow-xs" noZoom />
+    <div className="flex flex-1 flex-col gap-2">
+      <p className="m-0 text-xl font-semibold">Meowgic: Your AI commerce team</p>
+      <p className="m-0 text-sm">Connect your SHOPYY store so Task can work with the store information you authorize.</p>
+    </div>
+  </div>
+  <div className="mt-6 flex flex-wrap gap-5 border-t pt-6">
+    <a className="app-store-button app-shopyy text-white no-underline" href="https://app.meowgic.ai/en/my-stores" target="_blank" rel="noopener noreferrer">
+      <img src="/images/shopyy.png" alt="" className="m-0 h-10 w-10 shrink-0" noZoom />
+      <span className="flex flex-1 flex-col text-white">
+        <span className="text-sm font-semibold">Connect your SHOPYY store</span>
+        <span className="text-xl font-semibold">Open My Stores</span>
+      </span>
+    </a>
+    <a className="app-signup-button app-shopyy no-underline" href="https://account.shopyy.com/register" target="_blank" rel="noopener noreferrer">
+      <span className="flex flex-1 flex-col">
+        <span className="text-sm font-semibold">Don't have a store yet?</span>
+        <span className="text-xl font-semibold">Create a SHOPYY store</span>
+      </span>
+    </a>
+  </div>
+</div>
+
+<Steps>
+  <Step title="Open the SHOPYY developer page">
+    In your SHOPYY admin, open **Settings → System**, then select **Developer**.
+
+    <Frame>
+      <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20261123/a3a9a944-652d-42aa-9b8f-697bae673912.webp" alt="SHOPYY admin with System selected under Settings in the sidebar and Developer highlighted in the settings grid." />
+    </Frame>
+  </Step>
+  <Step title="Open the new app form">
+    On the **Developer app** tab, select **Add a new App**.
+
+    <Frame>
+      <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20261123/da8a6962-181c-4437-9133-e78947b170e8.webp" alt="SHOPYY Developer app tab with the Add a new App button highlighted above the list on the right." />
+    </Frame>
+  </Step>
+  <Step title="Name the app, set permissions, and save">
+    Enter `Meowgic` in **App name**. Follow the table to set permissions, API detail links, and data masking.
+
+    | Section | Items | Required selection |
+    | :-- | :-- | :-- |
+    | Permission | Order, Product, Collection, Comment, Customer, Webhooks, Script, Proxy, Marketing, Page, Post, ShippingZone, Payment, System, DiyFile | **Manage** |
+    | Permission | Store, Analysis | **Readonly** |
+    | API details link | Order Product Detail Url, Product Detail Url, Collection Detail Url, Promotion Detail Url, Page Detail Url, Post Detail Url | **Shop Temp Domain** |
+    | Data Masking | Order Email, Order Shipping Phone | **Non-masked Data** |
+
+    <Warning>
+      **Non-masked Data** leaves order email addresses and shipping phone numbers visible when accessed through this app. Keep your app token private.
+    </Warning>
+
+    Once you've checked the settings, select **Save** in the upper right.
+
+    <Frame>
+      <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20261123/ca38d760-50ce-4238-8bcd-9531505abefd.webp" alt="SHOPYY app form with Meowgic in App name and highlights around permissions, API detail links, data masking, and Save." />
+    </Frame>
+  </Step>
+  <Step title="Return to the app list and copy the token">
+    Select **Return to developer App list**.
+
+    <Frame>
+      <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20261123/60049924-ea33-4ea3-91f4-d9db6e92fcef.webp" alt="SHOPYY app form with Return to developer App list highlighted at the top left." />
+    </Frame>
+
+    Find the `Meowgic` row and click the copy icon to the right of its **Token** field.
+
+    <Frame>
+      <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20261123/524a4bcf-9090-49a4-8632-feceffda87ca.webp" alt="SHOPYY Developer app list with the token field and copy icon highlighted in the Meowgic row." />
+    </Frame>
+  </Step>
+  <Step title="Select SHOPYY in Meowgic">
+    Open **My Stores → Add new store**, then select **SHOPYY** from the platform menu.
+
+    <Frame>
+      <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20261123/49a60e99-ac28-4ebc-9401-f307375a1ea7.webp" alt="Meowgic My Stores page with SHOPYY highlighted at the bottom of the Add new store menu." />
+    </Frame>
+  </Step>
+  <Step title="Enter your store domain and app token">
+    Enter your SHOPYY **store domain**, paste the **app token** you copied, and submit the form.
+
+    <Frame>
+      <ZoomableImage src="https://assets.staticmeow.com/meowgic/static/images/20261123/29f7c240-d05c-45df-84af-dcf2716e994a.webp" alt="SHOPYY connection form with Store domain above the App token field." />
+    </Frame>
+  </Step>
+</Steps>
+
+<Check>
+  After connecting, find the new SHOPYY store in **My Stores** and confirm its name.
+</Check>
+
+## Start using Task after connecting
+
+Select **New task** and include your SHOPYY store name in the request. If Task asks you to choose a store, select the one you just connected.
+
+### What sold best today
+
+```text wrap
+What's the best-selling product in my SHOPYY store, [store name], today? Rank the top 5 products by units sold and show the name and units sold for each.
+```
+
+### How's traffic today
+
+```text wrap
+Analyze today's traffic so far for my SHOPYY store, [store name]. Are visits up or down compared with the same time period yesterday? If traffic sources are available, tell me which channel brought in the most visits and which saw the biggest change.
+```
+
+<Card title="Read the Task guide" icon="list-checks" href="/tips-tricks/how-to-use-task">
+  Learn how to specify a store, describe your goal, and check Task's results.
+</Card>
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Which SHOPYY token should I use?">
+    Use the **Token** in the `Meowgic` row on your target store's **Developer app** tab. The domain and token must belong to the same store.
+  </Accordion>
+  <Accordion title="How do I make sure Task uses the right SHOPYY store?">
+    Include the platform and store name in your request. If Task shows a store picker, check the selected store before continuing.
+  </Accordion>
+  <Accordion title="Which SHOPYY store data can Task access?">
+    The store data Task can use depends on the operations the SHOPYY integration supports and the permissions you grant.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The connection fails after I submit the domain and token">
+    Check the store domain, then return to that store's **Developer app** tab and copy the `Meowgic` app **Token** again. Verify that you saved the app with the [required permissions](#connect-store). If SHOPYY displays an **IP Whitelist** notice, ask your store administrator to check the allowlist settings.
+  </Accordion>
+  <Accordion title="Your SHOPYY store is missing when you return to My Stores">
+    Make sure you're using the Meowgic account you used to start the connection. Refresh **My Stores** and check the list again. If the issue persists, send support the store name and error message. Hide the token before sharing a screenshot.
+  </Accordion>
+</AccordionGroup>

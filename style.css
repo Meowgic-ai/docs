@@ -47,28 +47,32 @@
   background-color: #fff4f4;
 }
 
-.app-store-button.app-woocommerce {
+.app-store-button:is(.app-woocommerce, .app-shopyy) {
   background-color: #6728de;
 }
 
-.app-store-button.app-woocommerce:hover {
+.app-shopyy {
+  flex: 1 1 16rem;
+}
+
+.app-store-button:is(.app-woocommerce, .app-shopyy):hover {
   background-color: #5420bd;
 }
 
-.app-store-button:is(.app-woocommerce, .app-etsy) img {
+.app-store-button:is(.app-woocommerce, .app-etsy, .app-shopyy) img {
   filter: brightness(0) invert(1);
 }
 
-.app-signup-button.app-woocommerce {
+.app-signup-button:is(.app-woocommerce, .app-shopyy) {
   color: #6728de;
   border-color: currentColor;
 }
 
-.app-signup-button.app-woocommerce:hover {
+.app-signup-button:is(.app-woocommerce, .app-shopyy):hover {
   background-color: rgb(103 40 222 / 8%);
 }
 
-.dark .app-signup-button.app-woocommerce {
+.dark .app-signup-button:is(.app-woocommerce, .app-shopyy) {
   color: #c6abff;
 }
 
